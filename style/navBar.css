@@ -1,0 +1,15 @@
+.shopping-cart-btn {
+    color: rgb(150, 150, 150) !important;
+}
+
+.shopping-cart-btn :hover {
+    color: rgb(20, 200, 20) !important;
+}
+
+.favourite-btn {
+    color: rgb(0, 0, 0) !important;
+}
+
+.favourite-btn :hover {
+    color: rgb(243, 0, 0) !important;
+}

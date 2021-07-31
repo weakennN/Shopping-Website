@@ -1,0 +1,2 @@
+#PHP supported extensions
+AddType application/x-httpd-php .html .htm
