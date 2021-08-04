@@ -1,4 +1,15 @@
 function test() {
-    console.log( document.getElementById("id").innerHTML);
-    document.getElementById("button").innerHTML = "Hello World";
+    window.addEventListener("resize", smt);
 }
+
+function smt() {
+    let w = document.documentElement.clientWidth;
+    if (w === 990) {
+        alert("Hello");
+        let div = document.createElement("div");
+    } else if (w === 991) {
+        alert("test");
+    }
+}
+
+test();

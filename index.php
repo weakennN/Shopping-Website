@@ -1,3 +1,8 @@
+<?php
+include 'Classes/Database/Database.php';
+include 'Classes/ProductLoader.php';
+include 'Classes/Database/ProductManagement.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +17,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="test.js"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="style/navBar.css">
@@ -20,32 +24,54 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand " href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form class="d-flex w-100">
-                <input class="flex-fill form-control me-2 w-175" type="search" placeholder="Search" aria-label="Search">
-                <button type="submit">
-                    <img src="recourses/images/5017679.png" alt="">
-                </button>
-            </form>
-        </div>
-        <div class="nav-button account-btn mx-5">
-            <i class="fas fa-user-circle fa-2x"></i>
-        </div>
-        <div class="nav-button favourite-btn">
-            <i class="fas fa-heart fa-2x"></i>
-        </div>
-        <div class="nav-button shopping-cart-btn mx-5">
-            <i class="fas fa-shopping-cart fa-2x"></i>
-        </div>
+<?php include 'header.php'; ?>
+
+<div class="container">
+    <div class="row">
+        <?php include 'Includes/loadMainProducts.php'; ?>
     </div>
-</nav>
+    <nav>
+        <ul class="pagination justify-content-end">
+            <li class="page-item">
+                <a href="#" class="page-link">
+                    <span>&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item active">
+                <a href="index.php?page=1" class="page-link">
+                    1
+                </a>
+            </li>
+            <li class="page-item">
+                <a href="index.php?page=2" class="page-link">
+                    2
+                </a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link">
+                    3
+                </a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link">
+                    4
+                </a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link">
+                    5
+                </a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link">
+                    <span>&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <?php include_once "Includes/dbTest.php"; ?>
+</div>
 
 </body>
 
