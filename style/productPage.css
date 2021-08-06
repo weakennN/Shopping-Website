@@ -1,0 +1,11 @@
+.image-container {
+    height: 600px;
+    object-fit: contain;
+}
+
+@media (max-width: 575.98px) {
+
+    .image-container {
+        height: 490px;
+    }
+}
