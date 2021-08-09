@@ -10,13 +10,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="style/navBar.css">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/navBar.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="style/style.css?v=1">
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5" id="smt">
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
     <div class="container" id="navContainer">
         <a class="navbar-brand" href="index.php">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -38,13 +38,17 @@
             <i class="fas fa-user-circle fa-2x"></i>
         </div>
         <div class="nav-button favourite-btn">
-            <i class="fas fa-heart fa-2x"></i>
+            <i class="far fa-heart fa-2x"></i>
         </div>
         <div class="nav-button shopping-cart-btn mx-5" id="cart">
             <i class="fas fa-shopping-cart fa-2x"></i>
         </div>
     </div>
 </nav>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
 
 </body>
 

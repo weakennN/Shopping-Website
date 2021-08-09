@@ -1,2 +1,4 @@
 #PHP supported extensions
 AddType application/x-httpd-php .html .htm
+# Prevent directory listings
+Options All -Indexes

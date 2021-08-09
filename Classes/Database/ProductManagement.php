@@ -15,4 +15,22 @@ class ProductManagement
 
         return $products;
     }
+
+    public static function getProductTitle($productId)
+    {
+        $pdo = Database::connect();
+        $query = "SELECT title FROM products WHERE id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$productId]);
+        return $statement->fetchAll();
+    }
+
+    public static function getProductPrice($productId)
+    {
+        $pdo = Database::connect();
+        $query = "SELECT price FROM products WHERE id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$productId]);
+        return $statement->fetchAll();
+    }
 }

@@ -13,7 +13,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="SCSS File" />
         <option value="CSS File" />
+        <option value="Sass File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -39,13 +42,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="LET" />
+    <property name="last.edited.regexp" value="|hello|" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/index.php" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="list.type.of.created.stylesheet" value="Sass" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\test\Classes\Loader\ProductLoader\PImageLoader" />
       <recent name="D:\xampp\htdocs\test" />
       <recent name="D:\xampp\htdocs\test\JS" />
       <recent name="D:\xampp\htdocs\test\Classes" />
@@ -87,7 +94,12 @@
       <workItem from="1628099784480" duration="4886000" />
       <workItem from="1628162411097" duration="18887000" />
       <workItem from="1628243321680" duration="20398000" />
-      <workItem from="1628272281535" duration="11343000" />
+      <workItem from="1628272281535" duration="11612000" />
+      <workItem from="1628324952067" duration="10236000" />
+      <workItem from="1628411793562" duration="26209000" />
+      <workItem from="1628445856250" duration="150000" />
+      <workItem from="1628446029676" duration="12683000" />
+      <workItem from="1628502008088" duration="28133000" />
     </task>
     <servers />
   </component>

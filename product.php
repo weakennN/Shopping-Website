@@ -1,3 +1,15 @@
+<?php
+include "Classes/Loader/Loader.php";
+include "Classes/Loader/ProductLoader/PLoader.php";
+include "Classes/Loader/ProductLoader/PTitleLoader.php";
+include "Classes/Database/ProductManagement.php";
+include "Classes/Database/Database.php";
+include "Classes/Loader/ProductLoader/PImageLoader/PImageLoader.php";
+include "Classes/Loader/ProductLoader/PImageLoader/PImageGalleryLoader.php";
+include "Classes/Loader/ProductLoader/PImageLoader/PSlickSliderLoader.php";
+include "Classes/Loader/ProductLoader/PImageLoader/PModalLoader.php";
+include "Classes/Loader/ProductLoader/PImageLoader/PPriceLoader.php";
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,71 +19,129 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="JS/test.js"></script>
-    <link rel="stylesheet" href="style/productPage.css">
+    <link rel="stylesheet" href="style/productPage.css?<?php echo time(); ?>">
+    <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+          integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+          integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+          integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
 <?php include "header.php"; ?>
-<div class="container">
+
+<div class="container shadow-sm">
     <div class="row">
-        <div class="product-title text-left fs-2">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, quo!</p>
+        <div class="text-left p-0 fs-2 border-bottom">
+            <?php include 'Includes/loadProductTitle.php'; ?>
         </div>
 
     </div>
     <div class="row mt-4">
-        <div class="col-lg-5 col-md-8 col-sm-12 text-center">
-            <div class="image-container" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <img class="img-fluid" style="height: 100%;object-fit: contain"
-                     src="recourses/images/ProductImages/3/spiritfarer-ps4-30.jpg" alt="#">
+        <!-- start of product gallery -->
+        <div class="col-lg-5 col-md-12 col-sm-12 text-center mx-lg-4">
+            <div class="gal card-block">
+                <?php include "Includes/loadProductImages.php" ?>
             </div>
-            <div id="images">
-                <nav>
-                    <ul class="pagination h-100 justify-content-center" id="slider">
-                        <li class="page-item" onclick="previousImage()"><a class="page-link" href="#">Previous</a></li>
-                        <li class="using" id="1">
-                            <div>
-                                <img style="width: 80px"
-                                     src="recourses/images/ProductImages/1/neo--the-world-ends-with-you-ps4-30.jpg"
-                                     alt="">
-                            </div>
-                        </li>
-                        <li class="page-item using" id="2">
-                            <div>
-                                <img style="width: 80px"
-                                     src="recourses/images/ProductImages/2/smartfon-lg-g6---57---32gb--optical-black-30.jpg"
-                                     alt="">
-                            </div>
-                        </li>
-                        <li class="page-item using" id="3">
-                            <div>
-                                <img style="width: 80px"
-                                     src="recourses/images/ProductImages/3/spiritfarer-ps4-30.jpg" alt="">
-                            </div>
-                        </li>
-                        <li class="page-item" id="4" style="display: none"><a class="page-link" href="#">4</a></li>
-                        <li class="page-item" id="5" style="display: none"><a class="page-link" href="#">5</a></li>
-                        <li class="page-item" onclick="nextImage()"><a class="page-link" href="#"">Next</a></li>
-                    </ul>
-                </nav>
 
-                <ul id="dots" class="list-inline text-center" style="display: none">
-                    <li class="list-inline-item text-muted ph-dot">
-                        <i class="fas fa-circle"></i>
-                    </li>
-                    <li class="list-inline-item text-muted ph-dot">
-                        <i class="fas fa-circle"></i>
-                    </li>
-                    <li class="list-inline-item text-muted ph-dot">
-                        <i class="fas fa-circle"></i>
-                    </li>
-                </ul>
+            <div class="gal-nav">
+                <?php include "Includes/loadProductSlickSlider.php" ?>
             </div>
         </div>
-        <div class=" col-lg-7 col-md-4">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, fugiat.</p>
+        <!-- end of product gallery -->
+        <!-- start of product info -->
+        <div class="col-lg-6 col-md-12 mb-5 mt-md-5 mt-5 mt-lg-0 mt-xs-0">
+            <div>
+                <div class="mb-3">
+                    <div>
+                        <?php include "Includes/loadPPrice.php" ?>
+                    </div>
+                </div>
+                <div class="d-flex flex-row">
+                    <button class="btn btn-primary w-100">
+                        <div>
+                            <i class="fas fa-shopping-cart fa-2x"></i>
+                            <div class="mt-1">
+                                Add to cart
+                            </div>
+                        </div>
+
+                    </button>
+                </div>
+                <div class="d-flex flex-row mt-3">
+                    <button class="btn btn-danger w-100">
+                        <div>
+                            <i class="far fa-heart fa-2x"></i>
+                            <div class="mt-1">
+                                Add to favourite
+                            </div>
+                        </div>
+
+                    </button>
+                </div>
+                <div class="mt-2">
+                    <div class="text-left">
+                        <h3>Short product description</h3>
+                    </div>
+                    <div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet architecto
+                            corporis
+                            esse et eveniet, explicabo impedit incidunt ipsum itaque laborum laudantium magnam
+                            minima
+                            modi odit omnis perferendis quaerat quisquam quod ratione rerum, sequi sit suscipit
+                            tempora
+                            tempore totam ut vel voluptas voluptate voluptatum? Adipisci amet assumenda autem
+                            corporis
+                            debitis ea eaque earum eligendi enim excepturi explicabo, impedit ipsum iste itaque
+                            laboriosam minima molestiae natus nemo neque, nulla numquam omnis perferendis, sint sit
+                            ullam ut vero? Alias animi asperiores, blanditiis corporis deserunt dolore, dolorem esse
+                            expedita harum illo ipsam libero modi molestias obcaecati odio possimus quia quod sed
+                            similique voluptas!
+                        </p>
+                    </div>
+
+                </div>
+            </div>
         </div>
+        <!-- end of product info -->
+        <!-- start of product description -->
+        <div class="col-xs-12">
+            <div class="text-center my-5" id="product-description-title">
+                <div class="text-uppercase">
+                    <h2>full product description</h2>
+                </div>
+            </div>
+            <div class="product-description-text">
+                <div class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda at cum
+                    laudantium
+                    quod repellendus soluta velit? Autem corporis dolorum in minima porro provident quam quas quis
+                    reprehenderit sapiente? Nesciunt!
+                </div>
+                <div class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, quos?</div>
+                <div class="mb-3">
+                    <img class="img-fluid"
+                         src="recourses/images/ProductImages/1/2.jpg"
+                         alt="">
+                </div>
+                <div class="ratio ratio-16x9 mb-3">
+                    <iframe
+                            src="https://www.youtube.com/embed/u1wXak2Qfo4"
+                            title="YouTube video"
+                            allowfullscreen
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+
     </div>
-
+    <!-- end of product description -->
+    <!-- start of product gallery modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-fullscreen-lg-down modal-dialog-centered">
             <div class="modal-content">
@@ -83,20 +153,8 @@
                         <div class="col">
                             <div id="carouselExampleControls" class="carousel carousel-dark slide"
                                  data-bs-ride="carousel">
-                                <div class="carousel-inner text-center">
-                                    <div class="carousel-item active">
-                                            <iframe width="100%" height="600" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="w-50"
-                                             src="recourses/images/ProductImages/2/smartfon-lg-g6---57---32gb--optical-black-30.jpg"
-                                             alt="...">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="w-50"
-                                             src="recourses/images/ProductImages/3/spiritfarer-ps4-30.jpg"
-                                             alt="...">
-                                    </div>
+                                <div class="carousel-inner text-center test" id="modal-content">
+                                    <?php include "Includes/loadPModal.php" ?>
                                 </div>
                                 <button class="carousel-control-prev" type="button"
                                         data-bs-target="#carouselExampleControls"
@@ -117,42 +175,17 @@
             </div>
         </div>
     </div>
-</div>
+    <!-- end of product gallery modal -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-<script>
-    function nextImage() {
-        let ul = document.getElementById("slider");
-        let usingElements = document.getElementsByClassName("using");
-        let id = parseInt(usingElements[usingElements.length - 1].id) + 1;
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"
+            integrity="sha512-WNZwVebQjhSxEzwbettGuQgWxbpYdoLf7mH+25A7sfQbbxKeS5SQ9QBf97zOY4nOlwtksgDA/czSTmfj4DUEiQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-        if (id >= ul.children.length - 1) {
-            return;
-        }
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-        document.getElementById(id.toString()).style.display = "block";
-        usingElements[0].style.display = "none";
-        usingElements[0].classList.remove("using");
-        document.getElementById(id.toString()).classList.add("using");
-    }
-
-    function previousImage() {
-        let usingElements = document.getElementsByClassName("using");
-        let id = parseInt(usingElements[0].id) - 1;
-
-        if (id <= 0) {
-            return;
-        }
-
-        document.getElementById(id.toString()).style.display = "block";
-        usingElements[usingElements.length - 1].style.display = "none";
-        usingElements[usingElements.length - 1].classList.remove("using");
-        document.getElementById(id.toString()).classList.add("using");
-    }
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-        crossorigin="anonymous"></script>
-
+    <script src="JS/productPage.js"></script>
 </body>
 </html>
