@@ -12,3 +12,7 @@
     background-size: cover;
     overflow: hidden;
 }
+
+.product-card{
+    height: 100%;
+}

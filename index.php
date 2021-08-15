@@ -15,7 +15,7 @@ include 'Classes/Database/ProductManagement.php';
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 
-<body>
+<body class="bg-light">
 
 <?php include 'header.php'; ?>
 

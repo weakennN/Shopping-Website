@@ -22,6 +22,7 @@ class ProductManagement
         $query = "SELECT title FROM products WHERE id = ?";
         $statement = $pdo->prepare($query);
         $statement->execute([$productId]);
+
         return $statement->fetchAll();
     }
 
@@ -31,6 +32,17 @@ class ProductManagement
         $query = "SELECT price FROM products WHERE id = ?";
         $statement = $pdo->prepare($query);
         $statement->execute([$productId]);
+
+        return $statement->fetchAll();
+    }
+
+    public static function getProductDescription($productId)
+    {
+        $pdo = Database::connect();
+        $query = "SELECT description FROM products WHERE id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$productId]);
+
         return $statement->fetchAll();
     }
 }

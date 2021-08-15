@@ -9,6 +9,11 @@ include "Classes/Loader/ProductLoader/PImageLoader/PImageGalleryLoader.php";
 include "Classes/Loader/ProductLoader/PImageLoader/PSlickSliderLoader.php";
 include "Classes/Loader/ProductLoader/PImageLoader/PModalLoader.php";
 include "Classes/Loader/ProductLoader/PImageLoader/PPriceLoader.php";
+include "Classes/Loader/ProductLoader/PDescriptionLoader/PDescriptionLoader.php";
+include "Classes/Loader/ProductLoader/PDescriptionLoader/PDescriptionSubLoader/PDescriptionSubLoader.php";
+include "Classes/Loader/ProductLoader/PDescriptionLoader/PDescriptionSubLoader/PImageDescriptionLoader.php";
+include "Classes/Loader/ProductLoader/PDescriptionLoader/PDescriptionSubLoader/PTextDescription.php";
+include "Classes/Loader/ProductLoader/PDescriptionLoader/PDescriptionSubLoader/PVideoDescriptionLoader.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -18,7 +23,6 @@ include "Classes/Loader/ProductLoader/PImageLoader/PPriceLoader.php";
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="JS/test.js"></script>
     <link rel="stylesheet" href="style/productPage.css?<?php echo time(); ?>">
     <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
 
@@ -54,6 +58,7 @@ include "Classes/Loader/ProductLoader/PImageLoader/PPriceLoader.php";
             </div>
         </div>
         <!-- end of product gallery -->
+
         <!-- start of product info -->
         <div class="col-lg-6 col-md-12 mb-5 mt-md-5 mt-5 mt-lg-0 mt-xs-0">
             <div>
@@ -110,6 +115,7 @@ include "Classes/Loader/ProductLoader/PImageLoader/PPriceLoader.php";
             </div>
         </div>
         <!-- end of product info -->
+
         <!-- start of product description -->
         <div class="col-xs-12">
             <div class="text-center my-5" id="product-description-title">
@@ -118,29 +124,13 @@ include "Classes/Loader/ProductLoader/PImageLoader/PPriceLoader.php";
                 </div>
             </div>
             <div class="product-description-text">
-                <div class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda at cum
-                    laudantium
-                    quod repellendus soluta velit? Autem corporis dolorum in minima porro provident quam quas quis
-                    reprehenderit sapiente? Nesciunt!
-                </div>
-                <div class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, quos?</div>
-                <div class="mb-3">
-                    <img class="img-fluid"
-                         src="recourses/images/ProductImages/1/2.jpg"
-                         alt="">
-                </div>
-                <div class="ratio ratio-16x9 mb-3">
-                    <iframe
-                            src="https://www.youtube.com/embed/u1wXak2Qfo4"
-                            title="YouTube video"
-                            allowfullscreen
-                    ></iframe>
-                </div>
+                <?php include 'Includes/loadProductDescription.php'; ?>
             </div>
         </div>
 
     </div>
     <!-- end of product description -->
+
     <!-- start of product gallery modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-fullscreen-lg-down modal-dialog-centered">

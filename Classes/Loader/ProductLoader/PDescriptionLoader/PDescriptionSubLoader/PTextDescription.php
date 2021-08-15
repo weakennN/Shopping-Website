@@ -3,13 +3,9 @@
 class PTextDescription extends PDescriptionSubLoader
 {
 
-    public function match($value)
+    public function match($value): bool
     {
-        if ($value[0] === "<") {
-            return true;
-        }
-
-        return false;
+        return str_contains($value, "*");
     }
 
     public function load($value)
