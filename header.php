@@ -18,7 +18,7 @@
 
 <nav class="navbar navbar-expand-md navbar-light mb-5" id="main-navbar" style="display: block;background-color: white">
     <div class="container" id="navContainer">
-        <a href="index.php" class="navbar-brand">Navbar</a>
+        <a href="index.php" class="navbar-brand">weakennN</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -46,40 +46,39 @@
     </div>
 </nav>
 
-<nav class="navbar" id="responsive-navbar" style="display: none">
+<nav class="navbar mb-5" id="responsive-navbar" style="display: none">
     <div class="container-fluid">
-        <div class="row w-100">
-            <div class="col-1">
+        <div class="d-flex flex-row w-100">
+            <div style="margin-right: 1rem">
                 <i class="far fa-user fa-2x"></i>
             </div>
-            <div class="col-1">
+            <div>
                 <i class="far fa-heart fa-2x"></i>
             </div>
-            <div class="col text-center">
-                <a class="navbar-brand" href="index.php">Website</a>
+            <div class="text-center flex-grow-1">
+                <a class="navbar-brand" href="index.php">weakennN</a>
             </div>
-            <div class="col-1">
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
+            <div style="margin-right: 1rem">
+                <div data-bs-toggle="collapse"
                         data-bs-target="#responsive-navbar-collapse" aria-controls="navbarSupportedContent">
-                    <img src="recourses/images/5017679.png" alt="">
-                </button>
+                    <i class="fas fa-search fa-2x"></i>
+                </div>
             </div>
-            <div class="col-1">
+            <div>
                 <i class="fas fa-shopping-cart fa-2x"></i>
             </div>
         </div>
-
-        <div class="collapse navbar-collapse text-center" id="responsive-navbar-collapse">
-            <form class="form-inline text-center my-3">
-                <div class="input-group input-group-append">
-                    <input class="flex-fill form-control" type="search" placeholder="Search"
-                           aria-label="Search">
-                    <button type="submit">
-                        <img src="recourses/images/5017679.png" alt="">
-                    </button>
-                </div>
-            </form>
-        </div>
+    </div>
+    <div class="collapse navbar-collapse text-center" id="responsive-navbar-collapse">
+        <form class="form-inline text-center my-3">
+            <div class="input-group input-group-append">
+                <input class="flex-fill form-control" type="search" placeholder="Search"
+                       aria-label="Search">
+                <button type="submit">
+                    <img src="recourses/images/5017679.png" alt="">
+                </button>
+            </div>
+        </form>
     </div>
 </nav>
 

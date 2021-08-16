@@ -1,21 +1,7 @@
 <?php
-include "Classes/Loader/Loader.php";
-include "Classes/Loader/ProductLoader/PLoader.php";
-include "Classes/Loader/ProductLoader/PTitleLoader.php";
-include "Classes/Database/ProductManagement.php";
-include "Classes/Database/Database.php";
-include "Classes/Loader/ProductLoader/PImageLoader/PImageLoader.php";
-include "Classes/Loader/ProductLoader/PImageLoader/PImageGalleryLoader.php";
-include "Classes/Loader/ProductLoader/PImageLoader/PSlickSliderLoader.php";
-include "Classes/Loader/ProductLoader/PImageLoader/PModalLoader.php";
-include "Classes/Loader/ProductLoader/PImageLoader/PPriceLoader.php";
-include "Classes/Loader/ProductLoader/PDescriptionLoader/PDescriptionLoader.php";
-include "Classes/Loader/ProductLoader/PDescriptionLoader/PDescriptionSubLoader/PDescriptionSubLoader.php";
-include "Classes/Loader/ProductLoader/PDescriptionLoader/PDescriptionSubLoader/PImageDescriptionLoader.php";
-include "Classes/Loader/ProductLoader/PDescriptionLoader/PDescriptionSubLoader/PTextDescription.php";
-include "Classes/Loader/ProductLoader/PDescriptionLoader/PDescriptionSubLoader/PVideoDescriptionLoader.php";
+include_once "AutoLoad/autoLoader.php";
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -176,6 +162,6 @@ include "Classes/Loader/ProductLoader/PDescriptionLoader/PDescriptionSubLoader/P
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-    <script src="JS/productPage.js"></script>
+    <script src="JS/productPage.js?v=2"></script>
 </body>
 </html>

@@ -11,20 +11,15 @@ jQuery(document).ready(function () {
         asNavFor: '.gal',
         arrows: true,
         focusOnSelect: true,
+        responsive: [
+            {
+                breakpoint: 1000,
+                settings: {
+                    arrows: false
+                }
+            }
+        ]
     });
-});
-
-window.addEventListener("resize", function () {
-    let sliderButtons = document.getElementsByClassName("slick-arrow");
-    if (document.documentElement.clientWidth <= 1000) {
-        for (let i = 0; i < sliderButtons.length; i++) {
-            sliderButtons[i].style.display = "none";
-        }
-    } else if (document.documentElement.clientWidth > 1000 && sliderButtons[0].style.display === "none") {
-        for (let i = 0; i < sliderButtons.length; i++) {
-            sliderButtons[i].style.display = "block";
-        }
-    }
 });
 
 function imageClick(id) {

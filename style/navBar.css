@@ -1,5 +1,5 @@
 .shopping-cart-btn {
-    color: rgb(0, 0, 0) !important;
+    color: rgb(39, 136, 227) !important;
 }
 
 .shopping-cart-btn :hover {
@@ -9,7 +9,11 @@
 }
 
 .favourite-btn {
-    color: rgb(0, 0, 0) !important;
+    color: rgb(39, 136, 227) !important;
+}
+
+.account-btn {
+    color: rgb(39, 136, 227) !important;
 }
 
 .favourite-btn :hover {
@@ -20,7 +24,7 @@
 
 @keyframes favourite-btn-animation {
     0% {
-        color: black;
+        color: rgb(39, 136, 227);
     }
 
     100% {
@@ -30,7 +34,7 @@
 
 @keyframes shopping-cart-btn-animation {
     0% {
-        color: black;
+        color: rgb(39, 136, 227);
     }
 
     100% {

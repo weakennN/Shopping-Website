@@ -52,11 +52,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\test" />
+      <recent name="D:\xampp\htdocs\test\public" />
+      <recent name="D:\xampp\htdocs\test\private" />
       <recent name="D:\xampp\htdocs\test\Classes\Loader\ProductLoader" />
       <recent name="D:\xampp\htdocs\test\Classes\Loader\ProductLoader\PImageLoader" />
-      <recent name="D:\xampp\htdocs\test" />
-      <recent name="D:\xampp\htdocs\test\JS" />
-      <recent name="D:\xampp\htdocs\test\Classes" />
     </key>
   </component>
   <component name="RunManager">
@@ -102,6 +102,7 @@
       <workItem from="1628446029676" duration="12683000" />
       <workItem from="1628502008088" duration="28133000" />
       <workItem from="1629026874378" duration="27046000" />
+      <workItem from="1629102279273" duration="8033000" />
     </task>
     <servers />
   </component>

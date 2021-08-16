@@ -1,8 +1,7 @@
 <?php
-include 'Classes/Database/Database.php';
-include 'Classes/ProductLoader.php';
-include 'Classes/Database/ProductManagement.php';
+include_once "AutoLoad/autoLoader.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,9 +18,9 @@ include 'Classes/Database/ProductManagement.php';
 
 <?php include 'header.php'; ?>
 
-<div class="container shadow-sm">
+<div class="container-lg container-fluid-lg shadow-sm">
     <div class="row">
-        <?php include 'Includes/loadMainProducts.php'; ?>
+        <?php require 'Includes/loadMainProducts.php'; ?>
     </div>
     <nav id>
         <ul class="pagination justify-content-end">

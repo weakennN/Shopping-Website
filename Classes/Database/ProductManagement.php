@@ -2,7 +2,6 @@
 
 class ProductManagement
 {
-
     public static function getProducts()
     {
         $pdo = Database::connect();
