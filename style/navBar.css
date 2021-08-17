@@ -16,6 +16,10 @@
     color: rgb(39, 136, 227) !important;
 }
 
+.search-icon {
+    color: rgb(39, 136, 227) !important;
+}
+
 .favourite-btn :hover {
     animation-name: favourite-btn-animation;
     animation-duration: 0.5s;
@@ -40,4 +44,23 @@
     100% {
         color: rgb(20, 200, 20);
     }
+}
+
+.bullet {
+    position: relative;
+    left: -13px;
+    top: -15px;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    color: #000000;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.cart-dropdown{
+    left: -255px;
+    top: 50px;
 }
