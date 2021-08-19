@@ -9,7 +9,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../style/productPage.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="style/productPage.css?<?php echo time(); ?>">
     <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
@@ -27,7 +27,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
 
 <div class="container shadow-sm">
     <div class="row">
-        <div class="text-left p-0 fs-2 border-bottom">
+        <div class="text-left p-0 fs-2 border-bottom" id="title">
             <?php include $_SERVER["HOME"] . '/private/Includes/loadProductTitle.php'; ?>
         </div>
 
@@ -36,7 +36,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
         <!-- start of product gallery -->
         <div class="col-lg-5 col-md-12 col-sm-12 text-center mx-lg-4">
             <div class="gal card-block">
-                <?php include $_SERVER["HOME"] .  "/private/Includes/loadProductImages.php" ?>
+                <?php include $_SERVER["HOME"] . "/private/Includes/loadProductImages.php" ?>
             </div>
 
             <div class="gal-nav">
@@ -54,7 +54,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
                     </div>
                 </div>
                 <div class="d-flex flex-row">
-                    <button class="btn btn-primary w-100">
+                    <button class="btn btn-primary w-100" id="add-to-cart">
                         <div>
                             <i class="fas fa-shopping-cart fa-2x"></i>
                             <div class="mt-1">
@@ -154,14 +154,12 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
     <!-- end of product gallery modal -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"
             integrity="sha512-WNZwVebQjhSxEzwbettGuQgWxbpYdoLf7mH+25A7sfQbbxKeS5SQ9QBf97zOY4nOlwtksgDA/czSTmfj4DUEiQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-
-    <script src="../JS/productPage.js?v=2"></script>
+    <script src="JS/cartWrapper.js"></script>
+    <script src="JS/productPage.js?v=3"></script>
 </body>
 </html>

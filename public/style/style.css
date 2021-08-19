@@ -1,0 +1,33 @@
+.icon {
+    font-size: 1.7em;
+}
+
+.pagination-image {
+    width: 80px;
+}
+
+.img-size {
+    height: 450px;
+    width: 700px;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.product-card {
+    height: 100%;
+    border-color: transparent !important;
+}
+
+.cent {
+    font-size: 1rem
+}
+
+@keyframes product-card-border-anim {
+    0% {
+        border-width: 1px;
+    }
+
+    100% {
+        border-width: 5px;
+    }
+}

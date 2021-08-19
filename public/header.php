@@ -1,3 +1,6 @@
+<?php
+include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,11 +13,35 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="../style/navBar.css?<?php echo time(); ?>">
-    <link rel="stylesheet" href="../style/style.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="style/navBar.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="style/style.css?<?php echo time(); ?>">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
+
+<script>
+    $(document).ready(function () {
+        function toggleDropdown(e) {
+            const _d = $(e.target).closest('.dropdown'),
+                _m = $('.dropdown-menu', _d);
+            setTimeout(function () {
+                const shouldOpen = e.type !== 'click' && _d.is(':hover');
+                _m.toggleClass('show', shouldOpen);
+                _d.toggleClass('show', shouldOpen);
+                $('[data-toggle="dropdown"]', _d).attr('aria-expanded', shouldOpen);
+            }, e.type === 'mouseleave' ? 300 : 0);
+        }
+
+        $('body')
+            .on('mouseenter mouseleave', '.dropdown', toggleDropdown)
+            .on('click', '.dropdown-menu a', toggleDropdown);
+
+
+        // $('.dropdown a').on('click tap', e => e.preventDefault())
+    });
+</script>
 
 <nav class="navbar navbar-expand-md navbar-light mb-5" id="main-navbar" style="display: block;background-color: white">
     <div class="container" id="navContainer">
@@ -40,43 +67,27 @@
         <div class="nav-button favourite-btn">
             <i class="far fa-heart fa-2x"></i>
         </div>
-        <div class="dropdown">
-            <div class="nav-button shopping-cart-btn mx-5" id="cart">
-                <div class="dropdown-toggle">
-                    <i class="fas fa-shopping-cart fa-2x"></i>
-                    <span class="bullet">1</span>
+        <div class="dropdown" id="cart-dropdown">
+            <div class="dropdown-menu dropdown-menu-end cart-dropdown">
+                <div class="d-flex flex-column overflow-auto cart-wrapper" id="cart-wrapper">
+
+                </div>
+                <div class="total-price w-100 py-2" style="background-color: #efebeb">
+                    <div class="d-flex flex-row fw-bold">
+                        <div class="text-uppercase my-1 sub-total">
+                            <p class="ms-3">Total:</p>
+                        </div>
+                        <div class="ms-auto me-3 my-1 sub-total" id="cart-wrapper-sub-total">
+                            <p class="sub-total-cent">$50<span class="cent">.20</span></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="dropdown-menu dropdown-menu-end cart-dropdown" style="height: 100px; overflow-y: scroll;">
-                <div class="d-flex flex-column" style="width: 350px;margin: 10px">
-                    <div class="card">
-                        <div class="row g-0">
-                            <div class="col-4" style="width: 80px;height: 100px">
-                                <img src="recourses/images/ProductImages/1/1.jpg" class="img-fluid" alt="...">
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body m-0 p-0 mx-3">
-                                    <h5 class="card-title">Some product</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="row g-0">
-                            <div class="col-4" style="width: 80px;height: 100px;object-fit: contain">
-                                <img src="recourses/images/ProductImages/3/1.jpg" class="img-fluid"
-                                     style="object-fit: contain;" alt="...">
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <div class="d-flex flex-row" style="background-color: red">
-                                        <h5 class="card-title">Some product</h5>
-                                        <button type="button" class="btn-close mr-auto" aria-label="Close"></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+            <div class="nav-button shopping-cart-btn ms-5" id="cart">
+                <div class="dropdown-toggle">
+                    <i class="fas fa-shopping-cart fa-2x position-relative"></i>
+                    <div id="badge" class="position-absolute top-0 start-100 badge rounded-pill bg-danger">0</div>
                 </div>
             </div>
         </div>
@@ -123,7 +134,7 @@
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
 
-<script src="../JS/header.js"></script>
+<script src="JS/header.js"></script>
 </body>
 
 </html>

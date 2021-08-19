@@ -14,7 +14,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 
-<body class="bg-light">
+<body">
 
 <?php include $_SERVER["HOME"] . '/public/header.php'; ?>
 
@@ -64,6 +64,10 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
 
 </div>
 
+<script src="JS/cartWrapper.js?v=5"></script>
+<script src="JS/addToCart.js?v=1"></script>
+<script src="JS/Person.js"></script>
+<script src="JS/test.js"></script>
 </body>
 
 </html>

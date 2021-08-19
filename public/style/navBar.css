@@ -3,9 +3,11 @@
 }
 
 .shopping-cart-btn :hover {
-    animation-name: shopping-cart-btn-animation;
+   /* animation-name: shopping-cart-btn-animation;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
+
+    */
 }
 
 .favourite-btn {
@@ -60,7 +62,37 @@
     margin-top: 0;
 }
 
-.cart-dropdown{
+.cart-dropdown {
     left: -255px;
     top: 50px;
+}
+
+.cart-wrapper-price {
+    font-size: 1.5rem;
+}
+
+.remove-car-item-wrapper {
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: 2px;
+}
+
+.cart-wrapper {
+    width: 400px;
+    margin: 10px;
+    max-height: 320px;
+}
+
+.sub-total > p {
+    margin-bottom: 0;
+}
+
+.sub-total-cent {
+    font-size: 1.1rem;
+}
+
+.cart-wrapper-product-image {
+    width: 80px;
+    height: 100px;
+    object-fit: contain;
 }

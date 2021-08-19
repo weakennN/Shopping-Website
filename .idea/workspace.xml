@@ -47,7 +47,7 @@
     <property name="list.type.of.created.stylesheet" value="Sass" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -65,6 +65,9 @@
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="19c25af2-727d-42ea-8117-105ff18c62b6" name="Changes" comment="" />
@@ -103,11 +106,18 @@
       <workItem from="1628502008088" duration="28133000" />
       <workItem from="1629026874378" duration="27046000" />
       <workItem from="1629102279273" duration="24801000" />
-      <workItem from="1629189472287" duration="3196000" />
+      <workItem from="1629189472287" duration="21052000" />
+      <workItem from="1629284860808" duration="19554000" />
+      <workItem from="1629364591640" duration="13052000" />
+      <workItem from="1629389904871" duration="10919000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
