@@ -78,7 +78,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
                             <p class="ms-3">Total:</p>
                         </div>
                         <div class="ms-auto me-3 my-1 sub-total" id="cart-wrapper-sub-total">
-                            <p class="sub-total-cent">$50<span class="cent">.20</span></p>
+                            <p class="sub-total-cent"><span id="cart-wrapper-price">$0</span><span id="cart-wrapper-cent" class="cent">.00</span></p>
                         </div>
                     </div>
                 </div>

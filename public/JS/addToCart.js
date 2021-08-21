@@ -13,10 +13,11 @@ function addToCart() {
     }, function (data, status) {
     });
 
-    if (!checkIfProductExist()) {
+    if (!checkIfProductExist(title)) {
         let cartWrapperElement = createCartWrapperElement(title, productLink, productImageSource, price);
         document.getElementById("cart-wrapper").appendChild(cartWrapperElement);
-        updateSubTotal(parseFloat(price));
     }
+
+    updateSubTotal(parseFloat(price));
 }
 

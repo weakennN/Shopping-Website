@@ -76,7 +76,13 @@ function createCartWrapperElement(title, productLink, productImageSource, price)
 
     let priceHolder = document.createElement("div");
     let productPrice = document.createElement("p");
-    productPrice.innerHTML = price;
+    let priceSpan = document.createElement("span");
+    priceSpan.classList.add("cart-wrapper-price");
+    let centSpan = document.createElement("span");
+    centSpan.classList.add("cent");
+    priceSpan.textContent = "$" + price.substr(0, price.indexOf("."))
+    centSpan.textContent = price.substr(price.indexOf("."));
+    productPrice.append(priceSpan, centSpan);
     priceHolder.appendChild(productPrice);
 
     productCardBottomSide.appendChild(priceHolder);
@@ -84,7 +90,7 @@ function createCartWrapperElement(title, productLink, productImageSource, price)
     let quantityHolder = document.createElement("div");
     quantityHolder.classList.add("ms-5");
     let quantity = document.createElement("p");
-    quantity.classList.add("quantity");
+    quantity.classList.add("quantity", "text-muted" , "mt-2");
     quantity.innerHTML = "x&nbsp;&nbsp;1";
     quantityHolder.appendChild(quantity);
 
@@ -99,5 +105,8 @@ function updateSubTotal(priceToAdd) {
 
     let newTotalPrice = totalPrice + priceToAdd;
 
-    subTotal.children.item(0).textContent = "$" + newTotalPrice.toFixed(2);
+    let finalPrice = "$" + newTotalPrice.toFixed(2);
+
+    document.getElementById("cart-wrapper-price").innerText = finalPrice.substr(0, finalPrice.indexOf("."));
+    document.getElementById("cart-wrapper-cent").innerText = finalPrice.substr(finalPrice.indexOf("."));
 }

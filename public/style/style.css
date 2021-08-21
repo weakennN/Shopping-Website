@@ -16,6 +16,7 @@
 .product-card {
     height: 100%;
     border-color: transparent !important;
+    background-color: transparent;
 }
 
 .cent {
@@ -30,4 +31,8 @@
     100% {
         border-width: 5px;
     }
+}
+
+.quantity {
+    font-size: 1.1rem;
 }

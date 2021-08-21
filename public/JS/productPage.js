@@ -33,9 +33,10 @@ $(document).ready(
 
         if (!checkIfProductExist(productTitle)) {
             let cartWrapperProduct = createCartWrapperElement(productTitle, productLink, productImageSource, productPrice);
-            updateSubTotal(parseInt(productPrice));
             document.getElementById("cart-wrapper").appendChild(cartWrapperProduct);
         }
+
+        updateSubTotal(parseFloat(productPrice));
 
         $.post("../private/Includes/addToCart.php", {
             productId: productId
