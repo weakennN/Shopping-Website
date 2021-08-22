@@ -6,10 +6,10 @@ use PDO;
 
 class Database
 {
-    private static $host = "localhost";
-    private static $username = "root";
-    private static $password = "";
-    private static $database = "main_db";
+    private static string $host = "localhost";
+    private static string $username = "root";
+    private static string $password = "";
+    private static string $database = "main_db";
 
     public static function connect()
     {

@@ -4,7 +4,6 @@ namespace private\Classes\Loader\ProductLoader;
 
 class PTitleLoader extends \private\Classes\Loader\ProductLoader\PLoader
 {
-
     public function load()
     {
         $productId = $this->getProductId();

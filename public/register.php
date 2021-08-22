@@ -1,3 +1,6 @@
+<?php
+include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,29 +19,29 @@
     </div>
     <div class="row">
         <div class="col-lg-6 mt-5">
-            <form action="" class="row">
+            <form action="../private/Includes/registerUser.php" method="post" class="row">
                 <div class="col-lg-6 col-md-12 mb-3" id="first-name-input">
                     <label for="first-name">First name</label>
-                    <input id="first-name" type="text" class="form-control">
+                    <input id="first-name" type="text" class="form-control" name="firstName">
                 </div>
                 <div class="col-lg-6 col-md-12 mb-3" id="last-name-input">
                     <label for="last-name">Last name</label>
-                    <input type="text" class="form-control" id="last-name">
+                    <input type="text" class="form-control" id="last-name" name="lastName">
                 </div>
                 <div class="col-12 mb-3" id="email-input">
                     <label for="email">Email</label>
-                    <input type="text" class="form-control" id="email">
+                    <input type="text" class="form-control" id="email" name="email">
                 </div>
                 <div class="col-12 mb-3" id="password-input">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password">
+                    <input type="password" class="form-control" id="password" name="password">
                 </div>
                 <div class="col-12 mb-3" id="repeat-password-input">
                     <label for="repeat-password">Repeat password</label>
-                    <input type="password" class="form-control" id="repeat-password">
+                    <input type="password" class="form-control" id="repeat-password" name="repeatPassword">
                 </div>
                 <div class="col-12">
-                    <button class="btn btn-primary w-50 btn-lg">Register</button>
+                    <button type="button" class="btn btn-primary w-50 btn-lg" id="register-button">Register</button>
                 </div>
             </form>
         </div>

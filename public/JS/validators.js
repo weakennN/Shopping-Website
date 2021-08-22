@@ -46,3 +46,17 @@ function verifyPassword(password) {
 
     return null;
 }
+
+function validatePassword(value, append) {
+    let errorMessage = verifyPassword(document.getElementById(value).value);
+
+    if (errorMessage !== null) {
+        if (document.getElementById(append).children.length < 3) {
+            document.getElementById(append).appendChild(errorMessage);
+        }
+
+        return false;
+    }
+
+    return true;
+}

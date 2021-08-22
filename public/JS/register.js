@@ -1,9 +1,5 @@
 document.getElementById("first-name").addEventListener("focusout", function () {
-    let errorMessage = verifyName(document.getElementById("first-name").value);
-
-    if (errorMessage !== null) {
-        document.getElementById("first-name-input").appendChild(errorMessage);
-    }
+    verifyName("first-name", "first-name-input");
 });
 
 document.getElementById("first-name").addEventListener("focusin", function () {
@@ -13,11 +9,7 @@ document.getElementById("first-name").addEventListener("focusin", function () {
 });
 
 document.getElementById("last-name").addEventListener("focusout", function () {
-    let errorMessage = verifyName(document.getElementById("last-name").value);
-
-    if (errorMessage !== null) {
-        document.getElementById("last-name-input").appendChild(errorMessage);
-    }
+    verifyName("last-name", "last-name-input");
 });
 
 document.getElementById("last-name").addEventListener("focusin", function () {
@@ -27,11 +19,7 @@ document.getElementById("last-name").addEventListener("focusin", function () {
 });
 
 document.getElementById("email").addEventListener("focusout", function () {
-    let errorMessage = emailValidation(document.getElementById("email").value);
-
-    if (errorMessage !== null) {
-        document.getElementById("email-input").appendChild(errorMessage);
-    }
+    verifyRegisterEmail()
 });
 
 document.getElementById("email").addEventListener("focusin", function () {
@@ -41,11 +29,7 @@ document.getElementById("email").addEventListener("focusin", function () {
 });
 
 document.getElementById("password").addEventListener("focusout", function () {
-    let errorMessage = verifyPassword(document.getElementById("password").value);
-
-    if (errorMessage !== null) {
-        document.getElementById("password-input").appendChild(errorMessage);
-    }
+    validatePassword("password", "password-input");
 });
 
 document.getElementById("password").addEventListener("focusin", function () {
@@ -55,11 +39,7 @@ document.getElementById("password").addEventListener("focusin", function () {
 });
 
 document.getElementById("repeat-password").addEventListener("focusout", function () {
-    let errorMessage = verifyRepeatPassword(document.getElementById("repeat-password").value);
 
-    if (errorMessage !== null) {
-        document.getElementById("repeat-password-input").appendChild(errorMessage);
-    }
 });
 
 document.getElementById("repeat-password").addEventListener("focusin", function () {
@@ -68,7 +48,20 @@ document.getElementById("repeat-password").addEventListener("focusin", function 
     }
 });
 
-function verifyName(name) {
+document.getElementById("register-button").addEventListener("click", function (e) {
+    let firstNameValidation = verifyName("first-name", "first-name-input");
+    let lastNameValidation = verifyName("last-name", "last-name-input");
+    let emailValidation = verifyRegisterEmail();
+    let passwordValidation = validatePassword("password", "password-input");
+    let repeatPasswordValidation = validateRepeatPassword();
+
+    if (firstNameValidation !== false && lastNameValidation !== false &&
+        emailValidation !== false && passwordValidation !== false && repeatPasswordValidation !== false) {
+        document.getElementById("register-button").setAttribute("type", "submit");
+    }
+})
+
+function verifyNameLength(name) {
     let errorMessage = createErrorMessage();
     if (!isEmpty(name)) {
         errorMessage.textContent = "This field is required.";
@@ -90,4 +83,43 @@ function verifyRepeatPassword(password) {
     }
 
     return null;
+}
+
+function verifyName(value, append) {
+    let errorMessage = verifyNameLength(document.getElementById(value).value);
+
+    if (errorMessage !== null) {
+        if (document.getElementById(append).children.length < 3) {
+            document.getElementById(append).appendChild(errorMessage);
+        }
+        return false;
+    }
+
+    return true;
+}
+
+function verifyRegisterEmail() {
+    let errorMessage = emailValidation(document.getElementById("email").value);
+
+    if (errorMessage !== null) {
+        if (document.getElementById("email-input").children.length < 3) {
+            document.getElementById("email-input").appendChild(errorMessage);
+        }
+        return false;
+    }
+
+    return true;
+}
+
+function validateRepeatPassword() {
+    let errorMessage = verifyRepeatPassword(document.getElementById("repeat-password").value);
+
+    if (errorMessage !== null) {
+        if (document.getElementById("repeat-password-input").children.length < 3) {
+            document.getElementById("repeat-password-input").appendChild(errorMessage);
+        }
+        return false;
+    }
+
+    return true;
 }

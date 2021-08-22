@@ -16,6 +16,26 @@ document.getElementById("email").addEventListener("focusin", function () {
     document.getElementById("email-input").removeChild(document.getElementById("email-input").children.item(2));
 })
 
-document.getElementById("login-button").addEventListener("click", function (e) {
-    e.preventDefault(); //this stops the form action
+document.getElementById("login-button").addEventListener("click", function () {
+    let disable = false;
+
+    let errorMsg = emailValidation(document.getElementById("email").value);
+    if (errorMsg !== null) {
+        if (document.getElementById("email-input").children.length < 3) {
+            document.getElementById("email-input").appendChild(errorMsg);
+        }
+        disable = true;
+    }
+
+    let errorMsg1 = verifyPassword(document.getElementById("password").value);
+    if (errorMsg1 != null) {
+        if (document.getElementById("password-input").children.length < 3) {
+            document.getElementById("password-input").appendChild(errorMsg);
+        }
+        disable = true;
+    }
+
+    if (disable === false) {
+        document.getElementById("login-button").setAttribute("type", "submit");
+    }
 })

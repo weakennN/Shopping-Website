@@ -17,6 +17,7 @@
         <option value="CSS File" />
         <option value="Sass File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -38,6 +39,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -47,7 +49,7 @@
     <property name="list.type.of.created.stylesheet" value="Sass" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -112,7 +114,8 @@
       <workItem from="1629389904871" duration="12734000" />
       <workItem from="1629452495519" duration="20564000" />
       <workItem from="1629498582713" duration="215000" />
-      <workItem from="1629541230611" duration="6069000" />
+      <workItem from="1629541230611" duration="16520000" />
+      <workItem from="1629629434833" duration="20702000" />
     </task>
     <servers />
   </component>
