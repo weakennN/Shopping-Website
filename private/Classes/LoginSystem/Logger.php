@@ -30,10 +30,10 @@ class Logger extends \private\Classes\LoginSystem\Entry
         $authentication = UserManagement::getUserAuthentication($userId);
         if (isset($_POST["rememberMe"])) {
             // setting 6 month cookie if user checked remember me
-            \private\Classes\CookieManager::createCookie("userId", $userId . " " . $authentication, 15552000, "/");
+            \private\Classes\CookieManager::createCookie("userId", $userId . " " . $authentication, time() + 15552000, "/");
         } else {
             // setting one day cookie if user didn't check remember me
-            \private\Classes\CookieManager::createCookie("userId", $userId . " " . $authentication, 86400, "/");
+            \private\Classes\CookieManager::createCookie("userId", $userId . " " . $authentication, time() + 86400, "/");
         }
     }
 }

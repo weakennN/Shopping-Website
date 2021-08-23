@@ -3,11 +3,11 @@
 }
 
 .shopping-cart-btn :hover {
-   /* animation-name: shopping-cart-btn-animation;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
+    /* animation-name: shopping-cart-btn-animation;
+     animation-duration: 0.5s;
+     animation-fill-mode: forwards;
 
-    */
+     */
 }
 
 .favourite-btn {
@@ -57,11 +57,6 @@
     color: #000000;
 }
 
-.dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0;
-}
-
 .cart-dropdown {
     left: -255px;
     top: 50px;
@@ -95,4 +90,12 @@
     width: 80px;
     height: 100px;
     object-fit: contain;
+}
+
+.profile-dropdown {
+    top: 50px;
+}
+
+.dropdown-toggle::after {
+    display: none;
 }

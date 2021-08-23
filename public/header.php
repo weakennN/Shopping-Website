@@ -41,59 +41,63 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
 
         // $('.dropdown a').on('click tap', e => e.preventDefault())
     });
-</script>
 
-<nav class="navbar navbar-expand-md navbar-light mb-5" id="main-navbar" style="display: block;background-color: white">
-    <div class="container" id="navContainer">
-        <a href="index.php" class="navbar-brand">weakennN</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form class="form-inline w-100">
+    $(document).ready(function () {
+
+    })
+</script>
+<!-- start of large screen navbar !-->
+<nav class="navbar navbar-light bg-light" id="main-navbar">
+    <div class="container">
+        <div class="d-flex flex-row bd-highlight w-100">
+            <a class="navbar-brand" href="#">weakennN</a>
+            <form class="form-inline text-center w-100">
                 <div class="input-group input-group-append">
-                    <input class="flex-fill form-control" type="search" placeholder="Search"
+                    <input class="form-control" type="search" placeholder="Search"
                            aria-label="Search">
-                    <button type="submit" class="btn btn-primary">
+                    <button class="btn btn-primary" type="submit">
                         <i class="fas fa-search fa-2x"></i>
                     </button>
                 </div>
             </form>
-        </div>
-        <div class="nav-button account-btn mx-5">
-            <i class="far fa-user fa-2x"></i>
-        </div>
-        <div class="nav-button favourite-btn">
-            <i class="far fa-heart fa-2x"></i>
-        </div>
-        <div class="dropdown" id="cart-dropdown">
-            <div class="dropdown-menu dropdown-menu-end cart-dropdown">
-                <div class="d-flex flex-column overflow-auto cart-wrapper" id="cart-wrapper">
-
-                </div>
-                <div class="total-price w-100 py-2" style="background-color: #efebeb">
-                    <div class="d-flex flex-row fw-bold">
-                        <div class="text-uppercase my-1 sub-total">
-                            <p class="ms-3">Total:</p>
-                        </div>
-                        <div class="ms-auto me-3 my-1 sub-total" id="cart-wrapper-sub-total">
-                            <p class="sub-total-cent"><span id="cart-wrapper-price">$0</span><span id="cart-wrapper-cent" class="cent">.00</span></p>
+            <?php include "../private/Includes/createMainNavProfile.php" ?>
+            <a href="#" class="nav-button favourite-btn mt-2">
+                <i class="far fa-heart fa-2x"></i>
+            </a>
+            <div class="dropdown" id="cart-dropdown">
+                <div class="dropdown-menu dropdown-menu-end cart-dropdown">
+                    <div class="d-flex flex-column overflow-auto cart-wrapper" id="cart-wrapper">
+                    </div>
+                    <div class="total-price w-100 py-2" style="background-color: #efebeb">
+                        <div class="d-flex flex-row fw-bold">
+                            <div class="text-uppercase my-1 sub-total">
+                                <p class="ms-3">Total:</p>
+                            </div>
+                            <div class="ms-auto me-3 my-1 sub-total" id="cart-wrapper-sub-total">
+                                <p class="sub-total-cent"><span id="cart-wrapper-price">$0</span><span
+                                            id="cart-wrapper-cent" class="cent">.00</span></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="nav-button shopping-cart-btn ms-5" id="cart">
-                <div class="dropdown-toggle">
-                    <i class="fas fa-shopping-cart fa-2x position-relative"></i>
-                    <div id="badge" class="position-absolute top-0 start-100 badge rounded-pill bg-danger">0</div>
-                </div>
+                    <div class="nav-button shopping-cart-btn ms-5 pt-2" id="cart">
+                        <a href="#">
+                        <div class="dropdown-toggle">
+                            <i class="fas fa-shopping-cart fa-2x position-relative"></i>
+                            <div id="badge" style="left: 70px !important; top: 3px!important;"
+                                 class="position-absolute top-0 start-100 badge rounded-pill bg-danger">0
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
 </nav>
 
+<!-- end of large screen navbar !-->
+
+<!-- start of small screen navbar !-->
 <nav class="navbar mb-5" id="responsive-navbar" style="display: none">
     <div class="container-fluid">
         <div class="d-flex flex-row w-100">
@@ -129,6 +133,8 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
         </form>
     </div>
 </nav>
+
+<!-- end of small screen navbar !-->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"

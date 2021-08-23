@@ -15,7 +15,10 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
 <?php include $_SERVER["HOME"] . '/public/header.php'; ?>
 
 <div class="container">
+
     <h4 class="w-100 mb-5">Login</h4>
+    <div id="login-error-container">
+    </div>
     <div class="row">
         <div class="col-lg-6 col-md-12">
             <form action="../private/Includes/logInUser.php" class="row" id="login" method="post">

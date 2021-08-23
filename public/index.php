@@ -21,7 +21,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
     <div class="row">
         <?php require $_SERVER["HOME"] . '/private/Includes/loadMainProducts.php'; ?>
     </div>
-    <nav id>
+    <nav>
         <ul class="pagination justify-content-end">
             <li class="page-item">
                 <a href="#" class="page-link">
