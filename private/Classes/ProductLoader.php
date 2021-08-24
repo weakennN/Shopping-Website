@@ -32,12 +32,12 @@ class ProductLoader
                 <div class='card-body p-0'>
                     <div>
                         <div class= 'text-end py-2'>
-                            <i class='far fa-heart icon'></i>
+                            <i class='far fa-heart icon add-to-favourite'></i>
                             <i class='fas fa-shopping-cart icon add-to-cart ms-1' id= " . $product['id'] . "></i>
                         </div>
                     </div>
                     <a class='text-decoration-none' href= product.php?id=" . $product['id'] . ">
-                    <h5 class='card-title'>" . $product['title'] . "</h5>
+                    <h5 class='card-title title'>" . $product['title'] . "</h5>
                     <p class='card-text mt-3' style='font-size: 18px'>" . '$' . $product['price'] . "</p>
                 </a>
                   

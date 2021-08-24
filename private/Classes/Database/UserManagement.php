@@ -63,4 +63,59 @@ class UserManagement
 
         return $statement->fetch()["password"];
     }
+
+    public static function createShoppingCart($id)
+    {
+        $pdo = Database::connect();
+        $query = "INSERT INTO cart (id,user_id,total) VALUES (?,?,0.00)";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$id, $id]);
+    }
+
+    public static function isProductAdded($cartId, $productId): bool
+    {
+        $pdo = Database::connect();
+        $query = "SELECT * FROM cart_item WHERE cart_id = ? AND product_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$cartId, $productId]);
+
+        if ($statement->fetch()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static function updateProductQuantity($cartId, $productId, $value)
+    {
+        $pdo = Database::connect();
+        $query = "UPDATE cart_item SET quantity = quantity + ? WHERE cart_id = ? AND product_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$value, $cartId, $productId]);
+    }
+
+    public static function createCartItem($cartId, $productId)
+    {
+        $pdo = Database::connect();
+        $query = "INSERT INTO cart_item (cart_id,product_id,quantity) VALUES (?, ?, 1);";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$cartId, $productId]);
+    }
+
+    public static function getProductPrice($productId)
+    {
+        $pdo = Database::connect();
+        $query = "SELECT price FROM products WHERE id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$productId]);
+        return $statement->fetch()["price"];
+    }
+
+    public static function updateCartTotal($cartId, $value)
+    {
+        $pdo = Database::connect();
+        $query = "UPDATE cart SET total = total + ? WHERE id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$value, $cartId]);
+    }
 }

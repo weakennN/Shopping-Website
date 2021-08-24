@@ -1,3 +1,20 @@
+p {
+    color: black;
+}
+
+h5 {
+    color: black;
+}
+
+a {
+    color: black !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: black !important;
+}
+
 .icon {
     font-size: 1.7em;
 }
@@ -15,8 +32,14 @@
 
 .product-card {
     height: 100%;
-    border-color: transparent !important;
+    /* border-color: transparent !important; */
+    border-color: transparent;
     background-color: transparent;
+    transition: 0.6s;
+}
+
+.product-card:hover {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .cent {
@@ -35,4 +58,21 @@
 
 .quantity {
     font-size: 1.1rem;
+}
+
+.title {
+    color: black !important;
+    transition: 0.5s !important;
+}
+
+.title:hover {
+    color: #2a7af5 !important;
+}
+
+.add-to-cart {
+    color: #2a7af5;
+}
+
+.add-to-favourite {
+    color: #2a7af5;
 }

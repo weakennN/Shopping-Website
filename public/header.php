@@ -47,21 +47,21 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
     })
 </script>
 <!-- start of large screen navbar !-->
-<nav class="navbar navbar-light bg-light" id="main-navbar">
+<nav class="navbar navbar-light bg-light mb-5" id="main-navbar">
     <div class="container">
         <div class="d-flex flex-row bd-highlight w-100">
-            <a class="navbar-brand" href="#">weakennN</a>
+            <a class="navbar-brand" href="index.php">weakennN</a>
             <form class="form-inline text-center w-100">
                 <div class="input-group input-group-append">
-                    <input class="form-control" type="search" placeholder="Search"
+                    <input class="form-control navbar-search" type="search" placeholder="Search"
                            aria-label="Search">
-                    <button class="btn btn-primary" type="submit">
+                    <button class="btn btn-primary navbar-search-button" type="submit">
                         <i class="fas fa-search fa-2x"></i>
                     </button>
                 </div>
             </form>
             <?php include "../private/Includes/createMainNavProfile.php" ?>
-            <a href="#" class="nav-button favourite-btn mt-2">
+            <a href="#" class="mt-2 favourite-btn">
                 <i class="far fa-heart fa-2x"></i>
             </a>
             <div class="dropdown" id="cart-dropdown">
@@ -80,15 +80,15 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
                         </div>
                     </div>
                 </div>
-                    <div class="nav-button shopping-cart-btn ms-5 pt-2" id="cart">
-                        <a href="#">
-                        <div class="dropdown-toggle">
-                            <i class="fas fa-shopping-cart fa-2x position-relative"></i>
+                <div class="ms-5 pt-2" id="cart">
+                    <a href="#">
+                        <div class="dropdown-toggle shopping-cart-btn">
+                            <i class="fas fa-shopping-cart fa-2x position-relative" "></i>
                             <div id="badge" style="left: 70px !important; top: 3px!important;"
                                  class="position-absolute top-0 start-100 badge rounded-pill bg-danger">0
                             </div>
                         </div>
-                    </div>
+                </div>
                 </a>
             </div>
         </div>
@@ -101,11 +101,9 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
 <nav class="navbar mb-5" id="responsive-navbar" style="display: none">
     <div class="container-fluid">
         <div class="d-flex flex-row w-100">
-            <div style="margin-right: 1rem">
-                <i class="far fa-user fa-2x"></i>
-            </div>
+            <?php include "../private/Includes/createResponsiveNavbarProfile.php"?>
             <div>
-                <i class="far fa-heart fa-2x"></i>
+                <i class="far fa-heart fa-2x responsive-navbar-item"></i>
             </div>
             <div class="text-center flex-grow-1">
                 <a class="navbar-brand" href="index.php">weakennN</a>
@@ -113,20 +111,23 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
             <div style="margin-right: 1rem">
                 <div data-bs-toggle="collapse"
                      data-bs-target="#responsive-navbar-collapse" aria-controls="navbarSupportedContent">
-                    <i class="fas fa-search fa-2x"></i>
+                    <i class="fas fa-search fa-2x responsive-navbar-item"></i>
                 </div>
             </div>
-            <div>
-                <i class="fas fa-shopping-cart fa-2x"></i>
+            <div class="position-relative">
+                <i class="fas fa-shopping-cart fa-2x responsive-navbar-item"></i>
+                <div id="badge"
+                     class="responsive-navbar-cart-badge position-absolute badge rounded-pill bg-danger">0
+                </div>
             </div>
         </div>
     </div>
     <div class="collapse navbar-collapse text-center" id="responsive-navbar-collapse">
         <form class="form-inline text-center my-3">
             <div class="input-group input-group-append">
-                <input class="flex-fill form-control" type="search" placeholder="Search"
+                <input class="flex-fill form-control navbar-search" type="search" placeholder="Search"
                        aria-label="Search">
-                <button class="btn btn-primary" type="submit">
+                <button class="btn btn-primary navbar-search-button" type="submit">
                     <i class="fas fa-search fa-2x"></i>
                 </button>
             </div>

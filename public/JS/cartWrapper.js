@@ -56,7 +56,7 @@ function createCartWrapperElement(title, productLink, productImageSource, price)
     productTitleAnchor.setAttribute("href", productLink);
 
     let productTitle = document.createElement("h5");
-    productTitle.classList.add("card-title");
+    productTitle.classList.add("card-title", "title");
     productTitle.innerHTML = title;
 
     productTitleAnchor.appendChild(productTitle);

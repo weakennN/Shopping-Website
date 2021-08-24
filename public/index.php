@@ -14,9 +14,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
 </head>
 
 <body
-
 <?php include $_SERVER["HOME"] . '/public/header.php'; ?>
-
 <div class="container-lg container-fluid-lg shadow-sm">
     <div class="row">
         <?php require $_SERVER["HOME"] . '/private/Includes/loadMainProducts.php'; ?>

@@ -1,65 +1,37 @@
 .shopping-cart-btn {
-    color: rgb(39, 136, 227) !important;
-}
-
-.shopping-cart-btn :hover {
-    /* animation-name: shopping-cart-btn-animation;
-     animation-duration: 0.5s;
-     animation-fill-mode: forwards;
-
-     */
+    color: #2a7af5 !important;
 }
 
 .favourite-btn {
-    color: rgb(39, 136, 227) !important;
+    color: #2a7af5 !important;
+    transition: 1s !important;
 }
 
 .account-btn {
-    color: rgb(39, 136, 227) !important;
+    color: #2a7af5 !important;
 }
 
 .search-icon {
-    color: rgb(39, 136, 227) !important;
+    color: #2a7af5 !important;
 }
 
-.favourite-btn :hover {
-    animation-name: favourite-btn-animation;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
+.favourite-btn:hover {
+    color: red !important;
 }
 
 @keyframes favourite-btn-animation {
     0% {
-        color: rgb(39, 136, 227);
+        color: #2a7af5 !important;
     }
 
     100% {
-        color: rgb(243, 0, 0);
+        color: rgb(243, 0, 0) !important;
     }
-}
-
-@keyframes shopping-cart-btn-animation {
-    0% {
-        color: rgb(39, 136, 227);
-    }
-
-    100% {
-        color: rgb(20, 200, 20);
-    }
-}
-
-.bullet {
-    position: relative;
-    left: -13px;
-    top: -15px;
-    border-radius: 10px;
-    background: rgb(255, 255, 255);
-    color: #000000;
 }
 
 .cart-dropdown {
     left: -255px;
-    top: 50px;
+    top: 56px;
 }
 
 .cart-wrapper-price {
@@ -93,9 +65,57 @@
 }
 
 .profile-dropdown {
-    top: 50px;
+    top: 56px;
 }
 
 .dropdown-toggle::after {
     display: none;
+}
+
+.profile-dropdown-item {
+    background: transparent;
+    transition: 0.8s;
+}
+
+.profile-dropdown-item:hover {
+    background: #faf2f2;
+}
+
+.responsive-navbar-cart-badge {
+    left: 5px;
+    top: -4px;
+    margin-left: 17px;
+}
+
+.responsive-navbar-item {
+    color: #2a7af5;
+}
+
+.navbar-search-button {
+    background: #2a7af5 !important;
+}
+
+.navbar-search {
+    border-color: #eeebeb !important;
+    box-shadow: none;
+    transition: 1s;
+    outline: 0px !important;
+    -webkit-appearance: none;
+}
+
+.navbar-search:hover {
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 2px inset;
+}
+
+.navbar-search:focus {
+    -webkit-box-shadow: none;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 2px inset !important;
+}
+
+.dropdown-menu {
+    border-radius: 0;
+}
+
+.navbar-dropdown-item {
+    font-weight: bolder;
 }
