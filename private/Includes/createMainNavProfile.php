@@ -1,7 +1,7 @@
 <?php
 if (isset($_COOKIE["userId"])) {
-    echo "<div class='dropdown'>
-            <div class='dropdown-menu profile-dropdown'>
+    echo "<div class='dropdown profile-dropdown'>
+            <div class='dropdown-menu profile-dropdown-menu'>
                 <div class='profile-dropdown-item py-1'>
                     <a href='#' class='text-decoration-none ps-2 navbar-dropdown-item'>My profile</a>
                 </div>
@@ -19,8 +19,8 @@ if (isset($_COOKIE["userId"])) {
             </div>
         </div>";
 } else {
-    echo "<div class='dropdown'>
-            <div class='dropdown-menu profile-dropdown'>
+    echo "<div class='dropdown profile-dropdown'>
+            <div class='dropdown-menu profile-dropdown-menu'>
                 <div class='profile-dropdown-item py-1'>
                     <a href='login.php' class='text-decoration-none ps-2 navbar-dropdown-item'>Login</a>
                 </div>
@@ -34,7 +34,7 @@ if (isset($_COOKIE["userId"])) {
                 <i class='far fa-user fa-2x'></i>
             </div>
             </a>
-           
+          
         </div>";
 
     // TODO add profile on hover to change page to profile page when when profile page is ready

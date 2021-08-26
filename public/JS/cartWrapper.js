@@ -1,4 +1,4 @@
-function checkIfProductExist(productTitle) {
+function updateProductQuantity(productTitle) {
     let cartWrapper = document.getElementById("cart-wrapper");
 
     for (let i = 0; i < cartWrapper.children.length; i++) {
@@ -13,9 +13,9 @@ function checkIfProductExist(productTitle) {
     return false;
 }
 
-function createCartWrapperElement(title, productLink, productImageSource, price) {
+function createCartWrapperElement(title, productLink, productImageSource, price, productId) {
     let productCard = document.createElement("div");
-    productCard.classList.add("card", "mb-2", "border-0");
+    productCard.classList.add("card", "card-wrapper-item", "mb-2", "border-0");
 
     let productRow = document.createElement("div");
     productRow.classList.add("row", "g-0", "w-100");
@@ -90,12 +90,20 @@ function createCartWrapperElement(title, productLink, productImageSource, price)
     let quantityHolder = document.createElement("div");
     quantityHolder.classList.add("ms-5");
     let quantity = document.createElement("p");
-    quantity.classList.add("quantity", "text-muted" , "mt-2");
+    quantity.classList.add("quantity", "text-muted", "mt-2");
     quantity.innerHTML = "x&nbsp;&nbsp;1";
     quantityHolder.appendChild(quantity);
 
     productCardBottomSide.appendChild(quantityHolder);
 
+    closeButton.addEventListener("click", function () {
+        productCard.classList.add("fade-out");
+        setTimeout(function () {
+            removeFromCartWrapper(productCard, productId);
+            updateSubTotal(-(parseFloat(price) * parseInt(quantity.textContent.split(/[\s]+/)[1])));
+        }, 1000)
+
+    })
     return productCard;
 }
 
@@ -109,4 +117,32 @@ function updateSubTotal(priceToAdd) {
 
     document.getElementById("cart-wrapper-price").innerText = finalPrice.substr(0, finalPrice.indexOf("."));
     document.getElementById("cart-wrapper-cent").innerText = finalPrice.substr(finalPrice.indexOf("."));
+}
+
+function removeFromCartWrapper(cartWrapperItem, productId) {
+    document.getElementById("cart-wrapper").removeChild(cartWrapperItem);
+    removeFromCart(productId);
+    updateCartBadge(-1);
+}
+
+function updateCartBadge(value) {
+    let badges = document.getElementsByClassName("badge")
+    for (let i = 0; i < badges.length; i++) {
+        let badgeValue = parseInt(badges.item(i).textContent);
+        badges.item(i).textContent = (badgeValue + value).toString();
+    }
+}
+
+function addToUserCart(productId) {
+    $.post("../private/Includes/addToCart.php", {
+        productId: productId
+    }, function (data, status) {
+    });
+}
+
+function removeFromCart(productId) {
+    $.post("../private/Includes/removeFromCart.php", {
+        productId: productId
+    }, function (data, status) {
+    });
 }

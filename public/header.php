@@ -22,35 +22,18 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
 <body>
 
 <script>
-    $(document).ready(function () {
-        function toggleDropdown(e) {
-            const _d = $(e.target).closest('.dropdown'),
-                _m = $('.dropdown-menu', _d);
-            setTimeout(function () {
-                const shouldOpen = e.type !== 'click' && _d.is(':hover');
-                _m.toggleClass('show', shouldOpen);
-                _d.toggleClass('show', shouldOpen);
-                $('[data-toggle="dropdown"]', _d).attr('aria-expanded', shouldOpen);
-            }, e.type === 'mouseleave' ? 300 : 0);
-        }
-
-        $('body')
-            .on('mouseenter mouseleave', '.dropdown', toggleDropdown)
-            .on('click', '.dropdown-menu a', toggleDropdown);
 
 
-        // $('.dropdown a').on('click tap', e => e.preventDefault())
-    });
-
-    $(document).ready(function () {
-
-    })
 </script>
+
 <!-- start of large screen navbar !-->
 <nav class="navbar navbar-light bg-light mb-5" id="main-navbar">
     <div class="container">
         <div class="d-flex flex-row bd-highlight w-100">
-            <a class="navbar-brand" href="index.php">weakennN</a>
+            <a class="navbar-brand" href="index.php">
+                <img style="height: 30px"
+                     src="recourses/images/logo/5891132146_34b49d36-3b74-49c9-b710-aa58cb5ada62.png" alt="">
+            </a>
             <form class="form-inline text-center w-100">
                 <div class="input-group input-group-append">
                     <input class="form-control navbar-search" type="search" placeholder="Search"
@@ -64,9 +47,10 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
             <a href="#" class="mt-2 favourite-btn">
                 <i class="far fa-heart fa-2x"></i>
             </a>
-            <div class="dropdown" id="cart-dropdown">
+            <div class="dropdown cart-wrapper-dropdown" id="cart-dropdown">
                 <div class="dropdown-menu dropdown-menu-end cart-dropdown">
                     <div class="d-flex flex-column overflow-auto cart-wrapper" id="cart-wrapper">
+                        <div>21421421</div>
                     </div>
                     <div class="total-price w-100 py-2" style="background-color: #efebeb">
                         <div class="d-flex flex-row fw-bold">
@@ -81,7 +65,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
                     </div>
                 </div>
                 <div class="ms-5 pt-2" id="cart">
-                    <a href="#">
+                    <a href="cart.php">
                         <div class="dropdown-toggle shopping-cart-btn">
                             <i class="fas fa-shopping-cart fa-2x position-relative" "></i>
                             <div id="badge" style="left: 70px !important; top: 3px!important;"
@@ -94,19 +78,21 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
         </div>
     </div>
 </nav>
-
 <!-- end of large screen navbar !-->
 
 <!-- start of small screen navbar !-->
 <nav class="navbar mb-5" id="responsive-navbar" style="display: none">
     <div class="container-fluid">
         <div class="d-flex flex-row w-100">
-            <?php include "../private/Includes/createResponsiveNavbarProfile.php"?>
+            <?php include "../private/Includes/createResponsiveNavbarProfile.php" ?>
             <div>
                 <i class="far fa-heart fa-2x responsive-navbar-item"></i>
             </div>
             <div class="text-center flex-grow-1">
-                <a class="navbar-brand" href="index.php">weakennN</a>
+                <a href="index.php">
+                    <img style="height: 18px;"
+                         src="recourses/images/logo/5891132146_34b49d36-3b74-49c9-b710-aa58cb5ada62.png" alt="">
+                </a>
             </div>
             <div style="margin-right: 1rem">
                 <div data-bs-toggle="collapse"
@@ -115,10 +101,12 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
                 </div>
             </div>
             <div class="position-relative">
-                <i class="fas fa-shopping-cart fa-2x responsive-navbar-item"></i>
-                <div id="badge"
-                     class="responsive-navbar-cart-badge position-absolute badge rounded-pill bg-danger">0
-                </div>
+                <a href="cart.php">
+                    <i class="fas fa-shopping-cart fa-2x responsive-navbar-item"></i>
+                    <div id="badge"
+                         class="responsive-navbar-cart-badge position-absolute badge rounded-pill bg-danger">0
+                    </div>
+                </a>
             </div>
         </div>
     </div>
@@ -134,14 +122,13 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
         </form>
     </div>
 </nav>
-
 <!-- end of small screen navbar !-->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
 
-<script src="JS/header.js"></script>
+<script src="JS/header.js?<?php echo time(); ?>"></script>
 </body>
 
 </html>

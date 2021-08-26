@@ -64,7 +64,7 @@
     object-fit: contain;
 }
 
-.profile-dropdown {
+.profile-dropdown-menu {
     top: 56px;
 }
 
@@ -118,4 +118,12 @@
 
 .navbar-dropdown-item {
     font-weight: bolder;
+}
+
+.card-wrapper-item {
+    transition: 1s;
+}
+
+.fade-out{
+    opacity: 0;
 }

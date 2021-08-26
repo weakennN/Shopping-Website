@@ -1,4 +1,9 @@
 <?php
+// TODO redirect to profile page
+if (isset($_COOKIE["userId"])) {
+    header('Location: http://localhost/test/public/index.php');
+}
+
 include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
 ?>
 <!doctype html>

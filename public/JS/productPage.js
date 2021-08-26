@@ -17,7 +17,6 @@ $(document).ready(
                     breakpoint: 1000,
                     settings: {
                         arrows: false,
-                        // dots: true
                     }
                 }
             ]
@@ -31,8 +30,8 @@ $(document).ready(
         let productPrice = document.getElementById("price").textContent.substr(document.getElementById("price").textContent.indexOf("$") + 1);
         let productLink = window.location.href;
 
-        if (!checkIfProductExist(productTitle)) {
-            let cartWrapperProduct = createCartWrapperElement(productTitle, productLink, productImageSource, productPrice);
+        if (!updateProductQuantity(productTitle)) {
+            let cartWrapperProduct = createCartWrapperElement(productTitle, productLink, productImageSource, productPrice, productId);
             document.getElementById("cart-wrapper").appendChild(cartWrapperProduct);
         }
 

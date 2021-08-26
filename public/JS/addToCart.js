@@ -8,14 +8,12 @@ function addToCart() {
     let title = product.getElementsByClassName("text-decoration-none")[0].children.item(0).innerHTML;
     let price = product.getElementsByClassName("text-decoration-none")[0].children.item(1).innerHTML.substr(product.getElementsByClassName("text-decoration-none")[0].children.item(1).innerHTML.indexOf("$") + 1);
 
-    $.post("../private/Includes/addToCart.php", {
-        productId: productId
-    }, function (data, status) {
-    });
+    addToUserCart(productId);
 
-    if (!checkIfProductExist(title)) {
-        let cartWrapperElement = createCartWrapperElement(title, productLink, productImageSource, price);
+    if (!updateProductQuantity(title)) {
+        let cartWrapperElement = createCartWrapperElement(title, productLink, productImageSource, price,productId);
         document.getElementById("cart-wrapper").appendChild(cartWrapperElement);
+        updateCartBadge(1)
     }
 
     updateSubTotal(parseFloat(price));

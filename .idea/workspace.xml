@@ -15,9 +15,9 @@
       <list>
         <option value="SCSS File" />
         <option value="CSS File" />
+        <option value="HTML File" />
         <option value="Sass File" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -32,7 +32,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="ProjectId" id="1w2GBkJIP45dyr9hDHHxA5A8XAZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -49,22 +48,17 @@
     <property name="list.type.of.created.stylesheet" value="Sass" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\test\public\recourses\images\logo" />
+      <recent name="D:\xampp\htdocs\test\public\recourses" />
       <recent name="D:\xampp\htdocs\test\public" />
       <recent name="D:\xampp\htdocs\test\private" />
       <recent name="D:\xampp\htdocs\test" />
-      <recent name="D:\xampp\htdocs\test\Classes\Loader\ProductLoader" />
-      <recent name="D:\xampp\htdocs\test\Classes\Loader\ProductLoader\PImageLoader" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="Unnamed" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" nameIsGenerated="true" document_root="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -118,11 +112,27 @@
       <workItem from="1629629434833" duration="22850000" />
       <workItem from="1629726161868" duration="16153000" />
       <workItem from="1629799012348" duration="16699000" />
+      <workItem from="1629831898488" duration="1031000" />
+      <workItem from="1629886828823" duration="26031000" />
+      <workItem from="1629925568383" duration="10408000" />
+      <workItem from="1629972160259" duration="7295000" />
+      <workItem from="1629981827544" duration="20308000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/public/index.php</url>
+          <line>1</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

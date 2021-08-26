@@ -19,3 +19,5 @@ if ($register->verify()) {
 } else {
     header("Location: " . $_SERVER['HTTP_REFERER']);
 }
+
+// include php file that load product cookie to registered user database

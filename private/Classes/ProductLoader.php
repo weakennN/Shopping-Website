@@ -26,7 +26,7 @@ class ProductLoader
             $product = $products[$i];
             echo "<div class= 'col-lg-3 col-md-4 col-sm-6 col-xl-2 my-2 col-6'>
             <div class= 'card product-card p-2' id= " . $product['id'] . ">
-                <a alt='smt' href=product.php?id=" . $product['id'] . ">
+                <a href=product.php?id=" . $product['id'] . ">
                     <img src=" . "recourses/images/ProductImages/" . $product['id'] . "/" . $product['image'] . " class= 'card-img-top'>
                 </a>
                 <div class='card-body p-0'>
