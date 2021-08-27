@@ -44,6 +44,7 @@ function initCartItemAction() {
         let productTitle = cartItem.getElementsByTagName("h5").item(0);
         let minusButton = cartItem.getElementsByClassName("increase-quantity-btn-minus").item(0);
         let quantityInput = cartItem.getElementsByClassName("quantity-input").item(0);
+        let productTotalPriceEl = cartItem.getElementsByClassName("price").item(0);
         let productPrice = parseFloat(cartItem.getElementsByClassName("price").item(0).textContent.substr(1)) / parseInt(quantityInput.value);
         let plusButton = cartItem.getElementsByClassName("increase-quantity-btn-plus").item(0);
         let closeButton = cartItem.getElementsByClassName("btn-close").item(0);
@@ -52,15 +53,26 @@ function initCartItemAction() {
             decrementQuantity(productId, quantityInput);
             updateTotal(-productPrice);
             updateTotalProducts(-1)
+            updateProductTotalPrice(-productPrice, productTotalPriceEl);
+            // TODO: remove one item form user cart or from cookie
         })
         plusButton.addEventListener("click", function () {
             incrementQuantity(productId, quantityInput);
             updateTotal(productPrice);
             updateTotalProducts(1);
+            updateProductTotalPrice(productPrice, productTotalPriceEl);
+        })
+        quantityInput.addEventListener("input", function () {
+            if (!isNaN(quantityInput.value.charAt(quantityInput.value.length - 1))) {
+
+            } else {
+                quantityInput.value = quantityInput.value.substr(quantityInput.value.length - 2, quantityInput.value.length - 1);
+            }
+
         })
         closeButton.addEventListener("click", function () {
-           // removeFromCartWrapperByTitle(productTitle, productId);
-           // updateSubTotal(productPrice);
+            // removeFromCartWrapperByTitle(productTitle, productId);
+            // updateSubTotal(productPrice);
             cartItem.classList.add("fade-out");
             setTimeout(function () {
                 document.getElementById("cart-item-holder").removeChild(cartItem);
@@ -107,5 +119,10 @@ function updateTotalProducts(value) {
     let totalProducts = document.getElementById("total-products");
     let totalProductsValue = parseInt(totalProducts.textContent);
     totalProducts.textContent = (totalProductsValue + value).toString();
+}
+
+function updateProductTotalPrice(value, totalPrice) {
+    let totalAmount = parseFloat(totalPrice.textContent.substr(1));
+    totalPrice.textContent = "$" + (totalAmount + value);
 }
 

@@ -32,12 +32,12 @@
                                 <button class="increase-quantity-btn-minus" style="height: 40px;width: 40px;left: 10px">
                                     -
                                 </button>
-                                <input class="quantity-input" value="1" style="height: 40px;width: 40px" type="text">
+                                <input class="quantity-input" value="2" style="height: 40px;width: 40px" type="text">
                                 <button class="increase-quantity-btn-plus" style="height: 40px;width: 40px">+</button>
                             </div>
                         </div>
                         <div class="text-center total-holder" style="width: 30%;align-self: center">
-                            <p class="price"><span class="cart-wrapper-price">$59</span><span class="cent">.00</span>
+                            <p class="price"><span class="cart-wrapper-price">$120</span><span class="cent">.00</span>
                             </p>
                         </div>
                         <div class="ms-auto" style="width: 10%">

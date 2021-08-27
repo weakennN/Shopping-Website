@@ -116,23 +116,14 @@
       <workItem from="1629886828823" duration="26031000" />
       <workItem from="1629925568383" duration="10408000" />
       <workItem from="1629972160259" duration="7295000" />
-      <workItem from="1629981827544" duration="20308000" />
+      <workItem from="1629981827544" duration="21405000" />
+      <workItem from="1630021453809" duration="60000" />
+      <workItem from="1630058178101" duration="8806000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/public/index.php</url>
-          <line>1</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

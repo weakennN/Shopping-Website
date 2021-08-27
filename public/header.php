@@ -50,7 +50,6 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
             <div class="dropdown cart-wrapper-dropdown" id="cart-dropdown">
                 <div class="dropdown-menu dropdown-menu-end cart-dropdown">
                     <div class="d-flex flex-column overflow-auto cart-wrapper" id="cart-wrapper">
-                        <div>21421421</div>
                     </div>
                     <div class="total-price w-100 py-2" style="background-color: #efebeb">
                         <div class="d-flex flex-row fw-bold">
