@@ -8,10 +8,10 @@ function addToCart() {
     let title = product.getElementsByClassName("text-decoration-none")[0].children.item(0).innerHTML;
     let price = product.getElementsByClassName("text-decoration-none")[0].children.item(1).innerHTML.substr(product.getElementsByClassName("text-decoration-none")[0].children.item(1).innerHTML.indexOf("$") + 1);
 
-    addToUserCart(productId);
+    addToUserCart(productId, 1);
 
     if (!updateProductQuantity(title)) {
-        let cartWrapperElement = createCartWrapperElement(title, productLink, productImageSource, price,productId);
+        let cartWrapperElement = createCartWrapperElement(title, productLink, productImageSource, price, productId);
         document.getElementById("cart-wrapper").appendChild(cartWrapperElement);
         updateCartBadge(1)
     }

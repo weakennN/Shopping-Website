@@ -2,61 +2,63 @@
 
 namespace private\Classes\Cart;
 
-use private\Classes\CookieManager;
-
+use private\Classes\Database\UserManagement;
 
 class Cart
 {
 
-    public function addToCart($productId)
+    public function addToCart($productId, $value)
     {
         if (isset($_COOKIE["userId"])) {
             $id = explode(" ", $_COOKIE["userId"])[0];
-            $productPrice = \private\Classes\Database\UserManagement::getProductPrice($productId);
-            if (\private\Classes\Database\UserManagement::isProductAdded($id, $productId)) {
-                \private\Classes\Database\UserManagement::updateProductQuantity($id, $productId, 1);
+            $productPrice = UserManagement::getProductPrice($productId);
+            if (UserManagement::isProductAdded($id, $productId)) {
+                UserManagement::updateProductQuantity($id, $productId, $value);
             } else {
-                \private\Classes\Database\UserManagement::createCartItem($id, $productId);
+                UserManagement::createCartItem($id, $productId);
             }
-            \private\Classes\Database\UserManagement::updateCartTotal($id, $productPrice);
+            UserManagement::updateCartTotal($id, $productPrice * $value);
         } else {
-            if (isset($_COOKIE["products"])) {
-                //CookieManager::appendToCookie("products", " " . $productId, 2147483647, "/");
-                $this->appendToProductCookie($productId);
+            $macAddress = exec('getmac');
+            $macAddress = strtok($macAddress, ' ');
+            if (UserManagement::isSessionProductAdded($macAddress, $productId)) {
+                UserManagement::updateSessionProductQuantity($macAddress, $productId, 1);
             } else {
-                CookieManager::createCookie("products", $productId . "-1", 2147483647, "/");
+                UserManagement::createSessionCartItem($macAddress, $productId);
             }
         }
     }
 
-    public function appendToProductCookie($productId)
+    // TODO: check if products exists in addToCart and removeFromCart functions
+    public function removeFromCart($productId)
     {
-        $productsString = $_COOKIE["products"];
-        $products = explode(" ", $productsString);
-        $found = false;
-        for ($i = 0; $i < count($products); $i++) {
-            if ($products[$i][0] == $productId) {
-                $productQuantity = (int)$products[$i][2];
-                $productQuantity += 1;
-                if ($i >= 1) {
-                    $newCooke = $newCooke . " " . $products[$i][0] . "-" . $productQuantity;
-                } else {
-                    $newCooke = $newCooke . $products[$i][0] . "-" . $productQuantity;
-                }
-                $found = true;
-            } else {
-                if ($i >= 1) {
-                    $newCooke = $newCooke . " " . $products[$i];
-                } else {
-                    $newCooke = $newCooke . $products[$i];
-                }
-            }
+        if (isset($_COOKIE["userId"])) {
+            $id = explode(" ", $_COOKIE["userId"])[0];
+            $productPrice = UserManagement::getProductPrice($productId);
+            $productQuantity = UserManagement::getProductQuantity($productId);
+            $totalProductPrice = (float)$productPrice * (int)$productQuantity;
+            UserManagement::deleteCartItem($id, $productId);
+            UserManagement::updateCartTotal($id, -($totalProductPrice));
+        } else {
+            $macAddress = exec('getmac');
+            $macAddress = strtok($macAddress, ' ');
+            UserManagement::deleteSessionCartItem($macAddress, $productId);
         }
+    }
 
-        if ($found == false) {
-            $newCooke = $newCooke . " " . $productId . "-1";
+    public function removeCartItem($productId, $value)
+    {
+        if (isset($_COOKIE["userId"])) {
+            $id = explode(" ", $_COOKIE["userId"])[0];
+            $productPrice = UserManagement::getProductPrice($productId);
+            $productQuantity = UserManagement::getProductQuantity($productId);
+            $totalToRemove = $value * $productPrice;
+            UserManagement::updateProductQuantity($id, $productId, -$value);
+            UserManagement::updateCartTotal($id, -$totalToRemove);
+        } else {
+            $macAddress = exec('getmac');
+            $macAddress = strtok($macAddress, ' ');
+            UserManagement::updateSessionProductQuantity($macAddress, $productId, -$value);
         }
-
-        setcookie("products", $newCooke, 2147483647, "/");
     }
 }

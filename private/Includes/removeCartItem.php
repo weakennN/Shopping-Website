@@ -1,0 +1,10 @@
+<?php
+
+include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
+
+use private\Classes\Cart\Cart;
+
+if (isset($_POST["productId"]) && isset($_POST["quantity"])) {
+    $cart = new Cart();
+    $cart->removeCartItem($_POST["productId"], $_POST["quantity"]);
+}

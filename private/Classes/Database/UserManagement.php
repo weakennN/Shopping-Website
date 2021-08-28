@@ -118,4 +118,59 @@ class UserManagement
         $statement = $pdo->prepare($query);
         $statement->execute([$value, $cartId]);
     }
+
+    public static function getProductQuantity($productId)
+    {
+        $pdo = Database::connect();
+        $query = "SELECT quantity FROM cart_item WHERE product_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$productId]);
+        return $statement->fetch()["quantity"];
+    }
+
+    public static function deleteCartItem($cartId, $productId)
+    {
+        $pdo = Database::connect();
+        $query = "DELETE FROM cart_item WHERE cart_id = ? AND product_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$cartId, $productId]);
+    }
+
+    public static function isSessionProductAdded($macAddress, $productId): bool
+    {
+        $pdo = Database::connect();
+        $query = "SELECT cart_id FROM session_cart_item WHERE cart_id = ? AND product_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$macAddress, $productId]);
+
+        if ($statement->fetch()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static function updateSessionProductQuantity($macAddress, $productId, $value)
+    {
+        $pdo = Database::connect();
+        $query = "UPDATE session_cart_item SET quantity = quantity + ? WHERE cart_id = ? AND product_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$value, $macAddress, $productId]);
+    }
+
+    public static function createSessionCartItem($macAddress, $productId)
+    {
+        $pdo = Database::connect();
+        $query = "INSERT INTO session_cart_item (cart_id,product_id,quantity) VALUES (?, ? , 1)";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$macAddress, $productId]);
+    }
+
+    public static function deleteSessionCartItem($macAddress, $productId)
+    {
+        $pdo = Database::connect();
+        $query = "DELETE FROM session_cart_item WHERE cart_id = ? AND product_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$macAddress, $productId]);
+    }
 }

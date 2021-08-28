@@ -133,16 +133,18 @@ function updateCartBadge(value) {
     }
 }
 
-function addToUserCart(productId) {
+function addToUserCart(productId, value) {
     $.post("../private/Includes/addToCart.php", {
-        productId: productId
+        productId: productId,
+        quantity: value
     }, function (data, status) {
     });
 }
 
 function removeFromCart(productId) {
     $.post("../private/Includes/removeFromCart.php", {
-        productId: productId
+        productId: productId,
     }, function (data, status) {
+        alert(data);
     });
 }

@@ -38,7 +38,8 @@ $(document).ready(
         updateSubTotal(parseFloat(productPrice));
 
         $.post("../private/Includes/addToCart.php", {
-            productId: productId
+            productId: productId,
+            quantity: 1
         }, function (data, status) {
         });
 

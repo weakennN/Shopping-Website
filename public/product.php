@@ -159,7 +159,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="JS/cartWrapper.js?v=6"></script>
-    <script src="JS/productPage.js?v=2"></script>
+    <script src="JS/cartWrapper.js?<?php echo time(); ?>"></script>
+    <script src="JS/productPage.js?<?php echo time(); ?>"></script>
 </body>
 </html>
