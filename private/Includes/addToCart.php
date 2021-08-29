@@ -1,5 +1,11 @@
 <?php
 
+use private\Classes\Cart\Cart;
+
 include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
-$cart = new \private\Classes\Cart\Cart();
-$cart->addToCart($_POST["productId"], $_POST["quantity"]);
+
+if (isset($_POST["productId"]) && is_numeric($_POST["productId"])) {
+    $cart = new Cart();
+    $cart->addToCart($_POST["productId"], $_POST["quantity"]);
+}
+

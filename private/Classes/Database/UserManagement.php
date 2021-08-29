@@ -108,6 +108,7 @@ class UserManagement
         $query = "SELECT price FROM products WHERE id = ?";
         $statement = $pdo->prepare($query);
         $statement->execute([$productId]);
+
         return $statement->fetch()["price"];
     }
 
@@ -125,6 +126,7 @@ class UserManagement
         $query = "SELECT quantity FROM cart_item WHERE product_id = ?";
         $statement = $pdo->prepare($query);
         $statement->execute([$productId]);
+
         return $statement->fetch()["quantity"];
     }
 
@@ -172,5 +174,29 @@ class UserManagement
         $query = "DELETE FROM session_cart_item WHERE cart_id = ? AND product_id = ?";
         $statement = $pdo->prepare($query);
         $statement->execute([$macAddress, $productId]);
+    }
+
+    public static function doesProductExist($productId): bool
+    {
+        $pdo = Database::connect();
+        $query = "SELECT id FROM products WHERE id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$productId]);
+
+        if ($statement->fetch()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static function getSessionItemQuantity($macAddress, $productId)
+    {
+        $pdo = Database::connect();
+        $query = "SELECT quantity FROM session_cart_item WHERE cart_id = ? AND product_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$macAddress, $productId]);
+
+        return $statement->fetch()["quantity"];
     }
 }

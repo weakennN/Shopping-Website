@@ -4,7 +4,7 @@ namespace private\Classes\Database;
 
 class ProductManagement
 {
-    public static function getProducts()
+    public static function getProducts(): array
     {
         $pdo = Database::connect();
         $query = "SELECT * FROM products";
@@ -45,5 +45,15 @@ class ProductManagement
         $statement->execute([$productId]);
 
         return $statement->fetchAll();
+    }
+
+    public static function getProduct($productId)
+    {
+        $pdo = Database::connect();
+        $query = "SELECT * FROM products WHERE id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$productId]);
+
+        return $statement->fetch();
     }
 }

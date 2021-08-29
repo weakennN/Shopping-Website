@@ -41,7 +41,6 @@ function initCartItemAction() {
     for (let i = 0; i < cartItems.length; i++) {
         let cartItem = cartItems.item(i);
         let productId = cartItem.id;
-        let productTitle = cartItem.getElementsByTagName("h5").item(0);
         let minusButton = cartItem.getElementsByClassName("increase-quantity-btn-minus").item(0);
         let quantityInput = cartItem.getElementsByClassName("quantity-input").item(0);
         let productTotalPriceEl = cartItem.getElementsByClassName("price").item(0);

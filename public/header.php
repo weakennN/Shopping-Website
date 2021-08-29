@@ -49,19 +49,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
             </a>
             <div class="dropdown cart-wrapper-dropdown" id="cart-dropdown">
                 <div class="dropdown-menu dropdown-menu-end cart-dropdown">
-                    <div class="d-flex flex-column overflow-auto cart-wrapper" id="cart-wrapper">
-                    </div>
-                    <div class="total-price w-100 py-2" style="background-color: #efebeb">
-                        <div class="d-flex flex-row fw-bold">
-                            <div class="text-uppercase my-1 sub-total">
-                                <p class="ms-3">Total:</p>
-                            </div>
-                            <div class="ms-auto me-3 my-1 sub-total" id="cart-wrapper-sub-total">
-                                <p class="sub-total-cent"><span id="cart-wrapper-price">$0</span><span
-                                            id="cart-wrapper-cent" class="cent">.00</span></p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php include '../private/Includes/loadCartWrapper.php'?>
                 </div>
                 <div class="ms-5 pt-2" id="cart">
                     <a href="cart.php">
@@ -127,7 +115,9 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
 
+<script src="JS/cartItemActions.js?<?php echo time(); ?>"></script>
 <script src="JS/header.js?<?php echo time(); ?>"></script>
+
 </body>
 
 </html>

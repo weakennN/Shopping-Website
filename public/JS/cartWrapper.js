@@ -138,6 +138,7 @@ function addToUserCart(productId, value) {
         productId: productId,
         quantity: value
     }, function (data, status) {
+        alert(data + " " + status);
     });
 }
 
