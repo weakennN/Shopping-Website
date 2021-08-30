@@ -82,7 +82,7 @@ class CartWrapperLoader extends CartLoader
                 </div>
                 <div class='d-flex flex-row'>
                     <div><p><span class='cart-wrapper-price'>$" . $productPrice[0] . "</span><span class='cent'>" . '.' . $productPrice[1] . "</span></p></div>
-                    <div class='ms-5'><p class='quantity text-muted mt-2'>x&nbsp;&nbsp; " . $productQuantity . " </p></div>
+                    <div class='ms-5'><p class='quantity text-muted mt-2'>x&nbsp;&nbsp; ". $productQuantity ." </p></div>
                 </div>
             </div>
         </div>

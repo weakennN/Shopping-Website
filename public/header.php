@@ -49,14 +49,14 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
             </a>
             <div class="dropdown cart-wrapper-dropdown" id="cart-dropdown">
                 <div class="dropdown-menu dropdown-menu-end cart-dropdown">
-                    <?php include '../private/Includes/loadCartWrapper.php'?>
+                    <?php include '../private/Includes/loadCartWrapper.php' ?>
                 </div>
                 <div class="ms-5 pt-2" id="cart">
                     <a href="cart.php">
                         <div class="dropdown-toggle shopping-cart-btn">
-                            <i class="fas fa-shopping-cart fa-2x position-relative" "></i>
+                            <i class="fas fa-shopping-cart fa-2x position-relative"></i>
                             <div id="badge" style="left: 70px !important; top: 3px!important;"
-                                 class="position-absolute top-0 start-100 badge rounded-pill bg-danger">0
+                                 class="position-absolute top-0 start-100 badge rounded-pill bg-danger"><?php include "../private/Includes/loadCartBadge.php"?>
                             </div>
                         </div>
                 </div>
@@ -91,7 +91,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
                 <a href="cart.php">
                     <i class="fas fa-shopping-cart fa-2x responsive-navbar-item"></i>
                     <div id="badge"
-                         class="responsive-navbar-cart-badge position-absolute badge rounded-pill bg-danger">0
+                         class="responsive-navbar-cart-badge position-absolute badge rounded-pill bg-danger"><?php include "../private/Includes/loadCartBadge.php"?>
                     </div>
                 </a>
             </div>
@@ -115,6 +115,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
 
+<script src="JS/cartAction.js?<?php echo time(); ?>"></script>
 <script src="JS/cartItemActions.js?<?php echo time(); ?>"></script>
 <script src="JS/header.js?<?php echo time(); ?>"></script>
 

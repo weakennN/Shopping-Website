@@ -25,7 +25,6 @@
                 </div>
         </div>
     </div>
-
 </div>
 
 <script src="JS/cartWrapper.js?<?php echo time(); ?>"></script>

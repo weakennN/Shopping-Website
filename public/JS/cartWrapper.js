@@ -1,11 +1,13 @@
 function updateProductQuantity(productTitle) {
     let cartWrapper = document.getElementById("cart-wrapper");
-
     for (let i = 0; i < cartWrapper.children.length; i++) {
         let currentTitle = cartWrapper.children.item(i).getElementsByClassName("card-title").item(0).innerHTML;
-        if (productTitle === currentTitle) {
+        console.log(currentTitle);
+        if (productTitle.trim().localeCompare(currentTitle.trim()) === 0) {
             let quantityHtml = cartWrapper.children.item(i).getElementsByClassName("quantity").item(0).innerHTML;
-            cartWrapper.children.item(i).getElementsByClassName("quantity").item(0).innerHTML = "x&nbsp;&nbsp;" + (parseInt(quantityHtml.charAt(quantityHtml.length - 1)) + 1);
+            let quantity = parseInt(quantityHtml.split(" ")[1]);
+            console.log(quantityHtml)
+            cartWrapper.children.item(i).getElementsByClassName("quantity").item(0).innerHTML = "x&nbsp;&nbsp;" + (quantity + 1);
             return true;
         }
     }
@@ -131,21 +133,4 @@ function updateCartBadge(value) {
         let badgeValue = parseInt(badges.item(i).textContent);
         badges.item(i).textContent = (badgeValue + value).toString();
     }
-}
-
-function addToUserCart(productId, value) {
-    $.post("../private/Includes/addToCart.php", {
-        productId: productId,
-        quantity: value
-    }, function (data, status) {
-        alert(data + " " + status);
-    });
-}
-
-function removeFromCart(productId) {
-    $.post("../private/Includes/removeFromCart.php", {
-        productId: productId,
-    }, function (data, status) {
-        alert(data);
-    });
 }

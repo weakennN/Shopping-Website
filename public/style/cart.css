@@ -71,13 +71,22 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
-.col-lg-8 {
-    /*border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-
-     */
+.cart-item-holder {
+    width: auto !important;
 }
 
-.cart-item-holder {
-   /* padding: 10px;*/
+.quantity-holder {
+    height: 40px;
+    align-self: center;
+    width: 30%;
+}
+
+.empty-cart-button{
+    color: white !important;
+    width: 210px;
+    font-size: 23px !important;
+}
+
+.empty-cart-button:hover{
+    color: white !important;
 }

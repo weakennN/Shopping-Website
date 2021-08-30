@@ -61,6 +61,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
 
 </div>
 
+<script src="JS/cartAction.js?<?php echo time(); ?>"></script>
 <script src="JS/cartWrapper.js?<?php echo time(); ?>"></script>
 <script src="JS/addToCart.js?<?php echo time(); ?>"></script>
 </body>

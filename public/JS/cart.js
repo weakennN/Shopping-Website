@@ -1,39 +1,32 @@
-localStorage.setItem("modify", "true");
-window.addEventListener("resize", function () {
-    let quantitiesHolders = document.getElementsByClassName("pagination");
+window.addEventListener("resize", responsiveCartItem)
+
+function responsiveCartItem() {
+    let cartItems = document.getElementsByClassName("cart-item");
     let width = window.innerWidth;
-    if (width <= 1199 && localStorage.getItem("modify").localeCompare("true") === 0) {
-        localStorage.setItem("modify", "false");
-        let quantitiesHolders = document.getElementsByClassName("pagination");
-        for (let i = 0; i < quantitiesHolders.length; i++) {
-            let cartItem = quantitiesHolders.item(i).parentElement.parentElement.parentElement;
-            let parent = quantitiesHolders.item(i).parentElement;
-            parent.style.display = "none";
-            cartItem.getElementsByClassName("total-holder").item(0).style.display = "none";
-            let pagination = parent.children.item(0);
-            parent.removeChild(parent.children.item(0));
-            let priceTotalParent = cartItem.getElementsByClassName("total-holder").item(0);
-            priceTotalParent.children.item(0).classList.add("ms-auto");
-            cartItem.getElementsByClassName("cart-item-bottom").item(0).classList.add("mt-3");
-            cartItem.getElementsByClassName("cart-item-bottom").item(0).appendChild(pagination);
-            cartItem.getElementsByClassName("cart-item-bottom").item(0).appendChild(priceTotalParent.children.item(0));
+    if (width <= 1199) {
+        for (let i = 0; i < cartItems.length; i++) {
+            let cartItem = cartItems.item(i);
+            let pagination = cartItem.getElementsByClassName("pagination").item(0);
+            let price = cartItem.getElementsByClassName("price").item(0);
+            price.classList.add("ms-auto");
+            let cartItemBottom = cartItem.getElementsByClassName("cart-item-bottom").item(0);
+            cartItemBottom.append(pagination, price);
         }
-    } else if (width >= 1200 && localStorage.getItem("modify").localeCompare("false") === 0) {
-        localStorage.setItem("modify", "true");
-        for (let i = 0; i < quantitiesHolders.length; i++) {
-            let cartItem = quantitiesHolders.item(i).parentElement.parentElement;
-            let parent = quantitiesHolders.item(i).parentElement;
-            let pagination = parent.children.item(0);
-            parent.removeChild(parent.children.item(0));
-            let priceTotal = parent.removeChild(parent.children.item(0));
-            cartItem.getElementsByClassName("quantity-holder").item(0).appendChild(pagination);
-            cartItem.getElementsByClassName("total-holder").item(0).appendChild(priceTotal);
-            cartItem.getElementsByClassName("quantity-holder").item(0).style.display = "block"
-            cartItem.getElementsByClassName("total-holder").item(0).style.display = "block";
-            cartItem.getElementsByClassName("cart-item-bottom").item(0).classList.remove("mt-3");
+    } else {
+        for (let i = 0; i < cartItems.length; i++) {
+            let cartItem = cartItems.item(i);
+            let pagination = cartItem.getElementsByClassName("pagination").item(0);
+            let price = cartItem.getElementsByClassName("price").item(0);
+            price.classList.add("mb-0");
+            let quantityHolder = cartItem.getElementsByClassName("quantity-holder").item(0);
+            let totalHolder = cartItem.getElementsByClassName("total-holder").item(0);
+            quantityHolder.appendChild(pagination);
+            totalHolder.appendChild(price);
         }
     }
-});
+}
+
+responsiveCartItem();
 
 function initCartItemAction() {
     let cartItems = document.getElementsByClassName("cart-item");
@@ -99,6 +92,7 @@ function initCartItemAction() {
                 updateTotal(-productPrice * parseInt(quantityInput.value))
                 removeFromCart(productId);
                 updateTotalProducts(-parseInt(quantityInput.value));
+                changeCartView();
             }, 1000)
         })
     }
@@ -123,6 +117,7 @@ function decrementQuantity(productId, quantityInput, cartItem) {
         setTimeout(function () {
             document.getElementById("cart-item-holder").removeChild(cartItem);
             removeFromCart(productId);
+            changeCartView();
         }, 1000)
     }
 }
@@ -153,11 +148,33 @@ function updateProductTotalPrice(value, totalPrice) {
     totalPrice.getElementsByClassName("cent").item(0).textContent = finalAmount.substr(finalAmount.indexOf("."));
 }
 
-function removeCartItem(productId, quantity) {
-    $.post("../private/Includes/removeCartItem.php", {
-        productId: productId,
-        quantity: quantity
-    }, function (data, status) {
-        alert(data);
-    });
+function changeCartView() {
+    let cartItemHolder = document.getElementsByClassName("cart-item-holder").item(0);
+
+    if (cartItemHolder.children.length <= 0) {
+        console.log(cartItemHolder.children.length);
+        let row = document.getElementsByClassName("row").item(0);
+        while (row.children.length > 0) {
+            row.removeChild(row.children.item(0));
+        }
+        let emptyCartContainer = document.createElement("div");
+        emptyCartContainer.classList.add("col-12", "text-center");
+        let h1 = document.createElement("h1");
+        h1.classList.add("display-2")
+        h1.textContent = "Your cart is empty";
+        emptyCartContainer.appendChild(h1);
+        let p = document.createElement("p");
+        p.textContent = "Fill your cart and come back";
+        p.classList.add("display-6", "mt-4")
+        emptyCartContainer.appendChild(p);
+        let button = document.createElement("a");
+        button.style.color = "#ffffff";
+        button.textContent = "Go to homepage"
+        button.classList.add("btn", "btn-primary", "btn-lg", "mt-4", "empty-cart-button");
+        button.setAttribute("href", "index.php");
+        emptyCartContainer.appendChild(button);
+        row.appendChild(emptyCartContainer);
+    }
 }
+
+changeCartView();

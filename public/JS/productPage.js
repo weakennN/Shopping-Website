@@ -29,7 +29,6 @@ $(document).ready(
         let productImageSource = document.getElementsByClassName("slick-track")[0].children.item(1).getAttribute("src");
         let productPrice = document.getElementById("price").textContent.substr(document.getElementById("price").textContent.indexOf("$") + 1);
         let productLink = window.location.href;
-
         if (!updateProductQuantity(productTitle)) {
             let cartWrapperProduct = createCartWrapperElement(productTitle, productLink, productImageSource, productPrice, productId);
             document.getElementById("cart-wrapper").appendChild(cartWrapperProduct);
