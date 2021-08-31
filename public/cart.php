@@ -30,5 +30,7 @@
 <script src="JS/cartWrapper.js?<?php echo time(); ?>"></script>
 <script src="JS/cart.js?<?php echo time(); ?>"></script>
 
+
+
 </body>
 </html>

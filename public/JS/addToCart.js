@@ -13,9 +13,9 @@ function addToCart() {
     if (!updateProductQuantity(title)) {
         let cartWrapperElement = createCartWrapperElement(title, productLink, productImageSource, price, productId);
         document.getElementById("cart-wrapper").appendChild(cartWrapperElement);
-        updateCartBadge(1)
     }
 
+    updateCartBadge(1);
     updateSubTotal(parseFloat(price));
 }
 

@@ -1,0 +1,36 @@
+.profile-navigation {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 5px;
+}
+
+.profile-navigation-item {
+    color: #2a7af5 !important;
+    font-size: 1.1rem;
+    font-family: Verdana, sans-serif;
+    text-wrap: normal !important;
+    transition: 1s;
+}
+
+.profile-navigation-item:hover {
+    color: #07459b !important;
+}
+
+.profile-navigation-selected {
+    color: #2f2e2e !important;
+}
+
+.profile-navigation-selected:hover {
+    color: #2f2e2e !important;
+}
+
+.profile-main-content {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 5px;
+}
+
+.text-holder{
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}

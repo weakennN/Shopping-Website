@@ -54,4 +54,28 @@ class CartManagement
 
         return $statement->fetch()["total_products"];
     }
+
+    public static function insertSessionItemsToUserCart(array $sessionItems, $cartId)
+    {
+        $pdo = Database::connect();
+        $query = "INSERT INTO cart_item (cart_id,product_id,quantity) VALUES (?,?,?);";
+        foreach ($sessionItems as $sessionItem) {
+            if (UserManagement::isProductAdded($cartId, $sessionItem["product_id"])) {
+                UserManagement::updateProductQuantity($cartId, $sessionItem["product_id"], $sessionItem["quantity"]);
+            } else {
+                $statement = $pdo->prepare($query);
+                $statement->execute([$cartId, $sessionItem["product_id"], $sessionItem["quantity"]]);
+            }
+            $productPrice = (float)ProductManagement::getProductPrice($sessionItem["product_id"])[0]["price"];
+            UserManagement::updateCartTotal($cartId, $productPrice * (int)$sessionItem["quantity"]);
+        }
+    }
+
+    public static function deleteSessionItems($sessionCartId)
+    {
+        $pdo = Database::connect();
+        $query = "DELETE FROM session_cart_item WHERE cart_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$sessionCartId]);
+    }
 }

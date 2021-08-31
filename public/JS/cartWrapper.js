@@ -2,11 +2,9 @@ function updateProductQuantity(productTitle) {
     let cartWrapper = document.getElementById("cart-wrapper");
     for (let i = 0; i < cartWrapper.children.length; i++) {
         let currentTitle = cartWrapper.children.item(i).getElementsByClassName("card-title").item(0).innerHTML;
-        console.log(currentTitle);
         if (productTitle.trim().localeCompare(currentTitle.trim()) === 0) {
             let quantityHtml = cartWrapper.children.item(i).getElementsByClassName("quantity").item(0).innerHTML;
-            let quantity = parseInt(quantityHtml.split(" ")[1]);
-            console.log(quantityHtml)
+            let quantity = parseInt(quantityHtml.split("&nbsp;&nbsp;")[1]);
             cartWrapper.children.item(i).getElementsByClassName("quantity").item(0).innerHTML = "x&nbsp;&nbsp;" + (quantity + 1);
             return true;
         }

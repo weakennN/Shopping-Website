@@ -16,8 +16,8 @@ $register = new \private\Classes\LoginSystem\Register($validators);
 if ($register->verify()) {
     $register->registerUser($firstName, $lastName, $email, $password);
     header('Location: http://localhost/test/public/index.php');
+    include_once "insertSessionProductsToUserCart.php";
+    loadSessionProducts(\private\Classes\Database\UserManagement::getUserId("$email"));
 } else {
     header("Location: " . $_SERVER['HTTP_REFERER']);
 }
-
-// include php file that load product cookie to registered user database

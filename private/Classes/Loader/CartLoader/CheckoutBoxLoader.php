@@ -13,13 +13,14 @@ class CheckoutBoxLoader
         $cartTotal = CartManagement::getUserCartTotal($cartId);
         $totalProducts = CartManagement::getUserTotalProducts($cartId);
 
-        echo "   <div class='p-4'>
+        echo "<div class='p-4'>
                         <h3 style='font-weight: 500'>Order Description</h3>
                         <hr>
                         <p class='h5 mb-3'>Total products: <span id='total-products'>$totalProducts</span></p>
                         <p id='total' class='h5 mb-4'>Total: $$cartTotal</p>
-                        <button type='submit' class='btn btn-primary w-100 text-center btn-lg'>Proceed to checkout
-                        </button>
+                        <a href='checkout.php'>
+                         <button class='btn btn-primary w-100 text-center btn-lg'>Proceed to checkout</button>
+                        </a>
                     </div>";
     }
 
@@ -35,13 +36,14 @@ class CheckoutBoxLoader
 
         $cartTotal = number_format($cartTotal, 2);
 
-        echo "   <div class='p-4'>
+        echo "<div class='p-4'>
                         <h3 style='font-weight: 500'>Order Description</h3>
                         <hr>
                         <p class='h5 mb-3'>Total products: <span id='total-products'>$totalProducts</span></p>
                         <p id='total' class='h5 mb-4'>Total: $$cartTotal</p>
-                        <button type='submit' class='btn btn-primary w-100 text-center btn-lg'>Proceed to checkout
-                        </button>
+                        <a href='login.php'>
+                         <button class='btn btn-primary w-100 text-center btn-lg'>Proceed to checkout</button>
+                        </a>
                     </div>";
     }
 }

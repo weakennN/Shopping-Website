@@ -3,10 +3,10 @@ if (isset($_COOKIE["userId"])) {
     echo "<div class='dropdown profile-dropdown'>
             <div class='dropdown-menu profile-dropdown-menu'>
                 <div class='profile-dropdown-item py-1'>
-                    <a href='#' class='text-decoration-none ps-2 navbar-dropdown-item'>My profile</a>
+                    <a href='profile.php' class='text-decoration-none ps-2 navbar-dropdown-item'>My profile</a>
                 </div>
                 <div class='profile-dropdown-item py-1'>
-                    <a class='text-decoration-none ms-2 navbar-dropdown-item' href='#'>My cart</a>
+                    <a class='text-decoration-none ms-2 navbar-dropdown-item' href='cart.php'>My cart</a>
                 </div>
                <hr class='dropdown-divider'> 
                 <div class='profile-dropdown-item py-1'>
@@ -14,9 +14,14 @@ if (isset($_COOKIE["userId"])) {
                     <a href='#' class='text-decoration-none ms-1 navbar-dropdown-item'>Log out</a>
                 </div>
             </div>
-            <div class='nav-button account-btn mx-5 pt-2'>
+            <a href='profile.php'>
+             <div class='nav-button account-btn mx-5 pt-2 position-relative'>
                 <i class='far fa-user fa-2x'></i>
+                <div class='position-absolute top-0 start-100 badge rounded-pill user-check'>
+                <i class='fas fa-check'></i>
+                </div>
             </div>
+            </a>
         </div>";
 } else {
     echo "<div class='dropdown profile-dropdown'>

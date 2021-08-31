@@ -21,13 +21,8 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
 
 <body>
 
-<script>
-
-
-</script>
-
 <!-- start of large screen navbar !-->
-<nav class="navbar navbar-light bg-light mb-5" id="main-navbar">
+<nav class="navbar mb-5" id="main-navbar">
     <div class="container">
         <div class="d-flex flex-row bd-highlight w-100">
             <a class="navbar-brand" href="index.php">

@@ -124,6 +124,15 @@
     transition: 1s;
 }
 
-.fade-out{
+.fade-out {
     opacity: 0;
+}
+
+.user-check {
+    color: #2a7af5 !important;
+    background: white;
+    top: 25px !important;
+    left: 13px !important;
+    padding: 3px !important;
+    font-size: 14px !important;
 }

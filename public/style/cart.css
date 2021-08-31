@@ -81,12 +81,12 @@
     width: 30%;
 }
 
-.empty-cart-button{
+.empty-cart-button {
     color: white !important;
     width: 210px;
     font-size: 23px !important;
 }
 
-.empty-cart-button:hover{
+.empty-cart-button:hover {
     color: white !important;
 }
