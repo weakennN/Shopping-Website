@@ -5,9 +5,9 @@ namespace private\Classes\Loader\ProductLoader\PImageLoader;
 class PPriceLoader extends \private\Classes\Loader\ProductLoader\PLoader
 {
 
-    public function load()
+    public function load($productId)
     {
-        $productPrice = \private\Classes\Database\ProductManagement::getProductPrice($this->getProductId());
+        $productPrice = \private\Classes\Database\ProductManagement::getProductPrice($productId);
         echo "<h2 id='price' class='display-5'>Price: $" . $productPrice[0]["price"] . "</h2>";
     }
 }

@@ -25,7 +25,8 @@
                         </a>
                         <div class="card-body p-0 mt-2">
                             <a class="text-decoration-none" href="product.php?id=1">
-                                <h5 class="card-title title text-holder">Neo: The World Ends With You (PS4rehdfhdfhdfhdfh)</h5>
+                                <h5 class="card-title title text-holder">Neo: The World Ends With You
+                                    (PS4)</h5>
                                 <p class="card-text mt-3" style="font-size: 18px">$119.00</p>
                             </a>
                             <button type="button" class="btn btn-primary w-100 mt-2">Add to cart</button>

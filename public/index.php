@@ -15,6 +15,12 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
 
 <body
 <?php include $_SERVER["HOME"] . '/public/header.php'; ?>
+
+<div aria-live="polite" aria-atomic="true" class="position-relative">
+    <div class="toast-container position-absolute top-0 end-0 p-3 pt-0" style="z-index: 11" id="toast-container">
+    </div>
+</div>
+
 <div class="container-lg container-fluid-lg shadow-sm">
     <div class="row">
         <?php require $_SERVER["HOME"] . '/private/Includes/loadMainProducts.php'; ?>
@@ -58,10 +64,10 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
             </li>
         </ul>
     </nav>
-
 </div>
-
+<script src="JS/notification.js?<?php echo time(); ?>"></script>
 <script src="JS/cartAction.js?<?php echo time(); ?>"></script>
+<script src="JS/productCard.js?<?php echo time(); ?>"></script>
 <script src="JS/cartWrapper.js?<?php echo time(); ?>"></script>
 <script src="JS/addToCart.js?<?php echo time(); ?>"></script>
 </body>

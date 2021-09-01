@@ -8,8 +8,6 @@ if (isset($_POST["productId"]) && is_numeric($_POST["productId"]) && is_numeric(
     $cart = new Cart();
     $cart->addToCart($_POST["productId"], $_POST["quantity"]);
 } else {
-    echo "<script>
-    alert('hello');
-</script>";
+
 }
 

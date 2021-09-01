@@ -27,7 +27,7 @@ class ProductManagement
         return $statement->fetchAll();
     }
 
-    public static function getProductPrice($productId)
+    public static function getProductPrice($productId): bool|array
     {
         $pdo = Database::connect();
         $query = "SELECT price FROM products WHERE id = ?";
@@ -37,7 +37,7 @@ class ProductManagement
         return $statement->fetchAll();
     }
 
-    public static function getProductDescription($productId)
+    public static function getProductDescription($productId): bool|array
     {
         $pdo = Database::connect();
         $query = "SELECT description FROM products WHERE id = ?";

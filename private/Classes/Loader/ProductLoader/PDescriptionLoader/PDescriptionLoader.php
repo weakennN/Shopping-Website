@@ -11,9 +11,9 @@ class PDescriptionLoader extends \private\Classes\Loader\ProductLoader\PLoader
         $this->subLoaders = $subLoaders;
     }
 
-    public function load()
+    public function load($productId)
     {
-        $description = \private\Classes\Database\ProductManagement::getProductDescription($this->getProductId());
+        $description = \private\Classes\Database\ProductManagement::getProductDescription($productId);
         $components = explode(">", $description[0]["description"]);
 
         for ($i = 0; $i < count($components); $i++) {

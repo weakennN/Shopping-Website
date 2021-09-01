@@ -126,7 +126,7 @@ function removeFromCartWrapper(cartWrapperItem, productId) {
 }
 
 function updateCartBadge(value) {
-    let badges = document.getElementsByClassName("badge")
+    let badges = document.getElementsByClassName("cart-badge")
     for (let i = 0; i < badges.length; i++) {
         let badgeValue = parseInt(badges.item(i).textContent);
         badges.item(i).textContent = (badgeValue + value).toString();

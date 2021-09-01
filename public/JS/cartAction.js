@@ -9,7 +9,7 @@ function addToUserCart(productId, value) {
 
 function removeFromCart(productId) {
     $.post("../private/Includes/removeFromCart.php", {
-        productId: productId,
+        productId: productId
     }, function (data, status) {
         alert(data);
     });

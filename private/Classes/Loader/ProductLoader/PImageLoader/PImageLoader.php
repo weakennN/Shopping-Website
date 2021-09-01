@@ -5,10 +5,9 @@ namespace private\Classes\Loader\ProductLoader\PImageLoader;
 abstract class PImageLoader extends \private\Classes\Loader\ProductLoader\PLoader
 {
 
-    public function getImages()
+    public function getImages($productId): array
     {
         $images = array();
-        $productId = $this->getProductId();
         $path = "recourses/images/ProductImages/" . $productId . "/";
         if ($dh = opendir($path)) {
             while ((($file = readdir($dh))) !== false) {

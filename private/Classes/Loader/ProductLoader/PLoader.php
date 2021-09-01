@@ -2,10 +2,7 @@
 
 namespace private\Classes\Loader\ProductLoader;
 
-abstract class PLoader extends \private\Classes\Loader\Loader
+abstract class PLoader
 {
-    public function getProductId()
-    {
-        return $_GET["id"];
-    }
+    abstract function load($productId);
 }

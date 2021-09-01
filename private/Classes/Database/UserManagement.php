@@ -199,4 +199,34 @@ class UserManagement
 
         return $statement->fetch()["quantity"];
     }
+
+    public static function addToFavourite($userId, $productId)
+    {
+        $pdo = Database::connect();
+        $query = "INSERT INTO favourite (user_id, product_id) VALUES (?, ?)";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$userId, $productId]);
+    }
+
+    public static function isProductAddedToFavourite($userId, $productId): bool
+    {
+        $pdo = Database::connect();
+        $query = "SELECT id FROM `favourite` WHERE user_id = ? AND product_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$userId, $productId]);
+
+        if ($statement->fetch()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static function removeFromFavourite($userId, $productId)
+    {
+        $pdo = Database::connect();
+        $query = "DELETE FROM favourite WHERE user_id = ? AND product_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$userId, $productId]);
+    }
 }

@@ -25,6 +25,7 @@ $(document).ready(
 
     $("#add-to-cart").click(function () {
         let productId = window.location.href.substr(window.location.href.length - 1);
+        // TODO refactor how you get the id now it gets only the last char if id is 2 char it will get the last
         let productTitle = document.getElementById("title").textContent;
         let productImageSource = document.getElementsByClassName("slick-track")[0].children.item(1).getAttribute("src");
         let productPrice = document.getElementById("price").textContent.substr(document.getElementById("price").textContent.indexOf("$") + 1);
