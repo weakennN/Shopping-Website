@@ -9,9 +9,14 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/navBar.css?<?php echo time(); ?>">
     <link rel="stylesheet" href="style/productPage.css?<?php echo time(); ?>">
     <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
           integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -23,6 +28,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
+
 <?php include $_SERVER["HOME"] . "\public/header.php"; ?>
 
 <div class="container shadow-sm">
@@ -154,13 +160,18 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
     <!-- end of product gallery modal -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+            crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"
             integrity="sha512-WNZwVebQjhSxEzwbettGuQgWxbpYdoLf7mH+25A7sfQbbxKeS5SQ9QBf97zOY4nOlwtksgDA/czSTmfj4DUEiQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="JS/cartItemActions.js"></script>
     <script src="JS/cartAction.js?<?php echo time(); ?>"></script>
     <script src="JS/cartWrapper.js?<?php echo time(); ?>"></script>
     <script src="JS/productPage.js?<?php echo time(); ?>"></script>
+    <script src="JS/header.js"></script>
 </body>
 </html>

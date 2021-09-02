@@ -6,9 +6,16 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="style/cart.css? <?php echo time(); ?>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="style/navBar.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="style/style.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="style/cart.css">
 </head>
 <body>
+
 <?php include "header.php" ?>
 
 <div class="container">
@@ -20,17 +27,23 @@
             </div>
         </div>
         <div class="col-lg-4">
-                <div class="w-100 checkout-box">
-                    <?php include "../private/Includes/createCheckoutBox.php" ?>
-                </div>
+            <div class="w-100 checkout-box">
+                <?php include "../private/Includes/createCheckoutBox.php" ?>
+            </div>
         </div>
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+<script src="JS/cartAction.js?<?php echo time(); ?>"></script>
 <script src="JS/cartWrapper.js?<?php echo time(); ?>"></script>
 <script src="JS/cart.js?<?php echo time(); ?>"></script>
-
-
+<script src="JS/cartItemActions.js?<?php echo time(); ?>"></script>
+<script src="JS/header.js?<?php echo time(); ?>"></script>
 
 </body>
 </html>

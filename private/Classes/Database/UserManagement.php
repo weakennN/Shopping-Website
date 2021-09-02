@@ -120,12 +120,12 @@ class UserManagement
         $statement->execute([$value, $cartId]);
     }
 
-    public static function getProductQuantity($productId)
+    public static function getProductQuantity($productId, $cartId)
     {
         $pdo = Database::connect();
-        $query = "SELECT quantity FROM cart_item WHERE product_id = ?";
+        $query = "SELECT quantity FROM cart_item WHERE product_id = ? AND cart_id = ?";
         $statement = $pdo->prepare($query);
-        $statement->execute([$productId]);
+        $statement->execute([$productId, $cartId]);
 
         return $statement->fetch()["quantity"];
     }

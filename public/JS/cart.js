@@ -75,7 +75,7 @@ function initCartItemAction() {
                         if (productQuantity < parseInt(quantityInput.value)) {
                             addToUserCart(productId, parseInt(quantityInput.value) - productQuantity);
                         } else {
-                            removeCartItem(productId, Math.abs(parseInt(quantityInput.value) - productQuantity));
+                            removeCartItem(productId, productQuantity - parseInt(quantityInput.value));
                         }
                         productQuantity += parseInt(quantityInput.value) - productQuantity;
                     }

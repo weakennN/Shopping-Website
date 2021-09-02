@@ -2,6 +2,7 @@
 
 namespace private\Classes\Cart;
 
+use private\Classes\Common\Decrypt;
 use private\Classes\Database\UserManagement;
 
 class Cart
@@ -14,7 +15,7 @@ class Cart
         }
 
         if (isset($_COOKIE["userId"])) {
-            $id = explode(" ", $_COOKIE["userId"])[0];
+            $id = explode(" ", Decrypt::decrypt($_COOKIE["userId"]))[0];
             $productPrice = UserManagement::getProductPrice($productId);
             if (UserManagement::isProductAdded($id, $productId)) {
                 UserManagement::updateProductQuantity($id, $productId, $value);
@@ -40,9 +41,9 @@ class Cart
         }
 
         if (isset($_COOKIE["userId"])) {
-            $id = explode(" ", $_COOKIE["userId"])[0];
+            $id = explode(" ", Decrypt::decrypt($_COOKIE["userId"]))[0];
             $productPrice = UserManagement::getProductPrice($productId);
-            $productQuantity = UserManagement::getProductQuantity($productId);
+            $productQuantity = UserManagement::getProductQuantity($productId, $id);
             $totalProductPrice = (float)$productPrice * (int)$productQuantity;
             UserManagement::deleteCartItem($id, $productId);
             UserManagement::updateCartTotal($id, -($totalProductPrice));
@@ -60,10 +61,10 @@ class Cart
         }
 
         if (isset($_COOKIE["userId"])) {
-            $id = explode(" ", $_COOKIE["userId"])[0];
+            $id = explode(" ", Decrypt::decrypt($_COOKIE["userId"]))[0];
             $productPrice = UserManagement::getProductPrice($productId);
-            $productQuantity = UserManagement::getProductQuantity($productId);
-            if (((int)$productQuantity) <= 1 || (int)$productQuantity < (int)$value) {
+            $productQuantity = UserManagement::getProductQuantity($productId, $id);
+            if (((int)$productQuantity) <= 1 || ((int)$productQuantity) < (int)$value) {
                 $this->removeFromCart($productId);
             }
             $totalToRemove = $value * $productPrice;

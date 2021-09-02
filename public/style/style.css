@@ -33,7 +33,7 @@ a:hover {
 .product-card {
     height: 100% !important;
     /* border-color: transparent !important; */
-    border-color: transparent;
+    border-color: transparent !important;
     background-color: transparent;
     transition: 0.6s;
 }
@@ -75,4 +75,8 @@ a:hover {
 
 .add-to-favourite {
     color: #2a7af5;
+}
+
+.product {
+    transition: 1s;
 }

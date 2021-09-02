@@ -11,7 +11,6 @@ $logger = new \private\Classes\LoginSystem\Logger(array(new \private\Classes\Log
 if ($logger->verify()) {
     $logger->logInUser($email, $password);
     header('Location: http://localhost/test/public/index.php');
-    setcookie("append", "123", time() + 8000, "/");
     include_once "insertSessionProductsToUserCart.php";
     loadSessionProducts(\private\Classes\Database\UserManagement::getUserId($email));
 } else {

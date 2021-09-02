@@ -17,21 +17,17 @@ initProductCardActions();
 function addToFavourite(addToFavouriteButton, productId) {
     addToFavouriteButton.addEventListener("click", function () {
         if (addToFavouriteButton.classList.contains("far")) {
-            // add to favourite
             addToFavouriteButton.classList.replace("far", "fas");
             $.post("../private/Includes/addToFavourite.php", {
                 productId: productId
             }, function (data, status) {
-              //  alert(data + " " + status);
             });
             displayAddToFavouriteNotification()
         } else {
-            // remove from favourite
             addToFavouriteButton.classList.replace("fas", "far");
             $.post("../private/Includes/removeFromFavourite.php", {
                 productId: productId
             }, function (data, status) {
-               // alert(data + " " + status);
             })
             displayRemoveFromFavouriteNotification();
         }
