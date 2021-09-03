@@ -14,8 +14,8 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/navBar.css?<?php echo time(); ?>">
-    <link rel="stylesheet" href="style/productPage.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="style/navBar.css">
+    <link rel="stylesheet" href="style/productPage.css">
     <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
           integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
@@ -28,15 +28,13 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
-
 <?php include $_SERVER["HOME"] . "\public/header.php"; ?>
-
+<?php include_once "notificationContainer.php" ?>
 <div class="container shadow-sm">
     <div class="row">
         <div class="text-left p-0 fs-2 border-bottom" id="title">
             <?php include $_SERVER["HOME"] . '/private/Includes/loadProductTitle.php'; ?>
         </div>
-
     </div>
     <div class="row mt-4">
         <!-- start of product gallery -->
@@ -44,13 +42,11 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
             <div class="gal card-block">
                 <?php include $_SERVER["HOME"] . "/private/Includes/loadProductImages.php" ?>
             </div>
-
             <div class="gal-nav">
                 <?php include $_SERVER["HOME"] . "/private/Includes/loadProductSlickSlider.php" ?>
             </div>
         </div>
         <!-- end of product gallery -->
-
         <!-- start of product info -->
         <div class="col-lg-6 col-md-12 mb-5 mt-md-5 mt-5 mt-lg-0 mt-xs-0">
             <div>
@@ -67,18 +63,16 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
                                 Add to cart
                             </div>
                         </div>
-
                     </button>
                 </div>
                 <div class="d-flex flex-row mt-3">
-                    <button class="btn btn-danger w-100">
+                    <button class="btn btn-danger w-100" id="add-to-favourite">
                         <div>
                             <i class="far fa-heart fa-2x"></i>
                             <div class="mt-1">
                                 Add to favourite
                             </div>
                         </div>
-
                     </button>
                 </div>
                 <div class="mt-2">
@@ -102,12 +96,10 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
                             similique voluptas!
                         </p>
                     </div>
-
                 </div>
             </div>
         </div>
         <!-- end of product info -->
-
         <!-- start of product description -->
         <div class="col-xs-12">
             <div class="text-center my-5" id="product-description-title">
@@ -119,10 +111,8 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
                 <?php include $_SERVER["HOME"] . '/private/Includes/loadProductDescription.php'; ?>
             </div>
         </div>
-
     </div>
     <!-- end of product description -->
-
     <!-- start of product gallery modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-fullscreen-lg-down modal-dialog-centered">
@@ -168,10 +158,12 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="JS/notification.js"></script>
+    <script src="JS/favouriteAction.js"></script>
+    <script src="JS/cartAction.js"></script>
     <script src="JS/cartItemActions.js"></script>
-    <script src="JS/cartAction.js?<?php echo time(); ?>"></script>
-    <script src="JS/cartWrapper.js?<?php echo time(); ?>"></script>
-    <script src="JS/productPage.js?<?php echo time(); ?>"></script>
+    <script src="JS/cartWrapper.js"></script>
+    <script src="JS/productPage.js"></script>
     <script src="JS/header.js"></script>
 </body>
 </html>

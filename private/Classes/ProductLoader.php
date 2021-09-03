@@ -2,6 +2,9 @@
 
 namespace private\Classes;
 
+use private\Classes\Common\Decrypt;
+use private\Classes\Database\UserManagement;
+
 class ProductLoader
 {
     public function loadProducts()
@@ -24,6 +27,13 @@ class ProductLoader
             */
 
             $product = $products[$i];
+            $test = "far";
+            if (isset($_COOKIE["userId"])) {
+                $userId = explode(" ", Decrypt::decrypt($_COOKIE["userId"]))[0];
+                if (UserManagement::isProductAddedToFavourite($userId,$product["id"])) {
+                    $test = "fas";
+                }
+            }
             echo "<div class= 'col-lg-3 col-md-4 col-sm-6 col-xl-2 my-2 col-6'>
             <div class= 'card product-card p-2' id= " . $product['id'] . ">
                 <a href=product.php?id=" . $product['id'] . ">
@@ -32,7 +42,7 @@ class ProductLoader
                 <div class='card-body p-0'>
                     <div>
                         <div class= 'text-end py-2'>
-                            <i class='far fa-heart icon add-to-favourite'></i>
+                            <i class='$test fa-heart icon add-to-favourite'></i>
                             <i class='fas fa-shopping-cart icon add-to-cart ms-1' id= " . $product['id'] . "></i>
                         </div>
                     </div>
@@ -48,7 +58,7 @@ class ProductLoader
     }
 
 // TODO set up link for product page
-    private function getStartingProduct($page)
+    private function getStartingProduct($page): float|int
     {
         return ($page - 1) * 25;
     }

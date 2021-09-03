@@ -1,3 +1,4 @@
+<?php include_once "../private/AutoLoad/autoLoader.php" ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,9 +16,7 @@
     <link rel="stylesheet" href="style/cart.css">
 </head>
 <body>
-
 <?php include "header.php" ?>
-
 <div class="container">
     <div class="row">
         <h1 class="display-4 mb-4">My Cart</h1>
@@ -33,17 +32,16 @@
         </div>
     </div>
 </div>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
-<script src="JS/cartAction.js?<?php echo time(); ?>"></script>
-<script src="JS/cartWrapper.js?<?php echo time(); ?>"></script>
-<script src="JS/cart.js?<?php echo time(); ?>"></script>
-<script src="JS/cartItemActions.js?<?php echo time(); ?>"></script>
-<script src="JS/header.js?<?php echo time(); ?>"></script>
+<script src="JS/cartAction.js"></script>
+<script src="JS/cartWrapper.js"></script>
+<script src="JS/cart.js"></script>
+<script src="JS/cartItemActions.js"></script>
+<script src="JS/header.js"></script>
 
 </body>
 </html>

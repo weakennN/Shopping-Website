@@ -35,11 +35,11 @@ class ShoppingCartLoader extends CartLoader
         return "<div class='d-flex flex-column w-100 cart-item border-bottom pb-xl-3 mb-3' id='$productId'>
                     <div class='d-flex flex-row w-100 cart-item-top'>
                         <div class='d-flex flex-row cart-image-holder'>
-                            <a href=''>
+                            <a href='product.php?id=$productId'>
                                 <img style='width: 110px;object-fit: contain'
                                      src='recourses/images/ProductImages/$productId/$productImage' alt=''>
                             </a>
-                            <a href=''>
+                            <a href='product.php?id=$productId'>
                                 <h5 class='mt-3 ms-4 title'>$productTitle</h5>
                             </a>
                         </div>

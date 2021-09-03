@@ -1,6 +1,3 @@
-<?php
-include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
-?>
 <!-- start of large screen navbar !-->
 <nav class="navbar mb-5" id="main-navbar">
     <div class="container">
@@ -19,7 +16,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
                 </div>
             </form>
             <?php include "../private/Includes/createMainNavProfile.php" ?>
-            <a href="#" class="mt-2 favourite-btn">
+            <a href="favourite.php" class="mt-2 favourite-btn">
                 <i class="far fa-heart fa-2x"></i>
             </a>
             <div class="dropdown cart-wrapper-dropdown" id="cart-dropdown">
@@ -41,15 +38,14 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
     </div>
 </nav>
 <!-- end of large screen navbar !-->
-
 <!-- start of small screen navbar !-->
 <nav class="navbar mb-5" id="responsive-navbar" style="display: none">
     <div class="container-fluid">
         <div class="d-flex flex-row w-100">
             <?php include "../private/Includes/createResponsiveNavbarProfile.php" ?>
-            <div>
+            <a href="favourite.php">
                 <i class="far fa-heart fa-2x responsive-navbar-item"></i>
-            </div>
+            </a>
             <div class="text-center flex-grow-1">
                 <a href="index.php">
                     <img style="height: 18px;"

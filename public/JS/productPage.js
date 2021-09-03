@@ -21,29 +21,40 @@ $(document).ready(
                 }
             ]
         });
-    },
-
-    $("#add-to-cart").click(function () {
-        let productId = window.location.href.substr(window.location.href.length - 1);
-        // TODO refactor how you get the id now it gets only the last char if id is 2 char it will get the last
+        let addToCartButton = document.getElementById("add-to-cart");
+        let addToFavouriteButton = document.getElementById("add-to-favourite");
+        let productId = window.location.href.substr(window.location.href.indexOf("id=") + 3);
         let productTitle = document.getElementById("title").textContent;
         let productImageSource = document.getElementsByClassName("slick-track")[0].children.item(1).getAttribute("src");
         let productPrice = document.getElementById("price").textContent.substr(document.getElementById("price").textContent.indexOf("$") + 1);
         let productLink = window.location.href;
-        if (!updateProductQuantity(productTitle)) {
-            let cartWrapperProduct = createCartWrapperElement(productTitle, productLink, productImageSource, productPrice, productId);
-            document.getElementById("cart-wrapper").appendChild(cartWrapperProduct);
-        }
 
-        updateSubTotal(parseFloat(productPrice));
+        addToCartButton.addEventListener("click", function () {
+            if (!updateProductQuantity(productTitle)) {
+                let cartWrapperElement = createCartWrapperElement(productTitle, productLink, productImageSource, productPrice, productId);
+                document.getElementById("cart-wrapper").appendChild(cartWrapperElement);
+            }
 
-        $.post("../private/Includes/addToCart.php", {
-            productId: productId,
-            quantity: 1
-        }, function (data, status) {
+            addToUserCart(productId, 1);
+            updateCartBadge(1);
+            updateSubTotal(parseFloat(productPrice));
         });
 
-    })
+        addToFavouriteButton.addEventListener("click", function () {
+            if (addToFavouriteButton.getElementsByTagName("i").item(0).classList.contains("far")) {
+                addToFavouriteButton.getElementsByTagName("i").item(0).classList.replace("far", "fas");
+                addFavourite(productId);
+                displayAddToFavouriteNotification()
+            } else {
+                addToFavouriteButton.getElementsByTagName("i").item(0).classList.replace("fas", "far");
+                removeFavourite(productId);
+                displayRemoveFromFavouriteNotification()
+                // TODO js file with add to favourite functions
+            }
+        })
+
+        document.getElementsByClassName("slick-track").item(0).style.height = "556px";
+    }
 );
 
 function imageClick(id) {

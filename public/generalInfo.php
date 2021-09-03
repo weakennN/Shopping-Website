@@ -1,3 +1,7 @@
+<?php
+include_once "../private/Includes/checkLogin.php";
+include_once "../private/AutoLoad/autoLoader.php"
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -37,5 +41,8 @@
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
 <script src="JS/header.js"></script>
+<script src="JS/cartAction.js"></script>
+<script src="JS/cartItemActions.js"></script>
+<script src="JS/cartWrapper.js"></script>
 </body>
 </html>

@@ -1,3 +1,7 @@
+<?php
+include_once "../private/Includes/checkLogin.php";
+include_once "../private/AutoLoad/autoLoader.php"
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,121 +28,21 @@
         </div>
         <div class="col-md-9 p-0 mt-3 mt-md-0">
             <div class="row profile-main-content">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xl-3 my-2 col-6 product">
-                    <div class="card product-card p-2" id="1">
-                        <a href="product.php?id=1">
-                            <img src="recourses/images/ProductImages/1/1.jpg" class="card-img-top">
-                        </a>
-                        <div class="card-body p-0 mt-2">
-                            <a class="text-decoration-none" href="product.php?id=1">
-                                <h5 class="card-title title text-holder">Neo: The World Ends With You (PS4)</h5>
-                                <p class="card-text price mt-1" style="font-size: 1.5rem">$119<span
-                                            class="cent">.00</span></p>
-                            </a>
-                            <div class="d-flex flex-row w-100 mt-2">
-                                <button type="button" style="padding: 8px" class="btn btn-primary w-50">Add to cart
-                                </button>
-                                <button type="button" style="padding: 8px" class="btn btn-danger w-50 ms-1">Remove
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xl-3 my-2 col-6 product">
-                    <div class="card product-card p-2" id="1">
-                        <a href="product.php?id=1">
-                            <img src="recourses/images/ProductImages/1/1.jpg" class="card-img-top">
-                        </a>
-                        <div class="card-body p-0 mt-2">
-                            <a class="text-decoration-none" href="product.php?id=1">
-                                <h5 class="card-title title text-holder">Neo: The World Ends With You (PS4)</h5>
-                                <p class="card-text price mt-1" style="font-size: 1.5rem">$119<span
-                                            class="cent">.00</span></p>
-                            </a>
-                            <div class="d-flex flex-row w-100 mt-2">
-                                <button type="button" style="padding: 8px" class="btn btn-primary w-50">Add to cart
-                                </button>
-                                <button type="button" style="padding: 8px" class="btn btn-danger w-50 ms-1">Remove
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xl-3 my-2 col-6 product">
-                    <div class="card product-card p-2" id="1">
-                        <a href="product.php?id=1">
-                            <img src="recourses/images/ProductImages/1/1.jpg" class="card-img-top">
-                        </a>
-                        <div class="card-body p-0 mt-2">
-                            <a class="text-decoration-none" href="product.php?id=1">
-                                <h5 class="card-title title text-holder">Neo: The World Ends With You (PS4)</h5>
-                                <p class="card-text price mt-1" style="font-size: 1.5rem">$119<span
-                                            class="cent">.00</span></p>
-                            </a>
-                            <div class="d-flex flex-row w-100 mt-2">
-                                <button type="button" style="padding: 8px" class="btn btn-primary w-50">Add to cart
-                                </button>
-                                <button type="button" style="padding: 8px" class="btn btn-danger w-50 ms-1">Remove
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xl-3 my-2 col-6 product">
-                    <div class="card product-card p-2" id="1">
-                        <a href="product.php?id=1">
-                            <img src="recourses/images/ProductImages/1/1.jpg" class="card-img-top">
-                        </a>
-                        <div class="card-body p-0 mt-2">
-                            <a class="text-decoration-none" href="product.php?id=1">
-                                <h5 class="card-title title text-holder">Neo: The World Ends With You (PS4)</h5>
-                                <p class="card-text price mt-1" style="font-size: 1.5rem">$119<span
-                                            class="cent">.00</span></p>
-                            </a>
-                            <div class="d-flex flex-row w-100 mt-2">
-                                <button type="button" style="padding: 8px" class="btn btn-primary w-50">Add to cart
-                                </button>
-                                <button type="button" style="padding: 8px" class="btn btn-danger w-50 ms-1">Remove
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xl-3 my-2 col-6 product">
-                    <div class="card product-card p-2" id="1">
-                        <a href="product.php?id=1">
-                            <img src="recourses/images/ProductImages/1/1.jpg" class="card-img-top">
-                        </a>
-                        <div class="card-body p-0 mt-2">
-                            <a class="text-decoration-none" href="product.php?id=1">
-                                <h5 class="card-title title text-holder">Neo: The World Ends With You (PS4)</h5>
-                                <p class="card-text price mt-1" style="font-size: 1.5rem">$119<span
-                                            class="cent">.00</span></p>
-                            </a>
-                            <div class="d-flex flex-row w-100 mt-2">
-                                <button type="button" style="padding: 8px" class="btn btn-primary w-50">Add to cart
-                                </button>
-                                <button type="button" style="padding: 8px" class="btn btn-danger w-50 ms-1">Remove
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php include_once "../private/Includes/loadFavouriteProducts.php" ?>
             </div>
         </div>
     </div>
 </div>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
+<script src="JS/favouriteAction.js"></script>
 <script src="JS/cartItemActions.js"></script>
 <script src="JS/cartAction.js"></script>
 <script src="JS/cartWrapper.js"></script>
 <script src="JS/favourite.js"></script>
 <script src="JS/header.js"></script>
-
 </body>
 </html>

@@ -18,17 +18,11 @@ function addToFavourite(addToFavouriteButton, productId) {
     addToFavouriteButton.addEventListener("click", function () {
         if (addToFavouriteButton.classList.contains("far")) {
             addToFavouriteButton.classList.replace("far", "fas");
-            $.post("../private/Includes/addToFavourite.php", {
-                productId: productId
-            }, function (data, status) {
-            });
+            addFavourite(productId);
             displayAddToFavouriteNotification()
         } else {
             addToFavouriteButton.classList.replace("fas", "far");
-            $.post("../private/Includes/removeFromFavourite.php", {
-                productId: productId
-            }, function (data, status) {
-            })
+            removeFavourite(productId);
             displayRemoveFromFavouriteNotification();
         }
     })

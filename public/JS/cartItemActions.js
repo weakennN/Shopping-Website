@@ -4,7 +4,7 @@ function initCartWrapperItemAction() {
     for (let i = 0; i < cartItems.length; i++) {
         let cartItem = cartItems.item(i);
         let productId = cartItem.getElementsByTagName("a").item(0).getAttribute("href")
-            .substr(cartItem.getElementsByTagName("a").item(0).getAttribute("href").indexOf("=") + 1);
+            .substr(cartItem.getElementsByTagName("a").item(0).getAttribute("href").indexOf("id=") + 3);
         let closeButton = cartItem.getElementsByTagName("button").item(0);
         let price = cartItem.getElementsByClassName("cart-wrapper-price").item(0).textContent.substr(1);
         let quantity = cartItem.getElementsByClassName("quantity").item(0);

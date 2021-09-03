@@ -20,14 +20,11 @@ for (let i = 0; i < favouriteItems.length; i++) {
     })
 
     removeButton.addEventListener("click", function () {
+        item.style.transition = "1s";
         item.classList.add("fade-out");
         setTimeout(function () {
             document.getElementsByClassName("profile-main-content").item(0).removeChild(item);
-            $.post("../private/Includes/removeFromFavourite.php", {
-                productId: productId
-            }, function (data, status) {
-                alert(data + " " + status);
-            })
+            removeFavourite(productId);
         }, 1000)
     })
 }

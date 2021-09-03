@@ -229,4 +229,14 @@ class UserManagement
         $statement = $pdo->prepare($query);
         $statement->execute([$userId, $productId]);
     }
+
+    public static function getFavouriteProducts($userId): bool|array
+    {
+        $pdo = Database::connect();
+        $query = "SELECT * FROM favourite WHERE user_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$userId]);
+
+        return $statement->fetchAll();
+    }
 }
