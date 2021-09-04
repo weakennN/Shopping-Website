@@ -10,7 +10,6 @@ if (isset($_COOKIE["userId"])) {
         $userId = explode(" ", Decrypt::decrypt($_COOKIE["userId"]))[0];
         $favouriteList = new FavouriteList();
         $favouriteList->removeFromFavourite($userId, $_POST["productId"]);
+        echo "display";
     }
-} else {
-    header('Location: http://localhost/test/public/login.php');
 }

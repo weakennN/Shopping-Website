@@ -45,7 +45,7 @@ function initCartItemAction() {
         minusButton.addEventListener("click", function () {
             decrementQuantity(productId, quantityInput, cartItem);
             updateTotal(-productPrice);
-            updateTotalProducts(-1)
+            updateTotalProducts(-1);
             updateProductTotalPrice(-productPrice, productTotalPriceEl);
             productQuantity -= 1;
         })
@@ -67,7 +67,7 @@ function initCartItemAction() {
                             updateTotal(-(productQuantity * productPrice));
                             updateTotalProducts(-productQuantity);
                             removeFromCart(productId);
-                        }, 1000)
+                        }, 1000);
                     } else if (parseInt(quantityInput.value) !== productQuantity) {
                         updateTotalProducts(parseInt(quantityInput.value) - productQuantity);
                         updateTotal((parseInt(quantityInput.value) - productQuantity) * productPrice);
@@ -152,10 +152,9 @@ function changeCartView() {
     let cartItemHolder = document.getElementsByClassName("cart-item-holder").item(0);
 
     if (cartItemHolder.children.length <= 0) {
-        console.log(cartItemHolder.children.length);
         let row = document.getElementsByClassName("row").item(0);
         while (row.children.length > 0) {
-            row.removeChild(row.children.item(0));
+            row.removeChild(row.children.item(row.children.length - 1));
         }
         let emptyCartContainer = document.createElement("div");
         emptyCartContainer.classList.add("col-12", "text-center");
@@ -174,6 +173,7 @@ function changeCartView() {
         button.setAttribute("href", "index.php");
         emptyCartContainer.appendChild(button);
         row.appendChild(emptyCartContainer);
+        console.log(row.children.length)
     }
 }
 

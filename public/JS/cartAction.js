@@ -11,7 +11,7 @@ function removeFromCart(productId) {
     $.post("../private/Includes/removeFromCart.php", {
         productId: productId
     }, function (data, status) {
-        alert(data);
+      alert(data);
     });
 }
 

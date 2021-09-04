@@ -19,11 +19,9 @@ function addToFavourite(addToFavouriteButton, productId) {
         if (addToFavouriteButton.classList.contains("far")) {
             addToFavouriteButton.classList.replace("far", "fas");
             addFavourite(productId);
-            displayAddToFavouriteNotification()
         } else {
             addToFavouriteButton.classList.replace("fas", "far");
             removeFavourite(productId);
-            displayRemoveFromFavouriteNotification();
         }
     })
 }

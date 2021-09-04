@@ -90,3 +90,7 @@
 .empty-cart-button:hover {
     color: white !important;
 }
+
+.cart-image-holder {
+    width: 60%;
+}

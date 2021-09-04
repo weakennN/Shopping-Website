@@ -20,7 +20,6 @@ include_once "../private/AutoLoad/autoLoader.php"
 </head>
 <body>
 <?php include_once "header.php" ?>
-
 <div class="container">
     <div class="row">
         <div class="col-md-3 p-0 pe-0 pe-md-4">
