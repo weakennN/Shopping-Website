@@ -19,7 +19,6 @@ function removeCartWrapperItem(closeButton, productCard, productId, price, quant
             removeFromCartWrapper(productCard, productId);
             updateSubTotal(-(parseFloat(price) * parseInt(quantity.textContent.split(/[\s]+/)[1])));
         }, 1000)
-
     })
 }
 

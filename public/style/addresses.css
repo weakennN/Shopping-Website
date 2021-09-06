@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+    .modify-address-btn {
+        width: 50% !important;
+    }
+
+    .modify-btn-container {
+        margin-left: 0 !important;
+    }
+}
+
+.modify-address-btn {
+    width: 115px;
+}
+
+

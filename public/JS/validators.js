@@ -60,3 +60,8 @@ function validatePassword(value, append) {
 
     return true;
 }
+
+function containsNumber(value) {
+    let regex = /[0-9]+/;
+    return regex.test(value);
+}

@@ -28,7 +28,7 @@ document.getElementById("login-button").addEventListener("click", function () {
     }
 
     let errorMsg1 = verifyPassword(document.getElementById("password").value);
-    if (errorMsg1 != null) {
+    if (errorMsg1 !== null) {
         if (document.getElementById("password-input").children.length < 3) {
             document.getElementById("password-input").appendChild(errorMsg);
         }

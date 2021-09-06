@@ -23,7 +23,7 @@ include_once "../private/AutoLoad/autoLoader.php"
 <?php include_once "header.php" ?>
 
 <div class="container">
-    <div class="row gx-5">
+    <div class="row">
         <div class="col-md-3 p-0 pe-0 pe-md-4">
             <?php include_once "profileNavigation.php" ?>
         </div>

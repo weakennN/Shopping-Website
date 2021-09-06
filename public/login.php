@@ -22,9 +22,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
 </head>
 <body>
 <?php include $_SERVER["HOME"] . '/public/header.php'; ?>
-
 <div class="container">
-
     <h4 class="w-100 mb-5">Login</h4>
     <div id="login-error-container">
     </div>
@@ -45,8 +43,9 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
                 </div>
                 <div class="col-12 mt-4">
                     <button id="login-button" type="button" class="btn btn-primary w-50 btn-lg tt">Log in</button>
-                    <a href="register.php" type="button" class="btn btn-success w-50 btn-lg mt-3 tt">Create new
-                        account</a>
+                    <a href="register.php">
+                        <button class="btn btn-success w-50 btn-lg mt-3" type="button">Create new account</button>
+                    </a>
                 </div>
             </form>
         </div>
