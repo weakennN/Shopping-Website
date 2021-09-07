@@ -30,12 +30,12 @@ include_once "../private/AutoLoad/autoLoader.php";
             <div class="row profile-main-content p-2">
                 <h2 class="display-5 mb-4">Addresses</h2>
                 <div class="d-flex flex-column address-container pb-1" id="address-container">
-                    <div class="card border-0" id="1">
+                    <div class="card border-0 address" id="1">
                         <div class="card-body p-0">
                             <h5 class="card-title">Test Test</h5>
                             <p class="card-text m-auto m-0">0880325213</p>
                             <p class="card-text m-0">some address</p>
-                            <p class="card-text m-0">Country - City</p>
+                            <p class="card-text m-0 ">Country - City</p>
                             <div class="mt-3 d-flex flex-row">
                                 <button data-bs-target="#editAddressModal" data-bs-toggle="modal" type="button"
                                         class="btn modify-address-btn btn-primary me-2">Edit

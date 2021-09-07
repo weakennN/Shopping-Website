@@ -7,6 +7,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                <div class="d-flex flex-column alert-container">
+                </div>
                 <div class="row">
                     <div class="col-lg-6 col-12 mb-3 input-holder">
                         <label for="create-input-name">Name</label>
@@ -50,6 +52,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                <div class="d-flex flex-column alert-container">
+                </div>
                 <div class="row">
                     <div class="col-lg-6 col-12 mb-3 input-holder">
                         <label for="edit-input-name">Name</label>
@@ -71,6 +75,7 @@
                         <label for="edit-select-shipping-country">Shipping country</label>
                         <select class="form-select" id="edit-select-shipping-country">
                             <option selected id="1">Bulgaria</option>
+                            <option id="1">England</option>
                         </select>
                     </div>
                 </div>

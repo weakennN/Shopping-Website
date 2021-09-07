@@ -1,11 +1,66 @@
+function setAddressAction() {
+    let addresses = document.getElementsByClassName("address");
+
+    for (let address of addresses) {
+        let addressId = address.id;
+        let name = address.getElementsByTagName("h5").item(0).textContent;
+        let phone = address.getElementsByClassName("card-text").item(0).textContent;
+        let userAddress = address.getElementsByClassName("card-text").item(1).textContent;
+        let country = address.getElementsByClassName("card-text").item(2).textContent.split(" - ")[0]
+        let city = address.getElementsByClassName("card-text").item(2).textContent.split(" - ")[1];
+        let editButton = address.getElementsByTagName("button").item(0);
+        let deleteButton = address.getElementsByTagName("button").item(1);
+
+        editAddressAction(editButton, addressId, name, phone, userAddress, country, city);
+        deleteAddressAction(deleteButton, address, addressId);
+    }
+}
+
+setAddressAction();
+
+function editAddressAction(editButton, addressId, name, phone, address, country, city) {
+    editButton.addEventListener("click", function () {
+        setEditModalInputs(name, phone, address, country, city);
+    });
+}
+
+function deleteAddressAction(deleteButton, addressEl, addressId) {
+    deleteButton.addEventListener("click", function () {
+        addressEl.classList.add("fade-out");
+        setTimeout(function () {
+            document.getElementById("address-container").removeChild(addressEl);
+        }, 1000);
+    })
+}
+
+function setEditModalInputs(name, phone, address, country, city) {
+    document.getElementById("edit-input-name").value = name;
+    document.getElementById("edit-input-phone").value = phone;
+    document.getElementById("edit-input-address").value = address;
+    document.getElementById("edit-input-city").value = city;
+    document.getElementById("edit-select-shipping-country").options.item(getCurrentOptionId(country)).selected = true
+}
+
+function getCurrentOptionId(country) {
+    let select = document.getElementById("edit-select-shipping-country");
+
+    for (let i = 0; i < select.children.length; i++) {
+        if (select.children.item(i).textContent === country) {
+            return i;
+        }
+    }
+
+    return 0;
+}
+
+getCurrentOptionId();
+
+
 document.getElementById("create-address").addEventListener("click", function () {
     let action = validateAddressModal("createAddressModal");
 
     if (action === true) {
-        // get input values and call ajax function to create address
-        let addressInfo = getAddressModalValues("createAddressModal");
-        addAddress(createAddress(2, addressInfo["name"], addressInfo["phone"]
-            , addressInfo["address"], addressInfo["city"], addressInfo["country"]));
+        addUserAddress(getAddressModalValues("createAddressModal"));
     }
 });
 
@@ -22,8 +77,9 @@ function addAddress(addressEl) {
 }
 
 function createAddress(addressId, customerName, customerPhone, address, city, country) {
+    console.log(addressId);
     let addressEl = document.createElement("div");
-    addressEl.classList.add("card", "border-0");
+    addressEl.classList.add("card", "border-0", "address");
     addressEl.setAttribute("id", addressId);
     let addressElBody = document.createElement("div");
     addressElBody.classList.add("card-body", "p-0");

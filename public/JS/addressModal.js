@@ -112,3 +112,50 @@ function appendErrorMessage(parent, errorMessage, element) {
         element.setAttribute("valid", "true");
     }
 }
+
+function closeModal(modalId) {
+    let modal = document.getElementById(modalId);
+    let bsModal = bootstrap.Modal.getInstance(modal);
+    bsModal.hide();
+    let inputs = modal.getElementsByTagName("input");
+    for (let input of inputs) {
+        input.value = "";
+    }
+}
+
+function displayErrorMessage(modalId, errorMessage) {
+    let modal = document.getElementById(modalId);
+    console.log(errorMessage);
+    modal.getElementsByClassName("alert-container").item(0).appendChild(createErrorMessage(errorMessage));
+}
+
+function createErrorMessage(errorMessage) {
+    let alert = document.createElement("div");
+    alert.classList.add("alert", "alert-danger")
+    alert.setAttribute("role", "alert");
+    alert.textContent = errorMessage;
+
+    return alert;
+}
+
+function addUserAddress(addressInfo) {
+    console.log(addressInfo);
+    $.post("../private/Includes/addAddress.php", {
+        name: addressInfo["name"],
+        phone: addressInfo["phone"],
+        address: addressInfo["address"],
+        city: addressInfo["city"],
+        countryId: addressInfo["countryId"]
+    }, function (data, status) {
+        alert(data + " " + status);
+        let response = JSON.parse(data);
+        if (response["error"] !== null) {
+            console.log(response["error"]);
+            displayErrorMessage("createAddressModal", response["error"]);
+        } else {
+            addAddress(createAddress(response["addressId"], addressInfo["name"], addressInfo["phone"]
+                , addressInfo["address"], addressInfo["city"], addressInfo["country"]));
+            closeModal("createAddressModal");
+        }
+    });
+}
