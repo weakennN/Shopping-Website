@@ -29,7 +29,7 @@ class Register extends \private\Classes\LoginSystem\Entry
     {
         $password = \private\Classes\Common\UserSecurity::hashPassword($password);
         $authentication = \private\Classes\Common\UserSecurity::generateAuthentication(10);
-        \private\Classes\Database\UserManagement::createUser($firstName, $lastName, $email, $password, $authorization);
+        \private\Classes\Database\UserManagement::createUser($firstName, $lastName, $email, $password, $authentication);
         $userId = \private\Classes\Database\UserManagement::getUserId($email);
         \private\Classes\Database\UserManagement::createShoppingCart($userId);
         $userCookie = Encryptor::encrypt($userId . " " . $authentication);

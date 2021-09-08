@@ -8,6 +8,12 @@ for (let inputHolder of inputHolders) {
     })
 }
 
+document.getElementById("create-modal-close").addEventListener("click", function () {
+    closeModal("createAddressModal");
+})
+document.getElementById("edit-modal-close").addEventListener("click", function () {
+    closeModal("editAddressModal");
+})
 document.getElementById("create-input-name").addEventListener("focusout", function () {
     validateName(document.getElementById("create-input-name"));
 });
@@ -38,10 +44,10 @@ function validateName(nameEl) {
     let errorMessage = null;
 
     if (!isEmpty(nameEl.value)) {
-        errorMessage = createErrorMessage();
+        errorMessage = createInputErrorMessage();
         errorMessage.textContent = "This field is required."
     } else if (containsNumber(nameEl.value)) {
-        errorMessage = createErrorMessage();
+        errorMessage = createInputErrorMessage();
         errorMessage.textContent = "This field is shouldn't contain numbers."
     }
 
@@ -53,10 +59,10 @@ function validatePhone(phoneEl) {
     let errorMessage = null;
 
     if (!isEmpty(phoneEl.value)) {
-        errorMessage = createErrorMessage();
+        errorMessage = createInputErrorMessage();
         errorMessage.textContent = "This field is required."
     } else if (!containsNumber(phoneEl.value)) {
-        errorMessage = createErrorMessage();
+        errorMessage = createInputErrorMessage();
         errorMessage.textContent = "This field should contain only numbers."
     }
 
@@ -68,7 +74,7 @@ function validateAddress(addressEl) {
     let errorMessage = null;
 
     if (!isEmpty(addressEl.value)) {
-        errorMessage = createErrorMessage();
+        errorMessage = createInputErrorMessage();
         errorMessage.textContent = "This field is required."
     }
 
@@ -80,7 +86,7 @@ function validateCity(cityEl) {
     let errorMessage = null;
 
     if (!isEmpty(cityEl.value)) {
-        errorMessage = createErrorMessage();
+        errorMessage = createInputErrorMessage();
         errorMessage.textContent = "This field is required.";
     }
 
@@ -115,6 +121,10 @@ function appendErrorMessage(parent, errorMessage, element) {
 
 function closeModal(modalId) {
     let modal = document.getElementById(modalId);
+    let alertContainer = modal.getElementsByClassName("alert-container").item(0);
+    for (let i = alertContainer.children.length - 1; i >= 0; i--) {
+        alertContainer.removeChild(alertContainer.children.item(i));
+    }
     let bsModal = bootstrap.Modal.getInstance(modal);
     bsModal.hide();
     let inputs = modal.getElementsByTagName("input");
@@ -158,4 +168,33 @@ function addUserAddress(addressInfo) {
             closeModal("createAddressModal");
         }
     });
+}
+
+function editUserAddress(addressInfo, addressId) {
+    console.log(addressId);
+    $.post("../private/Includes/editAddress.php", {
+        addressId: addressId,
+        name: addressInfo["name"],
+        phone: addressInfo["phone"],
+        address: addressInfo["address"],
+        city: addressInfo["city"],
+        countryId: ""
+    }, function (data, status) {
+        alert(data + " " + status);
+        let response = JSON.parse(data);
+        if (response["error"] !== null) {
+            displayErrorMessage("editAddressModal", response["error"]);
+        } else {
+            updateAddressContent(getAddressModalValues("editAddressModal"), addressId);
+            closeModal("editAddressModal");
+        }
+    });
+}
+
+function deleteUserAddress(addressId) {
+    $.post("../private/Includes/deleteAddress.php", {
+        addressId: addressId
+    }, function (data, status) {
+        alert(data + " " + status);
+    })
 }

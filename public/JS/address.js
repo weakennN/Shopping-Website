@@ -21,12 +21,14 @@ setAddressAction();
 function editAddressAction(editButton, addressId, name, phone, address, country, city) {
     editButton.addEventListener("click", function () {
         setEditModalInputs(name, phone, address, country, city);
+        document.getElementById("edit-address").setAttribute("data-target", addressId);
     });
 }
 
 function deleteAddressAction(deleteButton, addressEl, addressId) {
     deleteButton.addEventListener("click", function () {
         addressEl.classList.add("fade-out");
+        deleteUserAddress(addressId);
         setTimeout(function () {
             document.getElementById("address-container").removeChild(addressEl);
         }, 1000);
@@ -68,16 +70,15 @@ document.getElementById("edit-address").addEventListener("click", function () {
     let editAddress = validateAddressModal("editAddressModal");
 
     if (editAddress === true) {
-        // get input values, get edit button data-target attribute and call ajax function to edit address
+        editUserAddress(getAddressModalValues("editAddressModal"), this.getAttribute("data-target"));
     }
 });
 
 function addAddress(addressEl) {
-    document.getElementById("address-container").append(addressEl, document.createElement("hr"));
+    document.getElementById("address-container").appendChild(addressEl);
 }
 
 function createAddress(addressId, customerName, customerPhone, address, city, country) {
-    console.log(addressId);
     let addressEl = document.createElement("div");
     addressEl.classList.add("card", "border-0", "address");
     addressEl.setAttribute("id", addressId);
@@ -112,7 +113,8 @@ function createAddress(addressId, customerName, customerPhone, address, city, co
     addressElBody.appendChild(buttonRow);
     addressEl.appendChild(addressElBody);
 
-    // TODO: add action to buttons
+    editAddressAction(editButton, addressId, customerName, customerPhone, address, country, city);
+    deleteAddressAction(deleteButton, addressEl, addressId);
 
     return addressEl;
 }
@@ -129,4 +131,12 @@ function getAddressModalValues(addressModal) {
         "country": addressModalEl.getElementsByTagName("select").item(0).value,
         "countryId": addressModalEl.getElementsByTagName("select").item(0).options.item(addressModalEl.getElementsByTagName("select").item(0).options.selectedIndex).id
     };
+}
+
+function updateAddressContent(addressInfo, addressId) {
+    let address = document.getElementById(addressId);
+    address.getElementsByTagName("h5").item(0).textContent = addressInfo["name"];
+    address.getElementsByClassName("card-text").item(0).textContent = addressInfo["phone"];
+    address.getElementsByClassName("card-text").item(1).textContent = addressInfo["address"];
+    address.getElementsByClassName("card-text").item(2).textContent = addressInfo["country"] + " - " + addressInfo["city"];
 }

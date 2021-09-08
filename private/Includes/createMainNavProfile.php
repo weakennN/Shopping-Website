@@ -3,10 +3,13 @@ if (isset($_COOKIE["userId"])) {
     echo "<div class='dropdown profile-dropdown'>
             <div class='dropdown-menu profile-dropdown-menu'>
                 <div class='profile-dropdown-item py-1'>
-                    <a href='generalInfo.php' class='text-decoration-none ps-2 navbar-dropdown-item'>My profile</a>
+                    <a href='generalInfo.php' class='text-decoration-none ps-2 navbar-dropdown-item'>Profile</a>
                 </div>
                 <div class='profile-dropdown-item py-1'>
-                    <a class='text-decoration-none ms-2 navbar-dropdown-item' href='cart.php'>My cart</a>
+                    <a class='text-decoration-none ms-2 navbar-dropdown-item' href='favourite.php'>Favourite</a>
+                </div>
+                <div class='profile-dropdown-item py-1'>
+                    <a class='text-decoration-none ms-2 navbar-dropdown-item' href='cart.php'>Cart</a>
                 </div>
                <hr class='dropdown-divider'> 
                 <div class='profile-dropdown-item py-1'>
@@ -41,6 +44,4 @@ if (isset($_COOKIE["userId"])) {
             </a>
           
         </div>";
-
-    // TODO add profile on hover to change page to profile page when when profile page is ready
 }

@@ -13,6 +13,10 @@
 }
 
 .address {
+    padding-bottom: 10px !important;
+    border-bottom: solid #565050 !important;
+    border-bottom-width: 1px !important;
+    border-radius: 0;
     transition: 1s;
 }
 

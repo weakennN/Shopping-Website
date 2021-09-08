@@ -39,7 +39,7 @@ document.getElementById("password").addEventListener("focusin", function () {
 });
 
 document.getElementById("repeat-password").addEventListener("focusout", function () {
-
+    validateRepeatPassword();
 });
 
 document.getElementById("repeat-password").addEventListener("focusin", function () {
@@ -62,7 +62,7 @@ document.getElementById("register-button").addEventListener("click", function (e
 })
 
 function verifyNameLength(name) {
-    let errorMessage = createErrorMessage();
+    let errorMessage = createInputErrorMessage();
     if (!isEmpty(name)) {
         errorMessage.textContent = "This field is required.";
         return errorMessage;
@@ -72,7 +72,7 @@ function verifyNameLength(name) {
 }
 
 function verifyRepeatPassword(password) {
-    let errorMessage = createErrorMessage();
+    let errorMessage = createInputErrorMessage();
 
     if (!isEmpty(password)) {
         errorMessage.textContent = "this field is required.";

@@ -16,6 +16,12 @@ document.getElementById("email").addEventListener("focusin", function () {
     document.getElementById("email-input").removeChild(document.getElementById("email-input").children.item(2));
 })
 
+document.getElementById("password").addEventListener("focusin", function () {
+    if (document.getElementById("password-input").children.length >= 3) {
+        document.getElementById("password-input").removeChild(document.getElementById("password-input").children.item(2));
+    }
+})
+
 document.getElementById("login-button").addEventListener("click", function () {
     let disable = false;
 

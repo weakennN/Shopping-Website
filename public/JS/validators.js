@@ -11,7 +11,7 @@ function isCorrectPassLength(password) {
     return password.length >= 6;
 }
 
-function createErrorMessage() {
+function createInputErrorMessage() {
     let errorMessage = document.createElement("p");
     errorMessage.classList.add("p-0", "text-danger", "mt-2");
     return errorMessage;

@@ -18,7 +18,7 @@ abstract class Validator
         return strlen($value) > 0;
     }
 
-    protected function getValidate(): string
+    public function getValidate(): string
     {
         return $this->validate;
     }

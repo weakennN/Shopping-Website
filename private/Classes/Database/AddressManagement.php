@@ -35,4 +35,68 @@ class AddressManagement
 
         return $statement->fetch()["id"];
     }
+
+    public static function addressIdExist($addressId, $userId): bool
+    {
+        $pdo = Database::connect();
+        $query = "SELECT id FROM address WHERE id = ? AND user_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$addressId, $userId]);
+
+        if (!$statement->fetch()) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public static function countryIdExist($countryId): bool
+    {
+        $pdo = Database::connect();
+        $query = "SELECT id FROM shipping_country WHERE id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$countryId]);
+
+        if (!$statement->fetch()) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public static function editAddress($userId, $addressId, $name, $phone, $address, $countryId, $city)
+    {
+        $pdo = Database::connect();
+        $query = "UPDATE address SET name = ?,phone = ?,address = ?,shipping_country = ?,city = ? WHERE id = ? AND user_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$name, $phone, $address, $countryId, $city, $addressId, $userId]);
+    }
+
+    public static function deleteAddress($addressId, $userId)
+    {
+        $pdo = Database::connect();
+        $query = "DELETE FROM address WHERE id = ? AND user_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$addressId, $userId]);
+    }
+
+    public static function getAddresses($userId): bool|array
+    {
+        $pdo = Database::connect();
+        $query = "SELECT * FROM address WHERE user_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$userId]);
+
+        return $statement->fetchAll();
+    }
+
+    public static function getCountryById($countryId)
+    {
+        $pdo = Database::connect();
+        $query = "SELECT country FROM shipping_country WHERE id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$countryId]);
+
+        return $statement->fetch()["country"];
+    }
 }
