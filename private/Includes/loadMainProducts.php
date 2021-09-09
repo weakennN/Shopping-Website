@@ -1,4 +1,6 @@
 <?php
 
-$productLoader = new \private\Classes\ProductLoader();
+use private\Classes\ProductLoader;
+
+$productLoader = new ProductLoader();
 $productLoader->loadProducts();

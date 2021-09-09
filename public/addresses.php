@@ -55,6 +55,7 @@ include_once "../private/AutoLoad/autoLoader.php";
 <script src="JS/cartAction.js"></script>
 <script src="JS/cartWrapper.js"></script>
 <script src="JS/validators.js"></script>
+<script src="JS/addressFunctions.js"></script>
 <script src="JS/address.js"></script>
 <script src="JS/addressModal.js"></script>
 <script src="JS/header.js"></script>

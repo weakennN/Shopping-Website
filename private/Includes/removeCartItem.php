@@ -1,6 +1,6 @@
 <?php
 
-include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
+include_once "../AutoLoad/autoLoader.php";
 
 use private\Classes\Cart\Cart;
 

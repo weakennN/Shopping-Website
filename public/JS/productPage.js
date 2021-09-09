@@ -49,7 +49,6 @@ $(document).ready(
                 addToFavouriteButton.getElementsByTagName("i").item(0).classList.replace("fas", "far");
                 removeFavourite(productId);
                 displayRemoveFromFavouriteNotification()
-                // TODO js file with add to favourite functions
             }
         })
 

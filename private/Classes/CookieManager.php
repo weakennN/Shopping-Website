@@ -2,17 +2,14 @@
 
 namespace private\Classes;
 
+use private\Classes\Common\Encryptor;
+
 class CookieManager
 {
 
     public static function createCookie($name, $value, $time, $path)
     {
-        // TODO: crypt the cookie value and name
-        if (isset($_COOKIE[$name])) {
-            echo "cookie" . $name . "already set";
-        } else {
-            setcookie($name, $value, $time, $path);
-        }
+        setcookie($name, Encryptor::encrypt($value), $time, $path);
     }
 
     public static function appendToCookie($name, $appendValue, $time, $path)

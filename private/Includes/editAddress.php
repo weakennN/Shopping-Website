@@ -26,6 +26,7 @@ if (isset($_POST["addressId"]) && isset($_POST["name"])
         new NameValidator($_POST["name"]), new NameValidator($_POST["address"]),
         new NameValidator($_POST["city"]), new CountryIdValidator($_POST["countryId"]));
     $edit = true;
+
     foreach ($validators as $validator) {
         if (!$validator->validate()) {
             $response["error"] = "Invalid address!";
@@ -33,7 +34,6 @@ if (isset($_POST["addressId"]) && isset($_POST["name"])
             break;
         }
     }
-
     if ($edit) {
         $addressManager = new AddressManager($userId);
         $addressManager->editAddress($_POST["addressId"], $_POST["name"], $_POST["phone"],

@@ -79,23 +79,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
                     <div class="text-left">
                         <h3>Short product description</h3>
                     </div>
-                    <div>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet architecto
-                            corporis
-                            esse et eveniet, explicabo impedit incidunt ipsum itaque laborum laudantium magnam
-                            minima
-                            modi odit omnis perferendis quaerat quisquam quod ratione rerum, sequi sit suscipit
-                            tempora
-                            tempore totam ut vel voluptas voluptate voluptatum? Adipisci amet assumenda autem
-                            corporis
-                            debitis ea eaque earum eligendi enim excepturi explicabo, impedit ipsum iste itaque
-                            laboriosam minima molestiae natus nemo neque, nulla numquam omnis perferendis, sint sit
-                            ullam ut vero? Alias animi asperiores, blanditiis corporis deserunt dolore, dolorem esse
-                            expedita harum illo ipsam libero modi molestias obcaecati odio possimus quia quod sed
-                            similique voluptas!
-                        </p>
-                    </div>
+                    <?php include_once "../private/Includes/loadProductShortDescription.php" ?>
                 </div>
             </div>
         </div>

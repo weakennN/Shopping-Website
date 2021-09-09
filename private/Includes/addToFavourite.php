@@ -3,7 +3,7 @@
 use private\Classes\Common\Decrypt;
 use private\Classes\FavouriteList\FavouriteList;
 
-include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
+include_once "../AutoLoad/autoLoader.php";
 
 if (isset($_COOKIE["userId"])) {
     if (isset($_POST["productId"]) && is_numeric($_POST["productId"])) {

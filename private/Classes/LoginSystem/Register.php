@@ -2,7 +2,9 @@
 
 namespace private\Classes\LoginSystem;
 
-use private\Classes\Common\Encryptor;
+use private\Classes\Common\UserSecurity;
+use private\Classes\CookieManager;
+use private\Classes\Database\UserManagement;
 
 class Register extends \private\Classes\LoginSystem\Entry
 {
@@ -27,13 +29,13 @@ class Register extends \private\Classes\LoginSystem\Entry
 
     public function registerUser($firstName, $lastName, $email, $password)
     {
-        $password = \private\Classes\Common\UserSecurity::hashPassword($password);
-        $authentication = \private\Classes\Common\UserSecurity::generateAuthentication(10);
-        \private\Classes\Database\UserManagement::createUser($firstName, $lastName, $email, $password, $authentication);
-        $userId = \private\Classes\Database\UserManagement::getUserId($email);
-        \private\Classes\Database\UserManagement::createShoppingCart($userId);
-        $userCookie = Encryptor::encrypt($userId . " " . $authentication);
-        \private\Classes\Database\UserManagement::setCartAndFavouriteListId($userId);
-        \private\Classes\CookieManager::createCookie("userId", $userCookie, time() + 86400, "/");
+        $password = UserSecurity::hashPassword($password);
+        $authentication = UserSecurity::generateAuthentication(10);
+        UserManagement::createUser($firstName, $lastName, $email, $password, $authentication);
+        $userId = UserManagement::getUserId($email);
+        UserManagement::createShoppingCart($userId);
+        $userCookie = $userId . " " . $authentication;
+        UserManagement::setCartAndFavouriteListId($userId);
+        CookieManager::createCookie("userId", $userCookie, time() + 86400, "/");
     }
 }

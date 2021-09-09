@@ -2,7 +2,7 @@
 
 namespace private\Classes\LoginSystem;
 
-use private\Classes\Common\Encryptor;
+use private\Classes\CookieManager;
 use private\Classes\Database\UserManagement;
 
 class Logger extends \private\Classes\LoginSystem\Entry
@@ -29,13 +29,13 @@ class Logger extends \private\Classes\LoginSystem\Entry
     {
         $userId = UserManagement::getUserId($email);
         $authentication = UserManagement::getUserAuthentication($userId);
-        $userCookie = Encryptor::encrypt($userId . " " . $authentication);
+        $userCookie = $userId . " " . $authentication;
         if (isset($_POST["rememberMe"])) {
             // setting 6 month cookie if user checked remember me
-            \private\Classes\CookieManager::createCookie("userId", $userCookie, time() + 15552000, "/");
+            CookieManager::createCookie("userId", $userCookie, time() + 15552000, "/");
         } else {
             // setting one day cookie if user didn't check remember me
-            \private\Classes\CookieManager::createCookie("userId", $userCookie, time() + 86400, "/");
+            CookieManager::createCookie("userId", $userCookie, time() + 86400, "/");
         }
     }
 }

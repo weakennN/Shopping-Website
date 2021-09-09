@@ -1,5 +1,5 @@
 <?php
 
-$test = $_POST["test"];
+$test = $_POST["flexRadioDefault"];
 
 echo $test;

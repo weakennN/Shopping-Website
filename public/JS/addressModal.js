@@ -160,10 +160,10 @@ function addUserAddress(addressInfo) {
         alert(data + " " + status);
         let response = JSON.parse(data);
         if (response["error"] !== null) {
-            console.log(response["error"]);
             displayErrorMessage("createAddressModal", response["error"]);
         } else {
-            addAddress(createAddress(response["addressId"], addressInfo["name"], addressInfo["phone"]
+            // TODO: maybe move addAddress to be called even if the function is wrong
+            addAddress(createAddressPageAddress(response["addressId"], addressInfo["name"], addressInfo["phone"]
                 , addressInfo["address"], addressInfo["city"], addressInfo["country"]));
             closeModal("createAddressModal");
         }
@@ -178,7 +178,7 @@ function editUserAddress(addressInfo, addressId) {
         phone: addressInfo["phone"],
         address: addressInfo["address"],
         city: addressInfo["city"],
-        countryId: ""
+        countryId: addressInfo["countryId"]
     }, function (data, status) {
         alert(data + " " + status);
         let response = JSON.parse(data);

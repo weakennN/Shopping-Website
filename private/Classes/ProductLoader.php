@@ -3,6 +3,7 @@
 namespace private\Classes;
 
 use private\Classes\Common\Decrypt;
+use private\Classes\Database\ProductManagement;
 use private\Classes\Database\UserManagement;
 
 class ProductLoader
@@ -17,7 +18,7 @@ class ProductLoader
 
         $startingProduct = $this->getStartingProduct($page);
 
-        $products = \private\Classes\Database\ProductManagement::getProducts();
+        $products = ProductManagement::getProducts();
 
         for ($i = $startingProduct; $i < 25 && count($products) > $i; $i++) {
 

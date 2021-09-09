@@ -150,9 +150,8 @@ function updateProductTotalPrice(value, totalPrice) {
 
 function changeCartView() {
     let cartItemHolder = document.getElementsByClassName("cart-item-holder").item(0);
-
     if (cartItemHolder.children.length <= 0) {
-        let row = document.getElementsByClassName("row").item(0);
+        let row = document.getElementById("cart-row");
         while (row.children.length > 0) {
             row.removeChild(row.children.item(row.children.length - 1));
         }
@@ -173,7 +172,6 @@ function changeCartView() {
         button.setAttribute("href", "index.php");
         emptyCartContainer.appendChild(button);
         row.appendChild(emptyCartContainer);
-        console.log(row.children.length)
     }
 }
 

@@ -18,7 +18,7 @@
 <body>
 <?php include "header.php" ?>
 <div class="container">
-    <div class="row">
+    <div class="row" id="cart-row">
         <h1 class="display-4 mb-4">My Cart</h1>
         <div class="col-lg-8 p-0">
             <div class="d-flex flex-column cart-item-holder" id="cart-item-holder">

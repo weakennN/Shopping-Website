@@ -56,4 +56,14 @@ class ProductManagement
 
         return $statement->fetch();
     }
+
+    public static function getProductsShortDescription($productId)
+    {
+        $pdo = Database::connect();
+        $query = "SELECT short_description FROM products WHERE id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$productId]);
+
+        return $statement->fetch()["short_description"];
+    }
 }

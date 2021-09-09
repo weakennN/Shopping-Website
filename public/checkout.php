@@ -1,4 +1,9 @@
-<!doctype html>
+<?php
+include_once "../private/AutoLoad/autoLoader.php";
+include_once "../private/Includes/checkLogin.php";
+include_once "../private/Includes/checkEmptyCart.php";
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

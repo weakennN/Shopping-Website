@@ -16,7 +16,7 @@ class AddressLoader
                 echo $this->createItem($address["id"], $address["name"], $address["phone"], $address["address"], $country, $address["city"]);
             }
         } else {
-
+            echo "<p class='lead' id='no-addresses-text'>You don't have any addresses.</p>";
         }
     }
 

@@ -3,8 +3,6 @@
 use private\Classes\Common\Decrypt;
 use private\Classes\Loader\CartLoader\ShoppingCartLoader;
 
-include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
-
 $shoppingCartLoader = new ShoppingCartLoader();
 
 if (isset($_COOKIE["userId"])) {

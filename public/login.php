@@ -1,5 +1,4 @@
 <?php
-// TODO redirect to profile page
 if (isset($_COOKIE["userId"])) {
     header('Location: http://localhost/test/public/index.php');
 }
