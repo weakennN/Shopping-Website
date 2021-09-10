@@ -14,9 +14,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
-        <option value="CSS File" />
         <option value="HTML File" />
         <option value="Sass File" />
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -45,7 +45,7 @@
     <property name="js.last.introduce.type" value="LET" />
     <property name="last.edited.regexp" value="|hello|" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="list.type.of.created.stylesheet" value="Sass" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
@@ -145,7 +145,8 @@
       <workItem from="1631026368215" duration="16699000" />
       <workItem from="1631102106652" duration="12418000" />
       <workItem from="1631124742377" duration="6874000" />
-      <workItem from="1631183854344" duration="15338000" />
+      <workItem from="1631183854344" duration="16119000" />
+      <workItem from="1631273917248" duration="16329000" />
     </task>
     <servers />
   </component>

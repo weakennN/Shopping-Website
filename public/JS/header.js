@@ -15,7 +15,8 @@ test();
 $(document).ready(function () {
     function toggleDropdown(e) {
         if (document.getElementById("cart-wrapper").children.length <= 0
-            || window.location.href.localeCompare("http://localhost/test/public/cart.php") === 0) {
+            || window.location.href.localeCompare("http://localhost/test/public/cart.php") === 0
+            || window.location.href === "http://localhost/test/public/checkout.php") {
             return;
         }
         const _d = $(e.target).closest('.cart-wrapper-dropdown'),

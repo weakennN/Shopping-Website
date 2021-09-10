@@ -39,6 +39,25 @@ function createAddressPageAddress(addressId, customerName, customerPhone, addres
     return addressEl;
 }
 
+function setAddressAction() {
+    let addresses = document.getElementsByClassName("address");
+
+    for (let address of addresses) {
+        // method that return all the information about the address
+        let addressId = address.id;
+        let name = address.getElementsByTagName("h5").item(0).textContent;
+        let phone = address.getElementsByClassName("card-text").item(0).textContent;
+        let userAddress = address.getElementsByClassName("card-text").item(1).textContent;
+        let country = address.getElementsByClassName("card-text").item(2).textContent.split(" - ")[0]
+        let city = address.getElementsByClassName("card-text").item(2).textContent.split(" - ")[1];
+        let editButton = address.getElementsByTagName("button").item(0);
+        let deleteButton = address.getElementsByTagName("button").item(1);
+
+        editAddressAction(editButton, addressId, name, phone, userAddress, country, city);
+        deleteAddressAction(deleteButton, address, addressId);
+    }
+}
+
 function editAddressAction(editButton, addressId, name, phone, address, country, city) {
     editButton.addEventListener("click", function () {
         setEditModalInputs(name, phone, address, country, city);
@@ -57,4 +76,31 @@ function deleteAddressAction(deleteButton, addressEl, addressId) {
             }
         }, 1000);
     })
+}
+
+function getCurrentOptionId(country) {
+    let select = document.getElementById("edit-select-shipping-country");
+
+    for (let i = 0; i < select.children.length; i++) {
+        if (select.children.item(i).textContent === country) {
+            return i;
+        }
+    }
+
+    return 0;
+}
+
+function updateAddressContent(addressInfo, addressId) {
+    let address = document.getElementById(addressId);
+    address.getElementsByTagName("h5").item(0).textContent = addressInfo["name"];
+    address.getElementsByClassName("card-text").item(0).textContent = addressInfo["phone"];
+    address.getElementsByClassName("card-text").item(1).textContent = addressInfo["address"];
+    address.getElementsByClassName("card-text").item(2).textContent = addressInfo["country"] + " - " + addressInfo["city"];
+}
+
+function addAddress(addressEl) {
+    if (document.getElementById("no-addresses-text") !== null) {
+        document.getElementById("address-container").removeChild((document.getElementById("no-addresses-text")));
+    }
+    document.getElementById("address-container").appendChild(addressEl);
 }

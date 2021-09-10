@@ -11,8 +11,8 @@
           integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="style/navBar.css?<?php echo time(); ?>">
-    <link rel="stylesheet" href="style/style.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="style/navBar.css">
+    <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/cart.css">
 </head>
 <body>

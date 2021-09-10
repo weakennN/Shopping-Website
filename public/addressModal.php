@@ -77,7 +77,6 @@
                         <label for="edit-select-shipping-country">Shipping country</label>
                         <select class="form-select" id="edit-select-shipping-country">
                             <option selected id="1">Bulgaria</option>
-                            <option id="1">England</option>
                         </select>
                     </div>
                 </div>

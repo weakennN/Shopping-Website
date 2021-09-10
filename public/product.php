@@ -57,22 +57,18 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
                 </div>
                 <div class="d-flex flex-row">
                     <button class="btn btn-primary w-100" id="add-to-cart">
-                        <div>
                             <i class="fas fa-shopping-cart fa-2x"></i>
                             <div class="mt-1">
                                 Add to cart
                             </div>
-                        </div>
                     </button>
                 </div>
                 <div class="d-flex flex-row mt-3">
                     <button class="btn btn-danger w-100" id="add-to-favourite">
-                        <div>
                             <i class="far fa-heart fa-2x"></i>
                             <div class="mt-1">
                                 Add to favourite
                             </div>
-                        </div>
                     </button>
                 </div>
                 <div class="mt-2">

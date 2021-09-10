@@ -44,11 +44,9 @@ $(document).ready(
             if (addToFavouriteButton.getElementsByTagName("i").item(0).classList.contains("far")) {
                 addToFavouriteButton.getElementsByTagName("i").item(0).classList.replace("far", "fas");
                 addFavourite(productId);
-                displayAddToFavouriteNotification()
             } else {
                 addToFavouriteButton.getElementsByTagName("i").item(0).classList.replace("fas", "far");
                 removeFavourite(productId);
-                displayRemoveFromFavouriteNotification()
             }
         })
 

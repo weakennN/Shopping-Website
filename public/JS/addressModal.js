@@ -148,6 +148,20 @@ function createErrorMessage(errorMessage) {
     return alert;
 }
 
+function getAddressModalValues(addressModal) {
+    let addressModalEl = document.getElementById(addressModal);
+    let inputs = addressModalEl.getElementsByTagName("input");
+    console.log(inputs.item(1).value)
+    return {
+        "name": inputs.item(0).value,
+        "phone": inputs.item(1).value,
+        "address": inputs.item(2).value,
+        "city": inputs.item(3).value,
+        "country": addressModalEl.getElementsByTagName("select").item(0).value,
+        "countryId": addressModalEl.getElementsByTagName("select").item(0).options.item(addressModalEl.getElementsByTagName("select").item(0).options.selectedIndex).id
+    };
+}
+
 function addUserAddress(addressInfo) {
     console.log(addressInfo);
     $.post("../private/Includes/addAddress.php", {
@@ -162,8 +176,28 @@ function addUserAddress(addressInfo) {
         if (response["error"] !== null) {
             displayErrorMessage("createAddressModal", response["error"]);
         } else {
-            // TODO: maybe move addAddress to be called even if the function is wrong
             addAddress(createAddressPageAddress(response["addressId"], addressInfo["name"], addressInfo["phone"]
+                , addressInfo["address"], addressInfo["city"], addressInfo["country"]));
+            closeModal("createAddressModal");
+        }
+    });
+}
+
+function addCheckoutPageUserAddress(addressInfo) {
+    console.log(addressInfo);
+    $.post("../private/Includes/addAddress.php", {
+        name: addressInfo["name"],
+        phone: addressInfo["phone"],
+        address: addressInfo["address"],
+        city: addressInfo["city"],
+        countryId: addressInfo["countryId"]
+    }, function (data, status) {
+        alert(data + " " + status);
+        let response = JSON.parse(data);
+        if (response["error"] !== null) {
+            displayErrorMessage("createAddressModal", response["error"]);
+        } else {
+            addAddress(creatCheckoutPageAddress(response["addressId"], addressInfo["name"], addressInfo["phone"]
                 , addressInfo["address"], addressInfo["city"], addressInfo["country"]));
             closeModal("createAddressModal");
         }
@@ -197,4 +231,12 @@ function deleteUserAddress(addressId) {
     }, function (data, status) {
         alert(data + " " + status);
     })
+}
+
+function setEditModalInputs(name, phone, address, country, city) {
+    document.getElementById("edit-input-name").value = name;
+    document.getElementById("edit-input-phone").value = phone;
+    document.getElementById("edit-input-address").value = address;
+    document.getElementById("edit-input-city").value = city;
+    document.getElementById("edit-select-shipping-country").options.item(getCurrentOptionId(country)).selected = true
 }
