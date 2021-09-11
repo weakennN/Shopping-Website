@@ -12,7 +12,7 @@ class CheckoutPageAddressCreator extends AddressElementCreator
         return "<div class='card border-0 address w-100' id=$addressId>
                         <div class='d-flex flex-row'>
                             <div class='form-check mt-4 me-4'>
-                                <input class='form-check-input' value=$addressId type='radio' name='radio'>
+                                <input class='form-check-input' value=$addressId type='radio' name='addressId'>
                                 <label class='form-check-label' for='flexRadioDefault1'></label>
                             </div>
                             <div class='card-body p-0'>

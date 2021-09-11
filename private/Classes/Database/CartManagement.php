@@ -78,4 +78,20 @@ class CartManagement
         $statement = $pdo->prepare($query);
         $statement->execute([$sessionCartId]);
     }
+
+    public static function emptyCart($cartId)
+    {
+        $pdo = Database::connect();
+        $query = "UPDATE cart SET total = 0 WHERE id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$cartId]);
+    }
+
+    public static function deleteCartItems($cartId)
+    {
+        $pdo = Database::connect();
+        $query = "DELETE FROM cart_item WHERE cart_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$cartId]);
+    }
 }

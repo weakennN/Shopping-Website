@@ -24,13 +24,13 @@ include_once "../private/Includes/checkEmptyCart.php";
 <?php include_once "header.php" ?>
 <div class="container">
     <div class="row">
-        <form action="" method="post">
+        <form action="../private/Includes/finishOrder.php" method="post">
             <div class="col-12 checkout-content">
                 <h5 class="display-5 mb-3">Choose Address</h5>
                 <div class="d-flex flex-column address-container pb-1" id="address-container">
                     <?php include_once "../private/Includes/loadCheckoutPageAddresses.php" ?>
                 </div>
-                <div class="mt-2">
+                <div>
                     <button type="button" class="btn btn-primary btn-lg ms-5" data-bs-toggle="modal"
                             data-bs-target="#createAddressModal">
                         <div class="d-flex flex-row">
@@ -41,20 +41,7 @@ include_once "../private/Includes/checkEmptyCart.php";
                 </div>
             </div>
             <div class="col-12 checkout-content mt-4">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                        <div class="ms-5">
-                            <h5 class="display-6 mb-3">Order Description</h5>
-                            <p class="lead">Total products: 10</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <div class="ms-5">
-                            <p class="display-6">Total: $550</p>
-                            <button type="submit" class="btn btn-primary">Order</button>
-                        </div>
-                    </div>
-                </div>
+                <?php include_once "../private/Includes/loadCheckoutBox.php" ?>
             </div>
         </form>
     </div>

@@ -7,6 +7,8 @@ use private\Classes\LoginSystem\Validators\RegisterEmailValidator;
 use private\Classes\LoginSystem\Validators\RegisterPasswordValidator;
 use private\Classes\LoginSystem\Validators\RepeatPasswordValidator;
 
+include_once "../AutoLoad/autoLoader.php";
+
 $firstName = $_POST["firstName"];
 $lastName = $_POST["lastName"];
 $email = $_POST["email"];

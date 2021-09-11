@@ -99,4 +99,14 @@ class AddressManagement
 
         return $statement->fetch()["country"];
     }
+
+    public static function getAddress($userId, $addressId)
+    {
+        $pdo = Database::connect();
+        $query = "SELECT * FROM address WHERE user_id = ? AND id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$userId, $addressId]);
+
+        return $statement->fetch();
+    }
 }
