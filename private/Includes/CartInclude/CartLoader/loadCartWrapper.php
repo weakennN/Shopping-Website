@@ -1,12 +1,12 @@
 <?php
 
-use private\Classes\Common\Decrypt;
 use private\Classes\Loader\CartLoader\CartWrapperLoader;
+use private\Classes\User\User;
 
 $cartWrapperLoader = new CartWrapperLoader();
 
 if (isset($_COOKIE["userId"])) {
-    $cartId = explode(" ", Decrypt::decrypt($_COOKIE["userId"]))[0];
+    $cartId = User::getUserCartId();
     $cartWrapperLoader->loadUserCart($cartId);
 } else {
     $cartId = exec('getmac');

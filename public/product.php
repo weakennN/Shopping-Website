@@ -28,22 +28,22 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
-<?php include $_SERVER["HOME"] . "\public/header.php"; ?>
+<?php include "header.php"; ?>
 <?php include_once "notificationContainer.php" ?>
 <div class="container shadow-sm">
     <div class="row">
         <div class="text-left p-0 fs-2 border-bottom" id="title">
-            <?php include $_SERVER["HOME"] . '/private/Includes/loadProductTitle.php'; ?>
+            <?php include "../private/Includes/ProductPageInclude/PLoader/loadProductTitle.php"; ?>
         </div>
     </div>
     <div class="row mt-4">
         <!-- start of product gallery -->
         <div class="col-lg-5 col-md-12 col-sm-12 text-center mx-lg-4">
             <div class="gal card-block">
-                <?php include $_SERVER["HOME"] . "/private/Includes/loadProductImages.php" ?>
+                <?php include "../private/Includes/ProductPageInclude/PLoader/loadProductImages.php"; ?>
             </div>
             <div class="gal-nav">
-                <?php include $_SERVER["HOME"] . "/private/Includes/loadProductSlickSlider.php" ?>
+                <?php include "../private/Includes/ProductPageInclude/PLoader/loadProductSlickSlider.php"; ?>
             </div>
         </div>
         <!-- end of product gallery -->
@@ -52,30 +52,30 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
             <div>
                 <div class="mb-3">
                     <div>
-                        <?php include $_SERVER["HOME"] . "/private/Includes/loadPPrice.php" ?>
+                        <?php include "../private/Includes/ProductPageInclude/PLoader/loadPPrice.php"; ?>
                     </div>
                 </div>
                 <div class="d-flex flex-row">
                     <button class="btn btn-primary w-100" id="add-to-cart">
-                            <i class="fas fa-shopping-cart fa-2x"></i>
-                            <div class="mt-1">
-                                Add to cart
-                            </div>
+                        <i class="fas fa-shopping-cart fa-2x"></i>
+                        <div class="mt-1">
+                            Add to cart
+                        </div>
                     </button>
                 </div>
                 <div class="d-flex flex-row mt-3">
                     <button class="btn btn-danger w-100" id="add-to-favourite">
-                            <i class="far fa-heart fa-2x"></i>
-                            <div class="mt-1">
-                                Add to favourite
-                            </div>
+                        <i class="far fa-heart fa-2x"></i>
+                        <div class="mt-1">
+                            Add to favourite
+                        </div>
                     </button>
                 </div>
                 <div class="mt-2">
                     <div class="text-left">
                         <h3>Short product description</h3>
                     </div>
-                    <?php include_once "../private/Includes/loadProductShortDescription.php" ?>
+                    <?php include_once "../private/Includes/ProductPageInclude/PLoader/loadProductShortDescription.php"; ?>
                 </div>
             </div>
         </div>
@@ -88,7 +88,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
                 </div>
             </div>
             <div class="product-description-text">
-                <?php include $_SERVER["HOME"] . '/private/Includes/loadProductDescription.php'; ?>
+                <?php include "../private/Includes/ProductPageInclude/PLoader/loadProductDescription.php"; ?>
             </div>
         </div>
     </div>
@@ -106,7 +106,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
                             <div id="carouselExampleControls" class="carousel carousel-dark slide"
                                  data-bs-ride="carousel">
                                 <div class="carousel-inner text-center test" id="modal-content">
-                                    <?php include $_SERVER["HOME"] . "/private/Includes/loadPModal.php" ?>
+                                    <?php include "../private/Includes/ProductPageInclude/PLoader/loadPModal.php"; ?>
                                 </div>
                                 <button class="carousel-control-prev" type="button"
                                         data-bs-target="#carouselExampleControls"
@@ -128,6 +128,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
         </div>
     </div>
     <!-- end of product gallery modal -->
+    <?php include_once "addToCartAlert.php" ?>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
@@ -145,5 +146,6 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
     <script src="JS/cartWrapper.js"></script>
     <script src="JS/productPage.js"></script>
     <script src="JS/header.js"></script>
+    <script src="JS/addToCartAlert.js"></script>
 </body>
 </html>

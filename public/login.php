@@ -2,7 +2,7 @@
 if (isset($_COOKIE["userId"])) {
     header('Location: http://localhost/test/public/index.php');
 }
-include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
+include_once "../private/AutoLoad/autoLoader.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -20,14 +20,14 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-<?php include $_SERVER["HOME"] . '/public/header.php'; ?>
+<?php include "header.php" ?>
 <div class="container">
     <h4 class="w-100 mb-5">Login</h4>
     <div id="login-error-container">
     </div>
     <div class="row">
         <div class="col-lg-6 col-md-12">
-            <form action="../private/Includes/logInUser.php" class="row" id="login" method="post">
+            <form action="../private/Includes/LoginSystemInclude/logInUser.php" class="row" id="login" method="post">
                 <div class="col-lg-12 mt-5" id="email-input">
                     <label for="email">Email</label>
                     <input type="text" id="email" class="form-control" name="email">

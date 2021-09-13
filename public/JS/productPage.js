@@ -38,6 +38,7 @@ $(document).ready(
             addToUserCart(productId, 1);
             updateCartBadge(1);
             updateSubTotal(parseFloat(productPrice));
+            setAddToCartAlertFields(productTitle, productImageSource, productPrice, productLink);
         });
 
         addToFavouriteButton.addEventListener("click", function () {

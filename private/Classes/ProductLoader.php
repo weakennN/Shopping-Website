@@ -2,9 +2,9 @@
 
 namespace private\Classes;
 
-use private\Classes\Common\Decrypt;
 use private\Classes\Database\ProductManagement;
 use private\Classes\Database\UserManagement;
+use private\Classes\User\User;
 
 class ProductLoader
 {
@@ -30,8 +30,8 @@ class ProductLoader
             $product = $products[$i];
             $test = "far";
             if (isset($_COOKIE["userId"])) {
-                $userId = explode(" ", Decrypt::decrypt($_COOKIE["userId"]))[0];
-                if (UserManagement::isProductAddedToFavourite($userId,$product["id"])) {
+                $userId = User::getUserId();
+                if (UserManagement::isProductAddedToFavourite($userId, $product["id"])) {
                     $test = "fas";
                 }
             }

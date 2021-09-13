@@ -4,14 +4,14 @@ namespace private\Classes\LoginSystem\Validators;
 
 use private\Classes\Database\UserManagement;
 
-class LoginPasswordValidator extends \private\Classes\LoginSystem\Validators\PasswordValidator
+class LoginPasswordValidator extends PasswordValidator
 {
 
     private string $email;
 
-    public function __construct($validate, $email)
+    public function __construct($validate, $errorMessage, $email)
     {
-        parent::__construct($validate);
+        parent::__construct($validate, $errorMessage);
         $this->email = $email;
     }
 

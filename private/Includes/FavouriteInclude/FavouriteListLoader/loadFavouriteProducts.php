@@ -1,8 +1,8 @@
 <?php
 
-use private\Classes\Common\Decrypt;
 use private\Classes\Loader\FavouriteListLoader\FavouriteListLoader;
+use private\Classes\User\User;
 
-$userId = explode(" ", Decrypt::decrypt($_COOKIE["userId"]))[0];
+$userId = User::getUserId();
 $favouriteListLoader = new FavouriteListLoader();
 $favouriteListLoader->load($userId);

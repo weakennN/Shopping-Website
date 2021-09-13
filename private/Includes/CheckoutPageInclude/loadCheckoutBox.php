@@ -1,9 +1,9 @@
 <?php
 
-use private\Classes\Common\Decrypt;
 use private\Classes\Database\CartManagement;
+use private\Classes\User\User;
 
-$userId = explode(" ", Decrypt::decrypt($_COOKIE["userId"]))[0];
+$userId = User::getUserId();
 
 $totalProducts = CartManagement::getUserTotalProducts($userId);
 $total = CartManagement::getUserCartTotal($userId);

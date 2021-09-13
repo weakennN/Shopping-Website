@@ -22,11 +22,11 @@ class FavouriteListLoader
         $price = explode(".", $productsPrice);
         return "<div class='col-lg-4 col-md-6 col-sm-6 col-xl-3 my-2 col-6 product'>
                     <div class='card product-card p-2' id='$productId'>
-                        <a href='product.php?id=1'>
+                        <a href='product.php?id=$productId'>
                             <img src='recourses/images/ProductImages/$productId/$productImage' class='card-img-top'>
                         </a>
                         <div class='card-body p-0 mt-2'>
-                            <a class='text-decoration-none' href='product.php?id=1'>
+                            <a class='text-decoration-none' href='product.php?id=$productId'>
                                 <h5 class='card-title title text-holder'>$productTitle</h5>
                                 <p class='card-text price mt-1' style='font-size: 1.5rem'>$$price[0]<span
                                             class='cent'>.$price[1]</span></p>

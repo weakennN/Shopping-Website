@@ -22,7 +22,7 @@ function creatCheckoutPageAddress(addressId, name, phone, address, city, country
     let radioButton = document.createElement("input");
     radioButton.classList.add("form-check-input");
     radioButton.setAttribute("type", "radio");
-    radioButton.setAttribute("name", "radioButton");
+    radioButton.setAttribute("name", "addressId");
     radioButton.setAttribute("value", addressId);
     formCheck.appendChild(radioButton);
     flexRow.appendChild(formCheck);

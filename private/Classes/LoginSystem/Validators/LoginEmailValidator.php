@@ -2,20 +2,23 @@
 
 namespace private\Classes\LoginSystem\Validators;
 
-class LoginEmailValidator extends \private\Classes\LoginSystem\Validators\EmailValidator
+use private\Classes\Database\UserManagement;
+
+class LoginEmailValidator extends EmailValidator
 {
-    public function __construct($validate)
+    public function __construct($validate, $errorMessage)
     {
-        parent::__construct($validate);
+        parent::__construct($validate, $errorMessage);
     }
 
     public function validate(): bool
     {
-        if (!parent::isEmpty(parent::getValidate())) {
+        if (!parent::isString(parent::getValidate())
+            || !parent::isEmpty(parent::getValidate())) {
             return false;
         } else if (!parent::isEmail()) {
             return false;
-        } else if (!\private\Classes\Database\UserManagement::isEmailTaken(parent::getValidate())) {
+        } else if (!UserManagement::isEmailTaken(parent::getValidate())) {
             return false;
         }
 

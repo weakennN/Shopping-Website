@@ -4,9 +4,9 @@ namespace private\Classes\LoginSystem\Validators;
 
 class RegisterPasswordValidator extends \private\Classes\LoginSystem\Validators\PasswordValidator
 {
-    public function __construct($validate)
+    public function __construct($validate, $errorMessage)
     {
-        parent::__construct($validate);
+        parent::__construct($validate, $errorMessage);
     }
 
     public function validate(): bool

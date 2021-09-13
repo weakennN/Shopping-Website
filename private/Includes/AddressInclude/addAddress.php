@@ -1,14 +1,15 @@
 <?php
 
 use private\Classes\AddressManager\AddressManager;
-use private\Classes\Common\Decrypt;
 use private\Classes\Database\AddressManagement;
-use private\Classes\LoginSystem\Validators\AddressValidators\AddressValidator;
+use private\Classes\LoginSystem\Validators\AddressValidators\DuplicateAddressValidator;
 use private\Classes\LoginSystem\Validators\AddressValidators\CountryIdValidator;
 use private\Classes\LoginSystem\Validators\NameValidator;
 use private\Classes\LoginSystem\Validators\PhoneValidator;
+use private\Classes\User\User;
+use private\Classes\ValidationSystem\ValidationSystem;
 
-include_once "../AutoLoad/autoLoader.php";
+include_once "../../AutoLoad/autoLoader.php";
 
 if (isset($_POST["name"]) && isset($_POST["phone"]) && isset($_POST["address"])
     && isset($_POST["city"]) && isset($_POST["countryId"])) {
@@ -26,24 +27,25 @@ if (isset($_POST["name"]) && isset($_POST["phone"]) && isset($_POST["address"])
         return;
     }
 
-    $userId = explode(" ", Decrypt::decrypt($_COOKIE["userId"]))[0];
+    $userId = User::getUserId();
 
-    $addressValidator = new AddressValidator($address, $userId, $countryId, $city);
-    $nameValidator = new NameValidator($name);
-    $cityValidator = new NameValidator($city);
-    $phoneValidator = new PhoneValidator($phone);
-    $countryValidator = new CountryIdValidator($countryId);
+    $addressValidator = new DuplicateAddressValidator($address, "Address already exist", $userId, $countryId, $city);
+    $nameValidator = new NameValidator($name, "Invalid name");
+    $cityValidator = new NameValidator($city, "Invalid city");
+    $phoneValidator = new PhoneValidator($phone, "Invalid phone");
+    $countryValidator = new CountryIdValidator($countryId, "Invalid country");
 
-    if (!$addressValidator->validate()) {
-        $response["error"] = "Address already exist!";
-    } else if (!$nameValidator->validate() || !$cityValidator->validate()
-        || !$phoneValidator->validate() || !$countryValidator->validate()) {
-        $response["error"] = "Invalid address!";
-    } else {
+    $validationSystem = new ValidationSystem($addressValidator, $nameValidator,
+        $cityValidator, $phoneValidator, $countryValidator);
+
+    if ($validationSystem->validate()) {
         $addressManager = new AddressManager($userId);
         $addressManager->addAddress($name, $phone, $address, $countryId, $city);
         $response["addressId"] = AddressManagement::getAddressId($userId, $address, $countryId);
+    } else {
+        $response["error"] = $validationSystem->getErrorMessages();
     }
+
 
     $json = json_encode($response);
 

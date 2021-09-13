@@ -6,9 +6,9 @@ class RepeatPasswordValidator extends \private\Classes\LoginSystem\Validators\Va
 {
     private string $repeatPassword;
 
-    public function __construct($validate, $repeatPassword)
+    public function __construct($validate, $errorMessage, $repeatPassword)
     {
-        parent::__construct($validate);
+        parent::__construct($validate, $errorMessage);
         $this->repeatPassword = $repeatPassword;
     }
 

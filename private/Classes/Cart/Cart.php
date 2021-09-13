@@ -4,6 +4,7 @@ namespace private\Classes\Cart;
 
 use private\Classes\Common\Decrypt;
 use private\Classes\Database\UserManagement;
+use private\Classes\User\User;
 
 class Cart
 {
@@ -15,7 +16,7 @@ class Cart
         }
 
         if (isset($_COOKIE["userId"])) {
-            $id = explode(" ", Decrypt::decrypt($_COOKIE["userId"]))[0];
+            $id = User::getUserId();
             $productPrice = UserManagement::getProductPrice($productId);
             if (UserManagement::isProductAdded($id, $productId)) {
                 UserManagement::updateProductQuantity($id, $productId, $value);
@@ -41,7 +42,7 @@ class Cart
         }
 
         if (isset($_COOKIE["userId"])) {
-            $id = explode(" ", Decrypt::decrypt($_COOKIE["userId"]))[0];
+            $id = User::getUserId();
             $productPrice = UserManagement::getProductPrice($productId);
             $productQuantity = UserManagement::getProductQuantity($productId, $id);
             $totalProductPrice = (float)$productPrice * (int)$productQuantity;
@@ -61,7 +62,7 @@ class Cart
         }
 
         if (isset($_COOKIE["userId"])) {
-            $id = explode(" ", Decrypt::decrypt($_COOKIE["userId"]))[0];
+            $id = User::getUserId();
             $productPrice = UserManagement::getProductPrice($productId);
             $productQuantity = UserManagement::getProductQuantity($productId, $id);
             if (((int)$productQuantity) <= 1 || ((int)$productQuantity) < (int)$value) {

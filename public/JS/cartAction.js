@@ -1,5 +1,5 @@
 function addToUserCart(productId, value) {
-    $.post("../private/Includes/addToCart.php", {
+    $.post("../private/Includes/CartInclude/addToCart.php", {
         productId: productId,
         quantity: value
     }, function (data, status) {
@@ -8,7 +8,7 @@ function addToUserCart(productId, value) {
 }
 
 function removeFromCart(productId) {
-    $.post("../private/Includes/removeFromCart.php", {
+    $.post("../private/Includes/CartInclude/removeFromCart.php", {
         productId: productId
     }, function (data, status) {
       alert(data + " " + status);
@@ -16,7 +16,7 @@ function removeFromCart(productId) {
 }
 
 function removeCartItem(productId, quantity) {
-    $.post("../private/Includes/removeCartItem.php", {
+    $.post("../private/Includes/CartInclude/removeCartItem.php", {
         productId: productId,
         quantity: quantity
     }, function (data, status) {

@@ -7,7 +7,7 @@ use private\Classes\LoginSystem\Validators\RegisterEmailValidator;
 use private\Classes\LoginSystem\Validators\RegisterPasswordValidator;
 use private\Classes\LoginSystem\Validators\RepeatPasswordValidator;
 
-include_once "../AutoLoad/autoLoader.php";
+include_once "../../AutoLoad/autoLoader.php";
 
 $firstName = $_POST["firstName"];
 $lastName = $_POST["lastName"];
@@ -24,7 +24,7 @@ $register = new Register($validators);
 if ($register->verify()) {
     $register->registerUser($firstName, $lastName, $email, $password);
     header('Location: http://localhost/test/public/index.php');
-    include_once "insertSessionProductsToUserCart.php";
+    include_once "../CartInclude/insertSessionProductsToUserCart.php";
     loadSessionProducts(UserManagement::getUserId("$email"));
 } else {
     header("Location: " . $_SERVER['HTTP_REFERER']);

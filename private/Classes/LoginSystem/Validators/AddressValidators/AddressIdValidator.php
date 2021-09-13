@@ -10,15 +10,16 @@ class AddressIdValidator extends Validator
 
     private int $userId;
 
-    public function __construct($validate, $userId)
+    public function __construct($validate, $errorMessage, $userId)
     {
-        parent::__construct($validate);
+        parent::__construct($validate, $errorMessage);
         $this->userId = $userId;
     }
 
     public function validate(): bool
     {
-        if (!AddressManagement::addressIdExist(parent::getValidate(), $this->userId)) {
+        if (!parent::containsNumbers(parent::getValidate())
+            || !AddressManagement::addressIdExist(parent::getValidate(), $this->userId)) {
             return false;
         }
 

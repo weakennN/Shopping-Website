@@ -27,7 +27,7 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
     </div>
     <div class="row">
         <div class="col-lg-6 mt-5">
-            <form action="../private/Includes/registerUser.php" method="post" class="row">
+            <form action="../private/Includes/LoginSystemInclude/registerUser.php" method="post" class="row">
                 <div class="col-lg-6 col-md-12 mb-3" id="first-name-input">
                     <label for="first-name">First name</label>
                     <input id="first-name" type="text" class="form-control" name="firstName">

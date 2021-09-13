@@ -1,5 +1,5 @@
 <?php
-include_once "../private/Includes/checkLogin.php";
+include_once "../private/Includes/LoginSystemInclude/checkLogin.php";
 include_once "../private/AutoLoad/autoLoader.php";
 ?>
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ include_once "../private/AutoLoad/autoLoader.php";
             <div class="row profile-main-content p-2">
                 <h2 class="display-5 mb-4">Addresses</h2>
                 <div class="d-flex flex-column address-container pb-1" id="address-container">
-                    <?php include_once "../private/Includes/loadAddresses.php" ?>
+                    <?php include_once "../private/Includes/AddressInclude/loadAddresses.php" ?>
                 </div>
                 <div class="mt-2">
                     <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal"

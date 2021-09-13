@@ -48,11 +48,11 @@ function setAddressAction() {
         let name = address.getElementsByTagName("h5").item(0).textContent;
         let phone = address.getElementsByClassName("card-text").item(0).textContent;
         let userAddress = address.getElementsByClassName("card-text").item(1).textContent;
-        let country = address.getElementsByClassName("card-text").item(2).textContent.split(" - ")[0]
-        let city = address.getElementsByClassName("card-text").item(2).textContent.split(" - ")[1];
+        let city = address.getElementsByClassName("card-text").item(2).textContent.split(" - ")[0]
+        let country = address.getElementsByClassName("card-text").item(2).textContent.split(" - ")[1];
         let editButton = address.getElementsByTagName("button").item(0);
         let deleteButton = address.getElementsByTagName("button").item(1);
-
+        console.log(city);
         editAddressAction(editButton, addressId, name, phone, userAddress, country, city);
         deleteAddressAction(deleteButton, address, addressId);
     }

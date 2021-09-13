@@ -47,4 +47,12 @@ class OrderManagement
         $statement = $pdo->prepare($query);
         $statement->execute([$shippingDetailsId, $orderId]);
     }
+
+    public static function createOrderItem($orderId, $productId, $takenPrice, $quantity)
+    {
+        $pdo = Database::connect();
+        $query = "INSERT INTO order_items (order_id, product_id, taken_price, quantity) VALUES(?, ?, ?, ?)";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$orderId, $productId, $takenPrice, $quantity]);
+    }
 }

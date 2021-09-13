@@ -1,10 +1,10 @@
 <?php
 
-use private\Classes\Common\Decrypt;
 use private\Classes\Database\CartManagement;
+use private\Classes\User\User;
 
 if (isset($_COOKIE["userId"])) {
-    $userId = explode(" ", Decrypt::decrypt($_COOKIE["userId"]))[0];
+    $userId = User::getUserId();
     if (count(CartManagement::getUserCartItems($userId)) <= 0) {
         header('Location: http://localhost/test/public/index.php');
     }

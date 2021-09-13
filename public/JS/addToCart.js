@@ -17,5 +17,6 @@ function addToCart() {
 
     updateCartBadge(1);
     updateSubTotal(parseFloat(price));
+    setAddToCartAlertFields(title, productImageSource, price, productLink);
 }
 

@@ -1,5 +1,5 @@
 function addFavourite(productId) {
-    $.post("../private/Includes/addToFavourite.php", {
+    $.post("../private/Includes/FavouriteInclude/addToFavourite.php", {
         productId: productId
     }, function (data, status) {
         alert(data + " " + status);
@@ -12,7 +12,7 @@ function addFavourite(productId) {
 }
 
 function removeFavourite(productId) {
-    $.post("../private/Includes/removeFromFavourite.php", {
+    $.post("../private/Includes/FavouriteInclude/removeFromFavourite.php", {
         productId: productId
     }, function (data, status) {
         alert(data + " " + status);

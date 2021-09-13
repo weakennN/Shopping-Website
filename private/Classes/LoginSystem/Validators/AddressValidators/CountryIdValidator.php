@@ -8,9 +8,15 @@ use private\Classes\LoginSystem\Validators\Validator;
 class CountryIdValidator extends Validator
 {
 
+    public function __construct($validate, $errorMessage)
+    {
+        parent::__construct($validate, $errorMessage);
+    }
+
     public function validate(): bool
     {
-        if (!AddressManagement::countryIdExist(parent::getValidate())) {
+        if (!parent::containsNumbers(parent::getValidate())
+            || !AddressManagement::countryIdExist(parent::getValidate())) {
             return false;
         }
 

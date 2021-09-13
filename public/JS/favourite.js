@@ -16,6 +16,7 @@ for (let i = 0; i < favouriteItems.length; i++) {
         }
         updateSubTotal(parseFloat(productPrice));
         updateCartBadge(1);
+        setAddToCartAlertFields(productTitle, productImage, productPrice, productLink);
         addToUserCart(productId, 1);
     })
 

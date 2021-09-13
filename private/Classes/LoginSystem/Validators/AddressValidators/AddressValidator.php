@@ -2,25 +2,19 @@
 
 namespace private\Classes\LoginSystem\Validators\AddressValidators;
 
-use private\Classes\Database\AddressManagement;
+use private\Classes\LoginSystem\Validators\Validator;
 
-class AddressValidator extends \private\Classes\LoginSystem\Validators\Validator
+class AddressValidator extends Validator
 {
-    private int $userId;
-    private int $countryId;
-    private string $city;
 
-    public function __construct($validate, $userId, $countryId, $city)
+    public function __construct($validate, $errorMessage)
     {
-        parent::__construct($validate);
-        $this->userId = $userId;
-        $this->countryId = $countryId;
-        $this->city = $city;
+        parent::__construct($validate, $errorMessage);
     }
 
     public function validate(): bool
     {
-        if (!AddressManagement::addressExist($this->userId, parent::getValidate(), $this->countryId, $this->city)) {
+        if (!parent::isString(parent::getValidate()) || !parent::isEmpty(parent::getValidate())) {
             return false;
         }
 

@@ -1,5 +1,5 @@
 <?php
-include_once "../private/Includes/checkLogin.php";
+include_once "../private/Includes/LoginSystemInclude/checkLogin.php";
 include_once "../private/AutoLoad/autoLoader.php"
 ?>
 <!doctype html>

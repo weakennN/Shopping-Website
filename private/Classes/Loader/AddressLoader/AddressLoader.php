@@ -21,7 +21,7 @@ class AddressLoader
         if (count($addresses) > 0) {
             foreach ($addresses as $address) {
                 $country = AddressManagement::getCountryById($address["shipping_country"]);
-                echo $this->addressElementCreator->create($address["id"], $address["name"], $address["phone"], $address["address"], $country, $address["city"]);
+                echo $this->addressElementCreator->create($address["id"], $address["name"], $address["phone"], $address["address"], $address["city"], $country);
             }
         } else {
             echo "<p class='lead' id='no-addresses-text'>You don't have any addresses.</p>";

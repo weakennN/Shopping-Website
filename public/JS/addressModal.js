@@ -133,10 +133,13 @@ function closeModal(modalId) {
     }
 }
 
-function displayErrorMessage(modalId, errorMessage) {
+function displayErrorMessage(modalId, errorMessages) {
     let modal = document.getElementById(modalId);
-    console.log(errorMessage);
-    modal.getElementsByClassName("alert-container").item(0).appendChild(createErrorMessage(errorMessage));
+    console.log(errorMessages);
+    for (let errorMessage of errorMessages) {
+        modal.getElementsByClassName("alert-container").item(0).appendChild(createErrorMessage(errorMessage));
+    }
+
 }
 
 function createErrorMessage(errorMessage) {
@@ -151,7 +154,7 @@ function createErrorMessage(errorMessage) {
 function getAddressModalValues(addressModal) {
     let addressModalEl = document.getElementById(addressModal);
     let inputs = addressModalEl.getElementsByTagName("input");
-    console.log(inputs.item(1).value)
+    console.log(inputs.item(3).value);
     return {
         "name": inputs.item(0).value,
         "phone": inputs.item(1).value,
@@ -164,7 +167,7 @@ function getAddressModalValues(addressModal) {
 
 function addUserAddress(addressInfo) {
     console.log(addressInfo);
-    $.post("../private/Includes/addAddress.php", {
+    $.post("../private/Includes/AddressInclude/addAddress.php", {
         name: addressInfo["name"],
         phone: addressInfo["phone"],
         address: addressInfo["address"],
@@ -173,6 +176,7 @@ function addUserAddress(addressInfo) {
     }, function (data, status) {
         alert(data + " " + status);
         let response = JSON.parse(data);
+        console.log(response);
         if (response["error"] !== null) {
             displayErrorMessage("createAddressModal", response["error"]);
         } else {
@@ -185,7 +189,7 @@ function addUserAddress(addressInfo) {
 
 function addCheckoutPageUserAddress(addressInfo) {
     console.log(addressInfo);
-    $.post("../private/Includes/addAddress.php", {
+    $.post("../private/Includes/AddressInclude/addAddress.php", {
         name: addressInfo["name"],
         phone: addressInfo["phone"],
         address: addressInfo["address"],
@@ -206,7 +210,7 @@ function addCheckoutPageUserAddress(addressInfo) {
 
 function editUserAddress(addressInfo, addressId) {
     console.log(addressId);
-    $.post("../private/Includes/editAddress.php", {
+    $.post("../private/Includes/AddressInclude/editAddress.php", {
         addressId: addressId,
         name: addressInfo["name"],
         phone: addressInfo["phone"],
@@ -226,7 +230,7 @@ function editUserAddress(addressInfo, addressId) {
 }
 
 function deleteUserAddress(addressId) {
-    $.post("../private/Includes/deleteAddress.php", {
+    $.post("../private/Includes/AddressInclude/deleteAddress.php", {
         addressId: addressId
     }, function (data, status) {
         alert(data + " " + status);

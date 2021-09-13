@@ -2,15 +2,19 @@
 
 namespace private\Classes\LoginSystem\Validators;
 
-use private\Classes\LoginSystem\Validators\Validator;
-
 class PhoneValidator extends Validator
 {
 
     private const PHONE_REGEX = "/[0-9]+/";
 
+    public function __construct($validate, $errorMessage)
+    {
+        parent::__construct($validate, $errorMessage);
+    }
+
     public function validate(): bool
     {
-        return preg_match(self::PHONE_REGEX, parent::getValidate());
+        // TODO fix phone regex
+        return preg_match(self::PHONE_REGEX, parent::getValidate()) && parent::containsNumbers(parent::getValidate());
     }
 }

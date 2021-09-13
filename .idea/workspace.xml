@@ -53,11 +53,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\test\public\recourses\images\logo" />
-      <recent name="D:\xampp\htdocs\test\public\recourses" />
-      <recent name="D:\xampp\htdocs\test\public" />
-      <recent name="D:\xampp\htdocs\test\private" />
-      <recent name="D:\xampp\htdocs\test" />
+      <recent name="D:\xampp\htdocs\test\private\Classes" />
+      <recent name="D:\xampp\htdocs\test\private\Includes\OrderPageInclude" />
+      <recent name="D:\xampp\htdocs\test\private\Includes\HeaderInclude" />
+      <recent name="D:\xampp\htdocs\test\private\Includes\LoginSystemInclude" />
+      <recent name="D:\xampp\htdocs\test\private\Includes\CartInclude" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -147,7 +147,11 @@
       <workItem from="1631124742377" duration="6874000" />
       <workItem from="1631183854344" duration="16119000" />
       <workItem from="1631273917248" duration="18769000" />
-      <workItem from="1631354531361" duration="10183000" />
+      <workItem from="1631354531361" duration="12887000" />
+      <workItem from="1631441975558" duration="12038000" />
+      <workItem from="1631527388787" duration="362000" />
+      <workItem from="1631537445014" duration="6281000" />
+      <workItem from="1631543858189" duration="10597000" />
     </task>
     <servers />
   </component>
