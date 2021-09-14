@@ -1,11 +1,13 @@
 <?php
 
+use private\Classes\Common\Encryptor;
 use private\Classes\Database\UserManagement;
 use private\Classes\LoginSystem\Register;
 use private\Classes\LoginSystem\Validators\NameValidator;
 use private\Classes\LoginSystem\Validators\RegisterEmailValidator;
 use private\Classes\LoginSystem\Validators\RegisterPasswordValidator;
 use private\Classes\LoginSystem\Validators\RepeatPasswordValidator;
+use private\Classes\ValidationSystem\ValidationSystem;
 
 include_once "../../AutoLoad/autoLoader.php";
 
@@ -15,17 +17,16 @@ $email = $_POST["email"];
 $password = $_POST["password"];
 $repeatPassword = $_POST["repeatPassword"];
 
-$validators = array(new NameValidator($firstName)
-, new NameValidator($lastName), new RegisterEmailValidator($email),
-    new RegisterPasswordValidator($password), new RepeatPasswordValidator($password, $repeatPassword));
+$validationSystem = new ValidationSystem(new NameValidator($firstName, "Invalid first name!")
+    , new NameValidator($lastName, "Invalid last name!"), new RegisterEmailValidator($email, "Email already exist!"),
+    new RegisterPasswordValidator($password, "Invalid password!"), new RepeatPasswordValidator($password, "Password dont match!", $repeatPassword));
 
-$register = new Register($validators);
-
-if ($register->verify()) {
+if ($validationSystem->validate()) {
+    $register = new Register();
     $register->registerUser($firstName, $lastName, $email, $password);
     header('Location: http://localhost/test/public/index.php');
     include_once "../CartInclude/insertSessionProductsToUserCart.php";
     loadSessionProducts(UserManagement::getUserId("$email"));
 } else {
-    header("Location: " . $_SERVER['HTTP_REFERER']);
+    header("Location: ../../../public/register.php?error=" . Encryptor::encrypt($validationSystem->getErrorMessages()[0]));
 }

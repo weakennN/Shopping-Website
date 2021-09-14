@@ -2,6 +2,8 @@
 
 namespace private\Classes\LoginSystem\Validators;
 
+use private\Classes\Database\UserManagement;
+
 class RegisterEmailValidator extends \private\Classes\LoginSystem\Validators\EmailValidator
 {
     public function __construct($validate, $errorMessage)
@@ -16,7 +18,7 @@ class RegisterEmailValidator extends \private\Classes\LoginSystem\Validators\Ema
             return false;
         } else if (!parent::isEmail()) {
             return false;
-        } else if (\private\Classes\Database\UserManagement::isEmailTaken(parent::getValidate())) {
+        } else if (UserManagement::isEmailTaken(parent::getValidate())) {
             return false;
         }
 

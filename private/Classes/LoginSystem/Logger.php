@@ -5,26 +5,8 @@ namespace private\Classes\LoginSystem;
 use private\Classes\CookieManager;
 use private\Classes\Database\UserManagement;
 
-class Logger extends \private\Classes\LoginSystem\Entry
+class Logger
 {
-    public function __construct($validators)
-    {
-        parent::__construct($validators);
-    }
-
-    public function verify(): bool
-    {
-        $validators = parent::getValidators();
-
-        foreach ($validators as $validator) {
-            if (!$validator->validate()) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
     public function logInUser($email)
     {
         $userId = UserManagement::getUserId($email);

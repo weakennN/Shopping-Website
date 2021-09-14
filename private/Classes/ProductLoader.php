@@ -35,7 +35,7 @@ class ProductLoader
                     $test = "fas";
                 }
             }
-            echo "<div class= 'col-lg-3 col-md-4 col-sm-6 col-xl-2 my-2 col-6'>
+            echo "<div class= 'col-lg-3 col-md-3 col-sm-4 col-xl-2 my-2 col-6'>
             <div class= 'card product-card p-2' id= " . $product['id'] . ">
                 <a href=product.php?id=" . $product['id'] . ">
                     <img src=" . "recourses/images/ProductImages/" . $product['id'] . "/" . $product['image'] . " class= 'card-img-top'>
@@ -50,8 +50,7 @@ class ProductLoader
                     <a class='text-decoration-none' href= product.php?id=" . $product['id'] . ">
                     <h5 class='card-title title'>" . $product['title'] . "</h5>
                     <p class='card-text mt-3' style='font-size: 18px'>" . '$' . $product['price'] . "</p>
-                </a>
-                  
+                    </a>                  
                 </div>
             </div>
             </div>";

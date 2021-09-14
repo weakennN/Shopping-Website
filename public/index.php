@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
+include_once "../private/AutoLoad/autoLoader.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,11 +18,11 @@ include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
 </head>
 
 <body
-<?php include $_SERVER["HOME"] . '/public/header.php'; ?>
+<?php include "header.php"; ?>
 <?php include_once "notificationContainer.php" ?>
 <div class="container-lg container-fluid-lg shadow-sm">
     <div class="row">
-        <?php require $_SERVER["HOME"] . '/private/Includes/loadMainProducts.php'; ?>
+        <?php include_once "../private/Includes/MainPageInclude/loadMainProducts.php"; ?>
     </div>
     <nav>
         <ul class="pagination justify-content-end">

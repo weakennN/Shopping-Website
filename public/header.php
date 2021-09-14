@@ -6,7 +6,7 @@
                 <img style="height: 30px"
                      src="recourses/images/logo/5891132146_34b49d36-3b74-49c9-b710-aa58cb5ada62.png" alt="">
             </a>
-            <form class="form-inline text-center w-100" method="get">
+            <form class="form-inline text-center w-100 me-5" method="get">
                 <div class="input-group input-group-append">
                     <input class="form-control navbar-search" type="search" placeholder="Search"
                            aria-label="Search">
@@ -16,20 +16,20 @@
                 </div>
             </form>
             <?php include "../private/Includes/HeaderInclude/createMainNavProfile.php" ?>
-            <a href="favourite.php" class="mt-2 favourite-btn">
+            <a href="favourite.php" class="mt-2 mx-5 favourite-btn">
                 <i class="far fa-heart fa-2x"></i>
             </a>
             <div class="dropdown cart-wrapper-dropdown" id="cart-dropdown">
                 <div class="dropdown-menu dropdown-menu-end cart-dropdown">
                     <?php include '../private/Includes/CartInclude/CartLoader/loadCartWrapper.php' ?>
                 </div>
-                <div class="ms-5 pt-2" id="cart">
+                <div class="pt-2" id="cart">
                     <a href="cart.php">
                         <div class="dropdown-toggle shopping-cart-btn">
-                            <i class="fas fa-shopping-cart fa-2x position-relative"></i>
-                            <div id="badge" style="left: 70px !important; top: 3px!important;"
-                                 class="position-absolute top-0 start-100 cart-badge badge rounded-pill bg-danger"><?php include "../private/Includes/CartInclude/CartLoader/loadCartBadge.php" ?>
+                            <div id="badge" style="z-index:1;left: 21px!important;top: 3px!important;"
+                                 class="position-absolute top-0 start-0 cart-badge badge rounded-pill bg-danger"><?php include "../private/Includes/CartInclude/CartLoader/loadCartBadge.php" ?>
                             </div>
+                            <i class="fas fa-shopping-cart fa-2x position-relative"></i>
                         </div>
                 </div>
                 </a>

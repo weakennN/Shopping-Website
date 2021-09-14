@@ -17,7 +17,7 @@ class LoginPasswordValidator extends PasswordValidator
 
     public function validate(): bool
     {
-        if (!$this->isEmpty(parent::getValidate())) {
+        if (!parent::isString(parent::getValidate(), $this->email) || !$this->isEmpty(parent::getValidate())) {
             return false;
         } else if (!parent::isValidLength()) {
             return false;

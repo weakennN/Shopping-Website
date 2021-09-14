@@ -3,6 +3,7 @@
 namespace private\Classes\User;
 
 use private\Classes\Common\Decrypt;
+use private\Classes\Database\OrderManagement;
 
 class User
 {
@@ -15,5 +16,10 @@ class User
     public static function getUserCartId(): string
     {
         return self::getUserId();
+    }
+
+    public static function getLastOrder()
+    {
+        return OrderManagement::getOrderId(self::getUserId());
     }
 }

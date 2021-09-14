@@ -15,6 +15,6 @@ class PhoneValidator extends Validator
     public function validate(): bool
     {
         // TODO fix phone regex
-        return preg_match(self::PHONE_REGEX, parent::getValidate()) && parent::containsNumbers(parent::getValidate());
+        return parent::containsNumbers(parent::getValidate()) && preg_match(self::PHONE_REGEX, parent::getValidate());
     }
 }

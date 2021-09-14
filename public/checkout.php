@@ -24,6 +24,7 @@ include_once "../private/Includes/CartInclude/checkEmptyCart.php";
 <?php include_once "header.php" ?>
 <div class="container">
     <div class="row">
+        <?php include_once "../private/Includes/LoginSystemInclude/displayLoginSystemAlert.php" ?>
         <form action="../private/Includes/CheckoutPageInclude/finishOrder.php" method="post">
             <div class="col-12 checkout-content">
                 <h5 class="display-5 mb-3">Choose Address</h5>

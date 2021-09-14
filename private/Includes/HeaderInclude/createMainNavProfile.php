@@ -26,7 +26,7 @@ if (isset($_COOKIE["userId"])) {
                 </a>
             </div>
             <a href='generalInfo.php'>
-             <div class='nav-button account-btn mx-5 pt-2 position-relative'>
+             <div class='nav-button account-btn pt-2 position-relative'>
                 <i class='far fa-user fa-2x'></i>
                 <div class='position-absolute top-0 start-100 badge rounded-pill user-check'>
                 <i class='fas fa-check'></i>
@@ -49,7 +49,7 @@ if (isset($_COOKIE["userId"])) {
             </a>                          
             </div>
             <a href='login.php'>
-            <div class='nav-button account-btn mx-5 pt-2'>
+            <div class='nav-button account-btn pt-2'>
                 <i class='far fa-user fa-2x'></i>
             </div>
             </a>

@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
+include_once "../private/AutoLoad/autoLoader.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
