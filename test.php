@@ -18,15 +18,11 @@
         border-color: #2a7af5 !important;
     }
 </style>
-<?php
-
-echo is_string(1);
-
-?>
 <div class="container">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
-    </button>
+    <?php
+    $string = "/<script>alert('hello')</script>";
+    echo htmlspecialchars($string);
+    ?>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
