@@ -17,7 +17,7 @@ include_once "../private/AutoLoad/autoLoader.php";
     <link rel="stylesheet" href="style/style.css">
 </head>
 
-<body
+<body>
 <?php include "header.php"; ?>
 <?php include_once "notificationContainer.php" ?>
 <div class="container-lg container-fluid-lg shadow-sm">
@@ -26,41 +26,7 @@ include_once "../private/AutoLoad/autoLoader.php";
     </div>
     <nav>
         <ul class="pagination justify-content-end">
-            <li class="page-item">
-                <a href="#" class="page-link">
-                    <span>&laquo;</span>
-                </a>
-            </li>
-            <li class="page-item active">
-                <a href="index.php?page=1" class="page-link">
-                    1
-                </a>
-            </li>
-            <li class="page-item">
-                <a href="index.php?page=2" class="page-link">
-                    2
-                </a>
-            </li>
-            <li class="page-item">
-                <a href="#" class="page-link">
-                    3
-                </a>
-            </li>
-            <li class="page-item">
-                <a href="#" class="page-link">
-                    4
-                </a>
-            </li>
-            <li class="page-item">
-                <a href="#" class="page-link">
-                    5
-                </a>
-            </li>
-            <li class="page-item">
-                <a href="#" class="page-link">
-                    <span>&raquo;</span>
-                </a>
-            </li>
+            <?php include_once "../private/Includes/PaginationInclude/createPagination.php" ?>
         </ul>
     </nav>
 </div>

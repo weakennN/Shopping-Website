@@ -20,8 +20,6 @@
 </style>
 <div class="container">
     <?php
-    $string = "/<script>alert('hello')</script>";
-    echo htmlspecialchars($string);
     ?>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"

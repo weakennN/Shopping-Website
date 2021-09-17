@@ -26,6 +26,11 @@ if (!isset($_GET["search"])) {
     <div class="row">
         <?php include_once "../private/Includes/SearchIncludes/search.php"; ?>
     </div>
+    <nav>
+        <ul class="pagination justify-content-end">
+            <?php include_once "../private/Includes/SearchIncludes/createPagination.php" ?>
+        </ul>
+    </nav>
 </div>
 <?php include_once "addToCartAlert.php" ?>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"

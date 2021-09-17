@@ -29,7 +29,7 @@ class ProductLoader
             */
 
             $product = $products[$i];
-            $favourite = $this->checkIfFavourite($product["id"], User::getUserId());
+            $favourite = $this->checkIfFavourite($product["id"]);
 
             echo $this->createElement($product['id'], $product['image'],
                 $product['title'], $product['price'], $favourite);
@@ -41,7 +41,7 @@ class ProductLoader
         $products = SearchManagement::searchProducts($title);
 
         foreach ($products as $product) {
-            $favourite = $this->checkIfFavourite($product["id"], User::getUserId());
+            $favourite = $this->checkIfFavourite($product["id"]);
             echo $this->createElement($product["id"], $product["image"]
                 , $product["title"], $product["price"], $favourite);
         }
@@ -76,10 +76,13 @@ class ProductLoader
             </div>";
     }
 
-    private function checkIfFavourite($productId, $userId): string
+    private function checkIfFavourite($productId): string
     {
-        if (UserManagement::isProductAddedToFavourite($userId, $productId)) {
-            return "fas";
+        if (isset($_COOKIE["userId"])) {
+            $userId = User::getUserId();
+            if (UserManagement::isProductAddedToFavourite($userId, $productId)) {
+                return "fas";
+            }
         }
 
         return "far";
