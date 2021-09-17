@@ -17,6 +17,7 @@ if (!isset($_GET["search"])) {
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="style/navBar.css">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/pagination.css">
 </head>
 <body>
 <?php include_once "header.php"; ?>

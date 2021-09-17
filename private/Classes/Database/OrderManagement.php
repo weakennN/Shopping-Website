@@ -55,4 +55,34 @@ class OrderManagement
         $statement = $pdo->prepare($query);
         $statement->execute([$orderId, $productId, $takenPrice, $quantity]);
     }
+
+    public static function getNewestOrders($userId): bool|array
+    {
+        $pdo = Database::connect();
+        $query = "SELECT * FROM order_list WHERE user_id = ? ORDER BY date DESC LIMIT 4";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$userId]);
+
+        return $statement->fetchAll();
+    }
+
+    public static function getOrders($userId): bool|array
+    {
+        $pdo = Database::connect();
+        $query = "SELECT * FROM order_list WHERE user_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$userId]);
+
+        return $statement->fetchAll();
+    }
+
+    public static function formatOrderDate($date)
+    {
+        $pdo = Database::connect();
+        $query = "SELECT DATE_FORMAT(?, '%M %e %Y, %l:%i %p') AS date";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$date]);
+
+        return $statement->fetch()["date"];
+    }
 }

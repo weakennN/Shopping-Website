@@ -1,0 +1,23 @@
+.order-title {
+    color: #0d6efd !important;
+}
+
+.order-title:hover {
+    color: #0d6efd !important;
+}
+
+.order-container {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background: #eef4ff;
+    border-radius: 8px;
+}
+
+.order-item {
+    border-radius: 8px;
+    background: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.flex-column {
+    overflow-x: hidden !important;
+}

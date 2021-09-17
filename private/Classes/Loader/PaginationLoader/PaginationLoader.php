@@ -25,7 +25,7 @@ class PaginationLoader
             $linkToPage = $pageLink . "?page=" . $i;
             if ($currentPage == $i) {
                 $pageElements .= "<li  class='page-item active'>
-                <a class='page-link'>
+                <a style='color: white!important;' class='page-link'>
                     <span>$i</span>
                 </a>
             </li>";
@@ -52,7 +52,7 @@ class PaginationLoader
 
         return " <li class='page-item page-backwards'>
                 <a $linkToPage class='page-link'>
-                   <i class='fas fa-backward'></i>
+                  <i class='fas fa-arrow-left'></i>
                 </a>
             </li>";
     }
@@ -66,7 +66,7 @@ class PaginationLoader
 
         return " <li class='page-item page-backwards'>
                 <a $linkToPage class='page-link'>
-                     <i class='fas fa-forward'></i>
+                    <i class='fas fa-arrow-right'></i>
                 </a>
             </li>";
     }

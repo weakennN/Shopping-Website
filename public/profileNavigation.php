@@ -3,7 +3,7 @@
     <hr class="mt-1 mb-1">
     <a class="py-2 profile-navigation-item" href="favourite.php">Favourites</a>
     <hr class="mt-1 mb-1">
-    <a class="py-2 profile-navigation-item" href="">Orders</a>
+    <a class="py-2 profile-navigation-item" href="order.php">Orders</a>
     <hr class="mt-1 mb-1">
     <a class="py-2 profile-navigation-item" href="addresses.php">Addresses</a>
 </div>
