@@ -1,4 +1,7 @@
-<?php include_once "../private/AutoLoad/autoLoader.php"; ?>
+<?php
+include_once "../private/AutoLoad/autoLoader.php";
+include_once "../private/Includes/LoginSystemInclude/checkLogin.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +9,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Order</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -21,13 +24,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3 p-0 pe-0 pe-md-4">
-            <?php include_once "profileNavigation.php" ?>
+            <?php include_once "profileNavigation.php"; ?>
         </div>
-        <div class="col-md-9 p-0 mt-3 mt-md-0 order-container">
+        <div class="col-md-9 p-0 mt-4 mt-md-0 order-container">
             <h5 class="display-6 ms-3 mt-2">Orders</h5>
-            <div class="d-flex flex-column overflow-auto" style="max-height: 470px">
+            <div class="d-flex flex-column overflow-auto mt-4" style="max-height: 470px">
                 <div class="row">
-                    <?php include_once "../private/Includes/loadOrders.php" ?>
+                    <?php include_once "../private/Includes/OrderPageIncludes/loadOrders.php"; ?>
                 </div>
             </div>
         </div>

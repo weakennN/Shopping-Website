@@ -56,7 +56,7 @@ class OrderManagement
         $statement->execute([$orderId, $productId, $takenPrice, $quantity]);
     }
 
-    public static function getNewestOrders($userId): bool|array
+    public static function getLatestOrders($userId): bool|array
     {
         $pdo = Database::connect();
         $query = "SELECT * FROM order_list WHERE user_id = ? ORDER BY date DESC LIMIT 4";
@@ -84,5 +84,49 @@ class OrderManagement
         $statement->execute([$date]);
 
         return $statement->fetch()["date"];
+    }
+
+    public static function orderExist($userId, $orderId): bool
+    {
+        $pdo = Database::connect();
+        $query = "SELECT * FROM order_list WHERE user_id = ? AND id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$userId, $orderId]);
+
+        if ($statement->fetch()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static function getOrder($orderId, $userId)
+    {
+        $pdo = Database::connect();
+        $query = "SELECT * FROM order_list WHERE id = ? AND user_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$orderId, $userId]);
+
+        return $statement->fetch();
+    }
+
+    public static function getShippingDetails($orderId, $shippingDetailsId)
+    {
+        $pdo = Database::connect();
+        $query = "SELECT * FROM shipping_details WHERE order_id = ? AND id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$orderId, $shippingDetailsId]);
+
+        return $statement->fetch();
+    }
+
+    public static function getOrderedItems($orderId): bool|array
+    {
+        $pdo = Database::connect();
+        $query = "SELECT * FROM order_items WHERE order_id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$orderId]);
+
+        return $statement->fetchAll();
     }
 }

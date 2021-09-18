@@ -24,7 +24,7 @@ class ProductManagement
         $statement = $pdo->prepare($query);
         $statement->execute([$productId]);
 
-        return $statement->fetchAll();
+        return $statement->fetch()["title"];
     }
 
     public static function getProductPrice($productId): bool|array
@@ -65,5 +65,15 @@ class ProductManagement
         $statement->execute([$productId]);
 
         return $statement->fetch()["short_description"];
+    }
+
+    public static function getImage($productId)
+    {
+        $pdo = Database::connect();
+        $query = "SELECT image FROM products WHERE id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$productId]);
+
+        return $statement->fetch()["image"];
     }
 }

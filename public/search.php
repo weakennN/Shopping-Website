@@ -27,7 +27,7 @@ if (!isset($_GET["search"])) {
     <div class="row">
         <?php include_once "../private/Includes/SearchIncludes/search.php"; ?>
     </div>
-    <nav>
+    <nav class="pb-2">
         <ul class="pagination justify-content-end">
             <?php include_once "../private/Includes/SearchIncludes/createPagination.php" ?>
         </ul>

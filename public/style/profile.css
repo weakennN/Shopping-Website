@@ -28,9 +28,21 @@
     border-radius: 5px;
 }
 
-.text-holder{
+.text-holder {
     max-width: 100% !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
+}
+
+.profile-main-content-container {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background: #eef4ff;
+    border-radius: 8px;
+}
+
+.shadow-border{
+    border-radius: 8px;
+    background: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }

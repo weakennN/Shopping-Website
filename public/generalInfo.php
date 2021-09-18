@@ -9,7 +9,7 @@ include_once "../private/AutoLoad/autoLoader.php"
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>General Info</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -17,6 +17,7 @@ include_once "../private/AutoLoad/autoLoader.php"
     <link rel="stylesheet" href="style/profile.css">
     <link rel="stylesheet" href="style/navBar.css">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/order.css">
 </head>
 <body>
 
@@ -27,10 +28,16 @@ include_once "../private/AutoLoad/autoLoader.php"
         <div class="col-md-3 p-0 pe-0 pe-md-4">
             <?php include_once "profileNavigation.php" ?>
         </div>
-        <div class="col-md-9 p-0">
+        <div class="col-md-9 p-0 order-container">
             <div class="profile-main-content mt-3 mt-md-0 p-3">
                 <h2 class="display-5">General Information</h2>
-                <h4 class="display-6 mt-3">Hello Test !</h4>
+                <?php include_once "../private/Includes/GeneralInfoPageIncludes/greetUser.php" ?>
+                <p class="display-5 m-0 mt-4 mb-4">Latest orders</p>
+                <div class="d-flex flex-column overflow-auto mt-4">
+                    <div class="row">
+                        <?php include_once "../private/Includes/OrderPageIncludes/loadLatestOrders.php"; ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

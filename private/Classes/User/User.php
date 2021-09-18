@@ -4,6 +4,7 @@ namespace private\Classes\User;
 
 use private\Classes\Common\Decrypt;
 use private\Classes\Database\OrderManagement;
+use private\Classes\Database\UserManagement;
 
 class User
 {
@@ -21,5 +22,15 @@ class User
     public static function getLastOrder()
     {
         return OrderManagement::getOrderId(self::getUserId());
+    }
+
+    public static function getFirstName()
+    {
+        return UserManagement::getFirstName(self::getUserId());
+    }
+
+    public static function orderExist($orderId): bool
+    {
+        return OrderManagement::orderExist(self::getUserId(), $orderId);
     }
 }

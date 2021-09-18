@@ -239,4 +239,14 @@ class UserManagement
 
         return $statement->fetchAll();
     }
+
+    public static function getFirstName($userId)
+    {
+        $pdo = Database::connect();
+        $query = "SELECT first_name FROM accounts WHERE id = ?";
+        $statement = $pdo->prepare($query);
+        $statement->execute([$userId]);
+
+        return $statement->fetch()["first_name"];
+    }
 }
