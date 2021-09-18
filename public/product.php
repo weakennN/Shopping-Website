@@ -29,7 +29,7 @@ include_once "../private/AutoLoad/autoLoader.php";
 </head>
 <body>
 <?php include "header.php"; ?>
-<?php include_once "notificationContainer.php" ?>
+<?php include_once "notificationContainer.html" ?>
 <div class="container shadow-sm">
     <div class="row">
         <div class="text-left p-0 fs-2 border-bottom" id="title">
@@ -128,7 +128,7 @@ include_once "../private/AutoLoad/autoLoader.php";
         </div>
     </div>
     <!-- end of product gallery modal -->
-    <?php include_once "addToCartAlert.php" ?>
+    <?php include_once "addToCartAlert.html" ?>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"

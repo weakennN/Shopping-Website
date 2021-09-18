@@ -26,7 +26,7 @@ include_once "../private/AutoLoad/autoLoader.php"
 <div class="container">
     <div class="row">
         <div class="col-md-3 p-0 pe-0 pe-md-4">
-            <?php include_once "profileNavigation.php" ?>
+            <?php include_once "profileNavigation.html" ?>
         </div>
         <div class="col-md-9 p-0 order-container">
             <div class="profile-main-content mt-3 mt-md-0 p-3">

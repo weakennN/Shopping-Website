@@ -24,7 +24,7 @@ include_once "../private/Includes/LoginSystemInclude/checkLogin.php";
 <div class="container">
     <div class="row">
         <div class="col-md-3 p-0 pe-0 pe-md-4">
-            <?php include_once "profileNavigation.php"; ?>
+            <?php include_once "profileNavigation.html"; ?>
         </div>
         <div class="col-md-9 p-0 mt-4 mt-md-0 order-container">
             <h5 class="display-6 ms-3 mt-2">Orders</h5>

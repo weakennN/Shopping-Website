@@ -3,7 +3,6 @@ function addToUserCart(productId, value) {
         productId: productId,
         quantity: value
     }, function (data, status) {
-        alert(data + " " + status);
     });
 }
 
@@ -11,7 +10,6 @@ function removeFromCart(productId) {
     $.post("../private/Includes/CartInclude/removeFromCart.php", {
         productId: productId
     }, function (data, status) {
-      alert(data + " " + status);
     });
 }
 
@@ -20,6 +18,5 @@ function removeCartItem(productId, quantity) {
         productId: productId,
         quantity: quantity
     }, function (data, status) {
-        alert(data + " " + status);
     });
 }

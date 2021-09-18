@@ -24,7 +24,7 @@ include_once "../private/AutoLoad/autoLoader.php";
 <div class="container">
     <div class="row">
         <div class="col-md-3 p-0 pe-0 pe-md-4">
-            <?php include_once "profileNavigation.php" ?>
+            <?php include_once "profileNavigation.html" ?>
         </div>
         <div class="col-md-9 col-12 p-0 mt-md-0 mt-3">
             <div class="row profile-main-content p-2">
@@ -45,7 +45,7 @@ include_once "../private/AutoLoad/autoLoader.php";
         </div>
     </div>
 </div>
-<?php include_once "addressModal.php" ?>
+<?php include_once "addressModal.html" ?>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"

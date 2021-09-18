@@ -174,7 +174,6 @@ function addUserAddress(addressInfo) {
         city: addressInfo["city"],
         countryId: addressInfo["countryId"]
     }, function (data, status) {
-        alert(data + " " + status);
         let response = JSON.parse(data);
         console.log(response);
         if (response["error"] !== null) {
@@ -196,7 +195,6 @@ function addCheckoutPageUserAddress(addressInfo) {
         city: addressInfo["city"],
         countryId: addressInfo["countryId"]
     }, function (data, status) {
-        alert(data + " " + status);
         let response = JSON.parse(data);
         if (response["error"] !== null) {
             displayErrorMessage("createAddressModal", response["error"]);
@@ -218,7 +216,6 @@ function editUserAddress(addressInfo, addressId) {
         city: addressInfo["city"],
         countryId: addressInfo["countryId"]
     }, function (data, status) {
-        alert(data + " " + status);
         let response = JSON.parse(data);
         if (response["error"] !== null) {
             displayErrorMessage("editAddressModal", response["error"]);
@@ -233,7 +230,6 @@ function deleteUserAddress(addressId) {
     $.post("../private/Includes/AddressInclude/deleteAddress.php", {
         addressId: addressId
     }, function (data, status) {
-        alert(data + " " + status);
     })
 }
 

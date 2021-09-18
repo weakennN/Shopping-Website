@@ -2,7 +2,6 @@ function addFavourite(productId) {
     $.post("../private/Includes/FavouriteInclude/addToFavourite.php", {
         productId: productId
     }, function (data, status) {
-        alert(data + " " + status);
         if (data.toString() === "display") {
             displayAddToFavouriteNotification();
         } else {
@@ -15,7 +14,6 @@ function removeFavourite(productId) {
     $.post("../private/Includes/FavouriteInclude/removeFromFavourite.php", {
         productId: productId
     }, function (data, status) {
-        alert(data + " " + status);
         if (data.toString() === "display") {
             displayRemoveFromFavouriteNotification();
         } else {

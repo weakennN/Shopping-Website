@@ -20,7 +20,7 @@ include_once "../private/AutoLoad/autoLoader.php";
 
 <body>
 <?php include "header.php"; ?>
-<?php include_once "notificationContainer.php" ?>
+<?php include_once "notificationContainer.html" ?>
 <div class="container-lg container-fluid-lg shadow-sm">
     <div class="row">
         <?php include_once "../private/Includes/MainPageInclude/loadMainProducts.php"; ?>
@@ -31,7 +31,7 @@ include_once "../private/AutoLoad/autoLoader.php";
         </ul>
     </nav>
 </div>
-<?php include_once "addToCartAlert.php" ?>
+<?php include_once "addToCartAlert.html" ?>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
