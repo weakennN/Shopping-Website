@@ -1,5 +1,5 @@
 <!-- start of large screen navbar !-->
-<nav class="navbar mb-5" id="main-navbar">
+<nav style="background: white" class="navbar mb-5" id="main-navbar">
     <div class="container">
         <div class="d-flex flex-row bd-highlight w-100">
             <a class="navbar-brand" href="index.php">
@@ -39,7 +39,7 @@
 </nav>
 <!-- end of large screen navbar !-->
 <!-- start of small screen navbar !-->
-<nav class="navbar mb-5" id="responsive-navbar" style="display: none">
+<nav class="navbar mb-5" id="responsive-navbar" style="display: none;background: white">
     <div class="container-fluid">
         <div class="d-flex flex-row w-100">
             <?php include "../private/Includes/HeaderInclude/createResponsiveNavbarProfile.php" ?>

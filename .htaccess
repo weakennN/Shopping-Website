@@ -4,3 +4,5 @@ AddType application/x-httpd-php .html .htm
 Options All -Indexes
 
 SetEnv HOME D:\xampp\htdocs\test
+
+ErrorDocument 404 http://localhost/test/public/error404.php

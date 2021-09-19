@@ -53,11 +53,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\test\public\User" />
+      <recent name="D:\xampp\htdocs\test\private\Includes\ErrorPageInclude" />
       <recent name="D:\xampp\htdocs\test\private\Includes\OrderPageIncludes" />
       <recent name="D:\xampp\htdocs\test\private\Includes\MainPageInclude" />
       <recent name="D:\xampp\htdocs\test\private\Classes" />
-      <recent name="D:\xampp\htdocs\test\private\Includes\OrderPageInclude" />
-      <recent name="D:\xampp\htdocs\test\private\Includes\HeaderInclude" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -164,6 +164,9 @@
       <workItem from="1631969130369" duration="4606000" />
       <workItem from="1631982833962" duration="3696000" />
       <workItem from="1632008076379" duration="228000" />
+      <workItem from="1632008344302" duration="191000" />
+      <workItem from="1632058787287" duration="5428000" />
+      <workItem from="1632067839944" duration="1955000" />
     </task>
     <servers />
   </component>

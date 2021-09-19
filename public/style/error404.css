@@ -1,0 +1,27 @@
+body {
+    background-image: linear-gradient(to right,#2a7af5 , #d7d6e0);
+}
+
+.error-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.error-actions {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.error-actions .btn {
+    margin-right: 10px;
+}
+
+.error-text {
+    font-weight: 700;
+    font-size: 5rem;
+}
+
+.error-details {
+    font-weight: 400;
+    font-size: 1.5rem;
+}

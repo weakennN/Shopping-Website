@@ -3,6 +3,10 @@
 use private\Classes\Loader\OrderDetailsLoader\OrderRegisterInfoLoader;
 use private\Classes\User\User;
 
-if (isset($_GET["order"]) && User::orderExist($_GET["order"]))
-$orderRegisterLoader = new OrderRegisterInfoLoader();
-$orderRegisterLoader->load($_GET["order"], User::getUserId());
+if (isset($_GET["order"]) && User::orderExist($_GET["order"])) {
+    $orderRegisterLoader = new OrderRegisterInfoLoader();
+    $orderRegisterLoader->load($_GET["order"], User::getUserId());
+} else {
+    include_once $_SERVER["HOME"] . "/private/Includes/ErrorPageInclude/errorPageInclude.php";
+    redirectTo404();
+}
