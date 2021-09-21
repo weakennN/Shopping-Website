@@ -3,7 +3,7 @@
 if (isset($_COOKIE["userId"])) {
     header('Location: http://localhost/test/public/index.php');
 }
-include_once "../private/AutoLoad/autoLoader.php";
+include_once $_SERVER['HOME'] . "/private/AutoLoad/autoLoader.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -27,7 +27,7 @@ include_once "../private/AutoLoad/autoLoader.php";
     <div id="login-error-container">
     </div>
     <div class="row">
-        <?php include_once "../private/Includes/LoginSystemInclude/displayLoginSystemAlert.php"; ?>
+        <?php include_once $_SERVER['HOME'] . "/private/Includes/LoginSystemInclude/displayLoginSystemAlert.php"; ?>
         <div class="col-lg-6 col-md-12">
             <form action="../private/Includes/LoginSystemInclude/logInUser.php" class="row" id="login" method="post">
                 <div class="col-lg-12 mt-5" id="email-input">

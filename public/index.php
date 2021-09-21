@@ -1,9 +1,8 @@
 <?php
-include_once "../private/AutoLoad/autoLoader.php";
+include_once $_SERVER['HOME'] . "/private/AutoLoad/autoLoader.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,17 +16,16 @@ include_once "../private/AutoLoad/autoLoader.php";
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/pagination.css">
 </head>
-
 <body>
 <?php include "header.php"; ?>
 <?php include_once "notificationContainer.html" ?>
 <div class="container-lg container-fluid-lg shadow-sm">
     <div class="row">
-        <?php include_once "../private/Includes/MainPageInclude/loadMainProducts.php"; ?>
+        <?php include_once $_SERVER["HOME"] . "/private/Includes/MainPageInclude/loadMainProducts.php"; ?>
     </div>
     <nav class="pb-2">
         <ul class="pagination justify-content-end">
-            <?php include_once "../private/Includes/PaginationInclude/createPagination.php" ?>
+            <?php include_once $_SERVER['HOME'] . "/private/Includes/PaginationInclude/createPagination.php" ?>
         </ul>
     </nav>
 </div>

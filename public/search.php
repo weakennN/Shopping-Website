@@ -1,4 +1,4 @@
-<?php include_once "../private/AutoLoad/autoLoader.php";
+<?php include_once $_SERVER['HOME'] . "/private/AutoLoad/autoLoader.php";
 if (!isset($_GET["search"])) {
     header("Location: http://localhost/test/public/index.php");
 }
@@ -23,13 +23,13 @@ if (!isset($_GET["search"])) {
 <?php include_once "header.php"; ?>
 <?php include_once "notificationContainer.html" ?>
 <div class="container-lg container-fluid-lg shadow-sm">
-    <?php include_once "../private/Includes/SearchIncludes/searchTitle.php" ?>
+    <?php include_once $_SERVER['HOME'] . "/private/Includes/SearchIncludes/searchTitle.php" ?>
     <div class="row">
-        <?php include_once "../private/Includes/SearchIncludes/search.php"; ?>
+        <?php include_once $_SERVER['HOME'] . "/private/Includes/SearchIncludes/search.php"; ?>
     </div>
     <nav class="pb-2">
         <ul class="pagination justify-content-end">
-            <?php include_once "../private/Includes/SearchIncludes/createPagination.php" ?>
+            <?php include_once $_SERVER['HOME'] . "/private/Includes/SearchIncludes/createPagination.php" ?>
         </ul>
     </nav>
 </div>

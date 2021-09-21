@@ -1,5 +1,6 @@
 <?php
-include_once "../private/AutoLoad/autoLoader.php";
+include_once $_SERVER['HOME'] . "/private/AutoLoad/autoLoader.php";
+include_once $_SERVER['HOME'] . "/private/Includes/ProductPageInclude/validateProductPage.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +9,7 @@ include_once "../private/AutoLoad/autoLoader.php";
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title><?php include_once $_SERVER['HOME'] . "/private/Includes/ProductPageInclude/PLoader/getProductTitle.php"; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -33,17 +34,17 @@ include_once "../private/AutoLoad/autoLoader.php";
 <div class="container shadow-sm">
     <div class="row">
         <div class="text-left p-0 fs-2 border-bottom" id="title">
-            <?php include "../private/Includes/ProductPageInclude/PLoader/loadProductTitle.php"; ?>
+            <?php include $_SERVER['HOME'] . "/private/Includes/ProductPageInclude/PLoader/loadProductTitle.php"; ?>
         </div>
     </div>
     <div class="row mt-4">
         <!-- start of product gallery -->
         <div class="col-lg-5 col-md-12 col-sm-12 text-center mx-lg-4">
             <div class="gal card-block">
-                <?php include "../private/Includes/ProductPageInclude/PLoader/loadProductImages.php"; ?>
+                <?php include $_SERVER['HOME'] . "/private/Includes/ProductPageInclude/PLoader/loadProductImages.php"; ?>
             </div>
             <div class="gal-nav">
-                <?php include "../private/Includes/ProductPageInclude/PLoader/loadProductSlickSlider.php"; ?>
+                <?php include $_SERVER['HOME'] . "/private/Includes/ProductPageInclude/PLoader/loadProductSlickSlider.php"; ?>
             </div>
         </div>
         <!-- end of product gallery -->
@@ -52,7 +53,7 @@ include_once "../private/AutoLoad/autoLoader.php";
             <div>
                 <div class="mb-3">
                     <div>
-                        <?php include "../private/Includes/ProductPageInclude/PLoader/loadPPrice.php"; ?>
+                        <?php include $_SERVER['HOME'] . "/private/Includes/ProductPageInclude/PLoader/loadPPrice.php"; ?>
                     </div>
                 </div>
                 <div class="d-flex flex-row">
@@ -75,7 +76,7 @@ include_once "../private/AutoLoad/autoLoader.php";
                     <div class="text-left">
                         <h3>Short product description</h3>
                     </div>
-                    <?php include_once "../private/Includes/ProductPageInclude/PLoader/loadProductShortDescription.php"; ?>
+                    <?php include_once $_SERVER['HOME'] . "/private/Includes/ProductPageInclude/PLoader/loadProductShortDescription.php"; ?>
                 </div>
             </div>
         </div>
@@ -88,7 +89,7 @@ include_once "../private/AutoLoad/autoLoader.php";
                 </div>
             </div>
             <div class="product-description-text">
-                <?php include "../private/Includes/ProductPageInclude/PLoader/loadProductDescription.php"; ?>
+                <?php include $_SERVER['HOME'] . "/private/Includes/ProductPageInclude/PLoader/loadProductDescription.php"; ?>
             </div>
         </div>
     </div>
@@ -106,7 +107,7 @@ include_once "../private/AutoLoad/autoLoader.php";
                             <div id="carouselExampleControls" class="carousel carousel-dark slide"
                                  data-bs-ride="carousel">
                                 <div class="carousel-inner text-center test" id="modal-content">
-                                    <?php include "../private/Includes/ProductPageInclude/PLoader/loadPModal.php"; ?>
+                                    <?php include $_SERVER['HOME'] . "/private/Includes/ProductPageInclude/PLoader/loadPModal.php"; ?>
                                 </div>
                                 <button class="carousel-control-prev" type="button"
                                         data-bs-target="#carouselExampleControls"

@@ -1,4 +1,4 @@
-<?php include_once "../private/AutoLoad/autoLoader.php"; ?>
+<?php include_once $_SERVER['HOME'] . "/private/AutoLoad/autoLoader.php"; ?>
 <!Doctype html>
 <html lang="en">
 <head>

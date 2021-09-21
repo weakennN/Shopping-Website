@@ -1,4 +1,4 @@
-<?php include_once "../private/AutoLoad/autoLoader.php" ?>
+<?php include_once $_SERVER['HOME'] . "/private/AutoLoad/autoLoader.php" ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,12 +22,12 @@
         <h1 class="display-4 mb-4">My Cart</h1>
         <div class="col-lg-8 p-0">
             <div class="d-flex flex-column cart-item-holder" id="cart-item-holder">
-                <?php include "../private/Includes/CartInclude/CartLoader/loadShoppingCartItems.php" ?>
+                <?php include $_SERVER['HOME'] . "/private/Includes/CartInclude/CartLoader/loadShoppingCartItems.php" ?>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="w-100 checkout-box">
-                <?php include "../private/Includes/CartInclude/CartLoader/createCheckoutBox.php" ?>
+                <?php include $_SERVER['HOME'] . "/private/Includes/CartInclude/CartLoader/createCheckoutBox.php" ?>
             </div>
         </div>
     </div>

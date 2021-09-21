@@ -1,6 +1,7 @@
 <?php
-include_once "../private/AutoLoad/autoLoader.php";
-include_once "../private/Includes/LoginSystemInclude/checkLogin.php";
+include_once $_SERVER['HOME'] . "/private/AutoLoad/autoLoader.php";
+include_once $_SERVER['HOME'] . "/private/Includes/LoginSystemInclude/checkLogin.php";
+include_once $_SERVER['HOME'] . "/private/Includes/OrderDetailsIncludes/validateOrderDetailsPage.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,13 +27,13 @@ include_once "../private/Includes/LoginSystemInclude/checkLogin.php";
             <?php include_once "profileNavigation.html" ?>
         </div>
         <div class="col-md-9 p-0 mt-3 mt-md-0 profile-main-content-container p-3">
-            <?php include_once "../private/Includes/OrderDetailsIncludes/showOrderId.php"; ?>
-            <?php include_once "../private/Includes/OrderDetailsIncludes/loadOrderRegisterLoader.php"; ?>
+            <?php include_once $_SERVER['HOME'] . "/private/Includes/OrderDetailsIncludes/showOrderId.php"; ?>
+            <?php include_once $_SERVER['HOME'] . "/private/Includes/OrderDetailsIncludes/loadOrderRegisterLoader.php"; ?>
             <h5 class="display-6 mt-3">Order description</h5>
             <div class="shadow-border">
-                <?php include_once "../private/Includes/OrderDetailsIncludes/loadShippingDetails.php" ?>
+                <?php include_once $_SERVER['HOME'] . "/private/Includes/OrderDetailsIncludes/loadShippingDetails.php" ?>
                 <div class="d-flex flex-column">
-                    <?php include_once "../private/Includes/OrderDetailsIncludes/loadProducts.php"?>
+                    <?php include_once $_SERVER['HOME'] . "/private/Includes/OrderDetailsIncludes/loadProducts.php" ?>
                 </div>
             </div>
         </div>

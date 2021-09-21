@@ -15,19 +15,19 @@
                     </button>
                 </div>
             </form>
-            <?php include "../private/Includes/HeaderInclude/createMainNavProfile.php" ?>
+            <?php include $_SERVER['HOME'] . "/private/Includes/HeaderInclude/createMainNavProfile.php" ?>
             <a href="favourite.php" class="mt-2 mx-5 favourite-btn">
                 <i class="far fa-heart fa-2x"></i>
             </a>
             <div class="dropdown cart-wrapper-dropdown" id="cart-dropdown">
                 <div class="dropdown-menu dropdown-menu-end cart-dropdown">
-                    <?php include '../private/Includes/CartInclude/CartLoader/loadCartWrapper.php' ?>
+                    <?php include $_SERVER["HOME"] . "/private/Includes/CartInclude/CartLoader/loadCartWrapper.php" ?>
                 </div>
                 <div class="pt-2" id="cart">
                     <a href="cart.php">
                         <div class="dropdown-toggle shopping-cart-btn">
                             <div id="badge" style="z-index:1;left: 21px!important;top: 3px!important;"
-                                 class="position-absolute top-0 start-0 cart-badge badge rounded-pill bg-danger"><?php include "../private/Includes/CartInclude/CartLoader/loadCartBadge.php" ?>
+                                 class="position-absolute top-0 start-0 cart-badge badge rounded-pill bg-danger"><?php include $_SERVER['HOME'] . "/private/Includes/CartInclude/CartLoader/loadCartBadge.php" ?>
                             </div>
                             <i class="fas fa-shopping-cart fa-2x position-relative"></i>
                         </div>
@@ -42,7 +42,7 @@
 <nav class="navbar mb-5" id="responsive-navbar" style="display: none;background: white">
     <div class="container-fluid">
         <div class="d-flex flex-row w-100">
-            <?php include "../private/Includes/HeaderInclude/createResponsiveNavbarProfile.php" ?>
+            <?php include $_SERVER['HOME'] . "/private/Includes/HeaderInclude/createResponsiveNavbarProfile.php" ?>
             <a href="favourite.php">
                 <i class="far fa-heart fa-2x responsive-navbar-item"></i>
             </a>
@@ -62,7 +62,7 @@
                 <a href="cart.php">
                     <i class="fas fa-shopping-cart fa-2x responsive-navbar-item"></i>
                     <div id="badge"
-                         class="responsive-navbar-cart-badge cart-badge position-absolute badge rounded-pill bg-danger"><?php include "../private/Includes/CartInclude/CartLoader/loadCartBadge.php" ?>
+                         class="responsive-navbar-cart-badge cart-badge position-absolute badge rounded-pill bg-danger"><?php include $_SERVER['HOME'] . "/private/Includes/CartInclude/CartLoader/loadCartBadge.php" ?>
                     </div>
                 </a>
             </div>

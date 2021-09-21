@@ -1,6 +1,6 @@
 <?php
-include_once "../private/AutoLoad/autoLoader.php";
-include_once "../private/Includes/LoginSystemInclude/checkLogin.php";
+include_once $_SERVER['HOME'] . "/private/AutoLoad/autoLoader.php";
+include_once $_SERVER['HOME'] . "/private/Includes/LoginSystemInclude/checkLogin.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +30,7 @@ include_once "../private/Includes/LoginSystemInclude/checkLogin.php";
             <h5 class="display-6 ms-3 mt-2">Orders</h5>
             <div class="d-flex flex-column overflow-auto mt-4" style="max-height: 470px">
                 <div class="row">
-                    <?php include_once "../private/Includes/OrderPageIncludes/loadOrders.php"; ?>
+                    <?php include_once $_SERVER['HOME'] . "/private/Includes/OrderPageIncludes/loadOrders.php"; ?>
                 </div>
             </div>
         </div>

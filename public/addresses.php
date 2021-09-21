@@ -1,6 +1,6 @@
 <?php
-include_once "../private/Includes/LoginSystemInclude/checkLogin.php";
-include_once "../private/AutoLoad/autoLoader.php";
+include_once $_SERVER['HOME'] . "/private/Includes/LoginSystemInclude/checkLogin.php";
+include_once $_SERVER['HOME'] . "/private/AutoLoad/autoLoader.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,7 @@ include_once "../private/AutoLoad/autoLoader.php";
     <link rel="stylesheet" href="style/addresses.css">
 </head>
 <body>
-<?php include_once "../public/header.php" ?>
+<?php include_once "header.php" ?>
 <div class="container">
     <div class="row">
         <div class="col-md-3 p-0 pe-0 pe-md-4">
@@ -30,7 +30,7 @@ include_once "../private/AutoLoad/autoLoader.php";
             <div class="row profile-main-content p-2">
                 <h2 class="display-5 mb-4">Addresses</h2>
                 <div class="d-flex flex-column address-container pb-1" id="address-container">
-                    <?php include_once "../private/Includes/AddressInclude/loadAddresses.php" ?>
+                    <?php include_once $_SERVER['HOME'] . "/private/Includes/AddressInclude/loadAddresses.php" ?>
                 </div>
                 <div class="mt-2">
                     <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal"

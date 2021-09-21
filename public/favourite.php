@@ -1,6 +1,6 @@
 <?php
-include_once "../private/Includes/LoginSystemInclude/checkLogin.php";
-include_once "../private/AutoLoad/autoLoader.php"
+include_once $_SERVER['HOME'] . "/private/Includes/LoginSystemInclude/checkLogin.php";
+include_once $_SERVER['HOME'] . "/private/AutoLoad/autoLoader.php"
 ?>
 <!doctype html>
 <html lang="en">
@@ -27,7 +27,7 @@ include_once "../private/AutoLoad/autoLoader.php"
         </div>
         <div class="col-md-9 p-0 mt-3 mt-md-0">
             <div class="row profile-main-content">
-                <?php include_once "../private/Includes/FavouriteInclude/FavouriteListLoader/loadFavouriteProducts.php" ?>
+                <?php include_once $_SERVER['HOME'] . "/private/Includes/FavouriteInclude/FavouriteListLoader/loadFavouriteProducts.php" ?>
             </div>
         </div>
     </div>
