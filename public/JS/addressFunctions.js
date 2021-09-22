@@ -52,7 +52,6 @@ function setAddressAction() {
         let country = address.getElementsByClassName("card-text").item(2).textContent.split(" - ")[1];
         let editButton = address.getElementsByTagName("button").item(0);
         let deleteButton = address.getElementsByTagName("button").item(1);
-        console.log(city);
         editAddressAction(editButton, addressId, name, phone, userAddress, country, city);
         deleteAddressAction(deleteButton, address, addressId);
     }

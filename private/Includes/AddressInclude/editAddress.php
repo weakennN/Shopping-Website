@@ -9,7 +9,7 @@ use private\Classes\LoginSystem\Validators\PhoneValidator;
 use private\Classes\User\User;
 use private\Classes\ValidationSystem\ValidationSystem;
 
-include_once "../../AutoLoad/autoLoader.php";
+include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
 
 $response = array("error" => null);
 
@@ -21,7 +21,7 @@ if (isset($_POST["addressId"]) && isset($_POST["name"])
     $validationSystem = new ValidationSystem(new AddressIdValidator($_POST["addressId"], "Invalid address!", $userId),
         new NameValidator($_POST["name"], "Invalid name!"), new AddressValidator($_POST["address"], "Invalid address!"),
         new NameValidator($_POST["city"], "Invalid city!"), new CountryIdValidator($_POST["countryId"], "Invalid country"),
-        new PhoneValidator($_POST["phone"],"Invalid phone!"));
+        new PhoneValidator($_POST["phone"], "Invalid phone!"));
 
     if ($validationSystem->validate()) {
         $addressManager = new AddressManager($userId);

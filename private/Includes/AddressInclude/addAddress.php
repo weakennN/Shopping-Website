@@ -9,7 +9,7 @@ use private\Classes\LoginSystem\Validators\PhoneValidator;
 use private\Classes\User\User;
 use private\Classes\ValidationSystem\ValidationSystem;
 
-include_once "../../AutoLoad/autoLoader.php";
+include_once $_SERVER["HOME"] . "/private/AutoLoad/autoLoader.php";
 
 if (isset($_POST["name"]) && isset($_POST["phone"]) && isset($_POST["address"])
     && isset($_POST["city"]) && isset($_POST["countryId"])) {

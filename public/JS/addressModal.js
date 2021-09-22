@@ -135,7 +135,6 @@ function closeModal(modalId) {
 
 function displayErrorMessage(modalId, errorMessages) {
     let modal = document.getElementById(modalId);
-    console.log(errorMessages);
     for (let errorMessage of errorMessages) {
         modal.getElementsByClassName("alert-container").item(0).appendChild(createErrorMessage(errorMessage));
     }
@@ -154,7 +153,6 @@ function createErrorMessage(errorMessage) {
 function getAddressModalValues(addressModal) {
     let addressModalEl = document.getElementById(addressModal);
     let inputs = addressModalEl.getElementsByTagName("input");
-    console.log(inputs.item(3).value);
     return {
         "name": inputs.item(0).value,
         "phone": inputs.item(1).value,
@@ -166,8 +164,7 @@ function getAddressModalValues(addressModal) {
 }
 
 function addUserAddress(addressInfo) {
-    console.log(addressInfo);
-    $.post($_SERVER['HOME']."/private/Includes/AddressInclude/addAddress.php", {
+    $.post("../Includes/Address/addUserAddress.php", {
         name: addressInfo["name"],
         phone: addressInfo["phone"],
         address: addressInfo["address"],
@@ -175,7 +172,6 @@ function addUserAddress(addressInfo) {
         countryId: addressInfo["countryId"]
     }, function (data, status) {
         let response = JSON.parse(data);
-        console.log(response);
         if (response["error"] !== null) {
             displayErrorMessage("createAddressModal", response["error"]);
         } else {
@@ -187,8 +183,7 @@ function addUserAddress(addressInfo) {
 }
 
 function addCheckoutPageUserAddress(addressInfo) {
-    console.log(addressInfo);
-    $.post($_SERVER['HOME']."/private/Includes/AddressInclude/addAddress.php", {
+    $.post("../Includes/Address/addCheckoutPageAddress.php", {
         name: addressInfo["name"],
         phone: addressInfo["phone"],
         address: addressInfo["address"],
@@ -207,8 +202,7 @@ function addCheckoutPageUserAddress(addressInfo) {
 }
 
 function editUserAddress(addressInfo, addressId) {
-    console.log(addressId);
-    $.post($_SERVER['HOME']."/private/Includes/AddressInclude/editAddress.php", {
+    $.post("../Includes/Address/editUserAddress.php", {
         addressId: addressId,
         name: addressInfo["name"],
         phone: addressInfo["phone"],
@@ -227,13 +221,13 @@ function editUserAddress(addressInfo, addressId) {
 }
 
 function deleteUserAddress(addressId) {
-    $.post($_SERVER['HOME']."/private/Includes/AddressInclude/deleteAddress.php", {
+    $.post("../Includes/Address/deleteUserAddress.php", {
         addressId: addressId
     }, function (data, status) {
     })
 }
 
-function setEditModalInputs(name, phone, address, country, city) {
+function setEditModalInputs(name, phone, address, city, country) {
     document.getElementById("edit-input-name").value = name;
     document.getElementById("edit-input-phone").value = phone;
     document.getElementById("edit-input-address").value = address;

@@ -25,7 +25,7 @@ function emailValidation(email) {
         errorMessage.textContent = "This field is required";
         return errorMessage;
     } else if (!isEmail(email)) {
-        errorMessage.textContent = "Email is invalid try email like (name@domain.com).";
+        errorMessage.textContent = "Email is invalid try something email like (name@domain.com).";
         return errorMessage;
     }
 

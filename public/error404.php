@@ -20,9 +20,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="error-template">
+            <div class="error-template text-center">
                 <h1 class="error-text">Oops!</h1>
-                <h2 class="error-text">404 Not Found</h2>
+                <h2 class="error-text">404</h2>
+                <h2 class="error-text">Page Not Found</h2>
                 <div>
                     <p class="m-0 error-details">We couldn't find the page you are looking for</p>
                 </div>

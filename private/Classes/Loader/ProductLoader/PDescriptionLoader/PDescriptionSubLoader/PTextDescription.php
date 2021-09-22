@@ -13,6 +13,6 @@ class PTextDescription extends \private\Classes\Loader\ProductLoader\PDescriptio
     public function load($value)
     {
         $value = str_replace("*", "", $value);
-        echo "<div class='mb-3'>" . $value . "</div>";
+        echo "<p style='font-size: 18px' class='mb-3'>" . $value . "</p>";
     }
 }

@@ -6,7 +6,7 @@
                 <img style="height: 30px"
                      src="recourses/images/logo/5891132146_34b49d36-3b74-49c9-b710-aa58cb5ada62.png" alt="">
             </a>
-            <form action="search.php" class="form-inline text-center w-100 me-5" method="GET">
+            <form action="search.php" class="form-inline text-center w-100 me-5 ms-4" method="GET">
                 <div class="input-group input-group-append">
                     <input class="form-control navbar-search" name="search" type="search" placeholder="Search"
                            aria-label="Search">
@@ -69,7 +69,7 @@
         </div>
     </div>
     <div class="collapse navbar-collapse text-center" id="responsive-navbar-collapse">
-        <form action="search.php" class="form-inline text-center my-3" method="get">
+        <form action="search.php" class="form-inline text-center my-3 mx-2" method="get">
             <div class="input-group input-group-append">
                 <input class="flex-fill form-control navbar-search" name="search" type="search" placeholder="Search"
                        aria-label="Search">

@@ -1,6 +1,5 @@
 function setAddToCartAlertFields(title, image, price, link) {
     let modal = document.getElementById("add-to-cart-alert");
-    console.log(modal);
     modal.getElementsByClassName("title").item(0).textContent = title;
     modal.getElementsByTagName("img").item(0).setAttribute("src", image);
     modal.getElementsByTagName("a").item(0).setAttribute("href", link);

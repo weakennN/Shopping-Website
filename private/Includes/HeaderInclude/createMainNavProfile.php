@@ -18,7 +18,7 @@ if (isset($_COOKIE["userId"])) {
                   </div>
             </a>              
                <hr class='dropdown-divider'> 
-               <a href='../private/Includes/LoginSystemInclude/logout.php'>
+               <a href='Includes/Account/logoutUser.php'>
                  <div class='profile-dropdown-item d-flex flex-row py-1'>
                   <i class='fas fa-sign-out-alt ms-2 mt-1'></i>
                     <p class='text-decoration-none ms-1 navbar-dropdown-item m-0'>Log out</p>

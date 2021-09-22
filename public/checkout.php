@@ -24,8 +24,10 @@ include_once $_SERVER['HOME'] . "/private/Includes/CartInclude/checkEmptyCart.ph
 <?php include_once "header.php" ?>
 <div class="container">
     <div class="row">
-        <?php include_once $_SERVER['HOME'] . "/private/Includes/LoginSystemInclude/displayLoginSystemAlert.php" ?>
-        <form action="../private/Includes/CheckoutPageInclude/finishOrder.php" method="post">
+        <div>
+            <?php include_once $_SERVER['HOME'] . "/private/Includes/LoginSystemInclude/displayLoginSystemAlert.php" ?>
+        </div>
+        <form action="Includes/Checkout/checkout.php" method="post">
             <div class="col-12 checkout-content">
                 <h5 class="display-5 mb-3">Choose Address</h5>
                 <div class="d-flex flex-column address-container pb-1" id="address-container">

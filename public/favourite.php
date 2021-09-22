@@ -20,6 +20,7 @@ include_once $_SERVER['HOME'] . "/private/AutoLoad/autoLoader.php"
 </head>
 <body>
 <?php include_once "header.php" ?>
+<?php include_once "notificationContainer.html" ?>
 <div class="container">
     <div class="row">
         <div class="col-md-3 p-0 pe-0 pe-md-4">
@@ -41,6 +42,7 @@ include_once $_SERVER['HOME'] . "/private/AutoLoad/autoLoader.php"
 <script src="JS/favouriteAction.js"></script>
 <script src="JS/cartItemActions.js"></script>
 <script src="JS/cartAction.js"></script>
+<script src="JS/notification.js"></script>
 <script src="JS/cartWrapper.js"></script>
 <script src="JS/addToCartAlert.js"></script>
 <script src="JS/favourite.js"></script>

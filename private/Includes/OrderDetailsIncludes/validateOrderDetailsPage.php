@@ -3,5 +3,5 @@
 use private\Classes\User\User;
 
 if (!isset($_GET["order"]) || !User::orderExist($_GET["order"])) {
-    header("Location: error404.php");
+    header("Location: http://localhost/error404.php");
 }
